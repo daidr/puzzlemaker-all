@@ -268,7 +268,7 @@ Code.init = function() {
   }
 
   // Construct the toolbox XML.
-var toolboxText = document.getElementById('toolbox').outerHTML;
+var toolboxText = document.getElementById('toolbox').innerHTML;
 var toolboxXml = Blockly.Xml.textToDom(toolboxText);
 
   Code.workspace = Blockly.inject('content_blocks',
@@ -378,7 +378,7 @@ Code.discard = function() {
 $("#toolbox").load("blocks/blocks.xml",function(){
 	Code.init();
 	var b = function() {
-				Code.workspace.updateToolbox($("#toolbox")[0]);
+				Code.workspace.updateToolbox($("#toolbox_xml")[0]);
 				Code.workspace.toolbox_.flyout_.hide()
 			};
 		var a = (function() {
