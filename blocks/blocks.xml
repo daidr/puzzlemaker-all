@@ -319,7 +319,7 @@
 	<block type="controls_if" data-keywords="如果|if|逻辑"></block>
 	<block type="logic_compare" data-keywords="=|<>|!=|≠|<|>|条件|if|逻辑">
 	</block>
-	<block type="logic_operation" data-keywords="&&||||且|和|或|if|逻辑"></block>
+	<block type="logic_operation" data-keywords="|且|和|或|if|逻辑"></block>
 	<block type="logic_negate" data-keywords="非|!|if|逻辑"></block>
 	<block type="logic_boolean" data-keywords="false|true|假|真|boolean|逻辑"></block>
 	<block type="logic_null" data-keywords="空|empty|逻辑"></block>
