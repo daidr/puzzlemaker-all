@@ -27,6 +27,7 @@ var MSG = {
   catVariables: "变量",
   catFunctions: "函数",
   catsysdisk: "磁盘操作",
+  catrequest: "网络操作",
   listVariable: "列表",
   textVariable: "文本",
   hashError: "对不起，没有任何已保存的程序对应'%1' 。",

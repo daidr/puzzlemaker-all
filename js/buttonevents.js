@@ -490,8 +490,8 @@ function clearBlockMarkers() {
 
 function appendBlockMarker(b) {
 	if(!b.getParent()) {
-		var a = $("<div hidden>priority_high</div>").addClass("viewproblem").addClass("material-icons").css("left", (b.getRelativeToSurfaceXY().x + b.workspace.scrollX) + 60).css("top", (b.getRelativeToSurfaceXY().y + b.workspace.scrollY) + 45).fadeIn(250).fadeOut(250).fadeIn(250);
-		//var a = $("<div hidden>priority_high</div>").addClass("viewproblem").addClass("material-icons").css("left", (b.getRelativeToSurfaceXY().x + b.workspace.scrollX) + 60).css("top", (b.getRelativeToSurfaceXY().y + b.workspace.scrollY) + 45).fadeIn(250).fadeOut(250).fadeIn(250);
+		var a = $("<div>priority_high</div>").addClass("viewproblem").addClass("material-icons").css("left", (b.getRelativeToSurfaceXY().x + b.workspace.scrollX) + 60).css("top", (b.getRelativeToSurfaceXY().y + b.workspace.scrollY) + 45).fadeIn(250).fadeOut(250).fadeIn(250);
+		//var a = $("<div>priority_high</div>").addClass("viewproblem").addClass("material-icons").css("left", (b.getRelativeToSurfaceXY().x + b.workspace.scrollX) + 60).css("top", (b.getRelativeToSurfaceXY().y + b.workspace.scrollY) + 45).fadeIn(250).fadeOut(250).fadeIn(250);
 
 		$("body").append(a)
 	}
