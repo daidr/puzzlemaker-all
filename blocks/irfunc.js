@@ -1,18 +1,18 @@
 'use strict';
 var thisBlock,isQQ;
 
-goog.provide('Blockly.Blocks.cqfunc');  // Deprecated
-goog.provide('Blockly.Constants.cqfunc');
+goog.provide('Blockly.Blocks.irfunc');  // Deprecated
+goog.provide('Blockly.Constants.irfunc');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Constants.cqfunc.HUE = Blockly.Msg["CQFUNC_HUE"];
-Blockly.Blocks.cqfunc.HUE = Blockly.Constants.cqfunc.HUE;
+Blockly.Constants.irfunc.HUE = Blockly.Msg["IRFUNC_HUE"];
+Blockly.Blocks.irfunc.HUE = Blockly.Constants.irfunc.HUE;
 
 Blockly.defineBlocksWithJsonArray([
 {
-  "type": "cq_sendmsg",
-  "message0": "CQ_发送 %1 消息 %2 号码 %3 消息内容 %4",
+  "type": "ir_sendmsg",
+  "message0": "IR_发送 %1 消息 %2 机器人QQ %3 号码 %4 消息内容 %5 气泡 %6",
   "args0": [
     {
       "type": "field_dropdown",
@@ -38,6 +38,12 @@ Blockly.defineBlocksWithJsonArray([
     },
     {
       "type": "input_value",
+      "name": "rotnumber",
+      "check": "Number",
+      "align": "RIGHT"
+    },
+    {
+      "type": "input_value",
       "name": "idnumber",
       "check": "Number",
       "align": "RIGHT"
@@ -47,21 +53,33 @@ Blockly.defineBlocksWithJsonArray([
       "name": "msg",
       "check": "String",
       "align": "RIGHT"
+    },
+    {
+      "type": "input_value",
+      "name": "qipao",
+      "check": "Number",
+      "align": "RIGHT"
     }
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": "%{BKY_CQFUNC_HUE}",
-  "tooltip": "发送各类酷Q消息",
+  "colour": "%{BKY_IRFUNC_HUE}",
+  "tooltip": "发送各类IR消息",
   "helpUrl": ""
 }
 ,
 {
-  "type": "cq_sendlike",
-  "message0": "发送赞 %1 号码 %2 次数 %3",
+  "type": "ir_sendlike",
+  "message0": "发送赞 %1 机器人QQ %2 被赞QQ %3 次数 %4",
   "args0": [
     {
       "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "rotnumber",
+      "check": "Number",
+      "align": "RIGHT"
     },
     {
       "type": "input_value",
@@ -78,36 +96,15 @@ Blockly.defineBlocksWithJsonArray([
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": "%{BKY_CQFUNC_HUE}",
+  "colour": "%{BKY_IRFUNC_HUE}",
   "tooltip": "向指定QQ发送赞，最多10次",
   "helpUrl": ""
 }
 ,
 {
-  "type": "cq_addlog",
-  "message0": "输出 %1 日志 %2 日志内容 %3",
+  "type": "ir_addlog",
+  "message0": "输出日志内容 %1",
   "args0": [
-    {
-      "type": "field_dropdown",
-      "name": "type",
-      "options": [
-        [
-          "信息",
-          "info"
-        ],
-        [
-          "调试",
-          "debug"
-        ],
-        [
-          "警告",
-          "warning"
-        ]
-      ]
-    },
-    {
-      "type": "input_dummy"
-    },
     {
       "type": "input_value",
       "name": "content",
@@ -117,12 +114,12 @@ Blockly.defineBlocksWithJsonArray([
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": "%{BKY_CQFUNC_HUE}",
-  "tooltip": "输出各类型的日志，方便调试",
+  "colour": "%{BKY_IRFUNC_HUE}",
+  "tooltip": "输出插件日志，方便调试",
   "helpUrl": ""
 },
 {
-  "type": "cq_jinyan",
+  "type": "ir_jinyan",
   "message0": "禁言指定Q号 %1 群号 %2 Q号 %3 时长(秒) %4",
   "args0": [
     {
@@ -150,17 +147,17 @@ Blockly.defineBlocksWithJsonArray([
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": "%{BKY_CQFUNC_HUE}",
+  "colour": "%{BKY_IRFUNC_HUE}",
   "tooltip": "禁言指定QQ号，时间单位为秒。如果时间为0则为解禁。本参数无返回值",
   "helpUrl": ""
-},
+}/* ,
 {
   "type": "cq_getgrouplist",
   "lastDummyAlign0": "RIGHT",
   "message0": "获取机器人加的所有群",
   "inputsInline": false,
   "output": null,
-  "colour": "%{BKY_CQFUNC_HUE}",
+  "colour": "%{BKY_IRFUNC_HUE}",
   "tooltip": "输出机器人所加的所有群，格式为“xxxxxxx|xxxxxxx|xxxxxxx”",
   "helpUrl": ""
 },
@@ -180,13 +177,13 @@ Blockly.defineBlocksWithJsonArray([
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": "%{BKY_CQFUNC_HUE}",
+  "colour": "%{BKY_IRFUNC_HUE}",
   "tooltip": "根据消息ID撤回指定消息",
   "helpUrl": ""
-}
+} */
 ]);
 
-Blockly.Blocks['cq_getusername'] = {
+Blockly.Blocks['ir_getusername'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("获取")

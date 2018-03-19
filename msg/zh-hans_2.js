@@ -417,10 +417,10 @@ Blockly.Msg.LISTS_INDEX_OF_INPUT_IN_LIST = Blockly.Msg.LISTS_INLIST;
 Blockly.Msg.PROCEDURES_DEFRETURN_COMMENT = Blockly.Msg.PROCEDURES_DEFNORETURN_COMMENT;
 
 Blockly.BlockSvg.START_HAT = true;
-Blockly.Msg["EVENT_GROUP_WARNING"] = "只能用在酷Q群消息事件内部";  // untranslated
-Blockly.Msg["EVENT_DISCUSS_WARNING"] = "只能用在酷Q讨论组消息事件内部";
-Blockly.Msg["EVENT_MSG_WARNING"] = "只能用在酷Q消息事件内部";
-Blockly.Msg["EVENT_ADDGROUP_WARNING"] = "只能用在酷Q群添加事件内部";
+Blockly.Msg["EVENT_GROUP_WARNING"] = "只能用在群消息事件内部";  // untranslated
+Blockly.Msg["EVENT_DISCUSS_WARNING"] = "只能用在讨论组消息事件内部";
+Blockly.Msg["EVENT_MSG_WARNING"] = "只能用在消息事件内部";
+Blockly.Msg["EVENT_ADDGROUP_WARNING"] = "只能用在群添加事件内部";
 
 
 Blockly.Msg["MATH_HUE"] = "230";
@@ -436,6 +436,10 @@ Blockly.Msg["TIME_HUE"] = "90";
 Blockly.Msg["CQCODE_HUE"] = "45";
 Blockly.Msg["CQEVENT_HUE"] = "300";
 Blockly.Msg["CQFUNC_HUE"] = "270";
+
+Blockly.Msg["IRCODE_HUE"] = "45";
+Blockly.Msg["IREVENT_HUE"] = "300";
+Blockly.Msg["IRFUNC_HUE"] = "270";
 
 Blockly.Msg["VOICEERA_HUE"] = "#009AD2";
 
