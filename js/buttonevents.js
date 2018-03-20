@@ -473,7 +473,7 @@ function getNonFunctions(c) {
 	var a = [];
 	for(var b = 0; b < e.length; b++) {
 		var d = e[b];
-		if(d.type != "procedures_defreturn" && d.type != "procedures_defnoreturn" && d.type != "cqevent_allevent") {
+		if(d.type != "procedures_defreturn" && d.type != "procedures_defnoreturn" && d.type != "cqevent_allevent" && d.type != "ir_irevent_allevent") {
 			a.push(d)
 		}
 	}
@@ -524,7 +524,7 @@ function checkCode() {
 	var hasCQEvents = 0;
 	for(var i = 0; i < Code.workspace.getTopBlocks().length; i++) {
 		var block = Code.workspace.getTopBlocks()[i];
-		if(block.type == "cqevent_allevent") {
+		if(block.type == "cqevent_allevent" || block.type == "ir_irevent_allevent") {
 			hasCQEvents = hasCQEvents + 1;
 		}
 	}

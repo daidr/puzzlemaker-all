@@ -68,24 +68,10 @@ Blockly.defineBlocksWithJsonArray([{
     "helpUrl": ""
 },  //ircode - face表情 处理完成
 
-/* {
-    "type": "cqcode_record",
-    "message0": "发送语音 %1 %2 音频文件名 %3",
+{
+    "type": "ircode_record",
+    "message0": "发送语音 %1 音频ID %2",
     "args0": [
-        {
-            "type": "field_dropdown",
-            "name": "magic",
-            "options": [
-                [
-                    "添加「变声」标记",
-                    "true"
-                ],
-                [
-                    "不添加「变声」标记",
-                    "false"
-                ]
-            ]
-        },
         {
             "type": "input_dummy"
         },
@@ -98,8 +84,8 @@ Blockly.defineBlocksWithJsonArray([{
     ],
     "output": "String",
     "colour": "%{BKY_IRCODE_HUE}",
-    "tooltip": "输出发送语音的CQ码，「音频文件名」需存放在酷Q目录的「data\\record\\」下。",
+    "tooltip": "输出语音的IR动态变量",
     "helpUrl": ""
-} */
+}
 
 ]);

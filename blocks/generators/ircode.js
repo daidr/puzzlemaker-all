@@ -27,10 +27,9 @@ Blockly.JavaScript['ircode_sface'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_NONE];
 }; //OK
 
-/* 
-Blockly.JavaScript['cqcode_record'] = function(block) {
-  var dropdown_magic = block.getFieldValue('magic');
+
+Blockly.JavaScript['ircode_record'] = function(block) {
   var value_filename = Blockly.JavaScript.valueToCode(block, 'filename', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = "'[CQ:record,file=' + " + value_filename + " + ',magic=" +dropdown_magic + "]'";
+  var code = "'[IR:Voi=' + " + value_filename + " + '" + "]'";
   return [code, Blockly.JavaScript.ORDER_NONE];
-}; */
+};
