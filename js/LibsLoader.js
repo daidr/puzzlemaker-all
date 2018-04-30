@@ -91,7 +91,7 @@ function LibsLoader() {
                 timeout: 5000,
                 type: 'get',
                 cache: false,
-                async: false,
+                async: true,
                 success: function (data) {
                     success += 1;
                     var cssBlob = new Blob([data], { type: 'text/css' });
@@ -130,7 +130,7 @@ function LibsLoader() {
             timeout: 5000,
             type: 'get',
             cache: false,
-            async: false,
+            async: true,
             success: function (data) {
                 success += 1;
                 var jsBlob = new Blob([data], { type: 'text/javacript' });
@@ -169,7 +169,7 @@ function LibsLoader() {
             url: libsConfig.libs.puzzle[i],
             timeout: 5000,
             cache: false,
-            async: false,
+            async: true,
             type: 'get',
             success: function (data) {
                 success += 1;
