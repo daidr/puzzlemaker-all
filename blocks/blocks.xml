@@ -1,203 +1,155 @@
 <xml id="toolbox_xml">
-	<category name="酷Q拼图" colour="#ff9921">
-		<category name="%{BKY_CATCQEVENT}" colour="%{BKY_CQEVENT_HUE}">
-			<block type="cqevent_allevent" data-keywords="群消息|事件|酷q">
+	<category name="机器人拼图" colour="#ff9921">
+		<category name="%{BKY_CATROTEVENT}" colour="%{BKY_ROTEVENT_HUE}">
+			<block type="rotevent_allevent" data-keywords="群消息|事件|酷q|IR">
 				<value name="eventTypeInput">
-					<block type="event_cqsys"></block>
+					<block type="event_rotsys"></block>
 				</value>
 				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">群_消息ID</field>
-						<value name="VALUE">
-							<block type="msg_id" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
+					<block type="variables_set">
 						<field name="VAR">群_消息内容</field>
 						<value name="VALUE">
-							<block type="from_msg" deletable="false" movable="false" editable="false"></block>
+							<block type="event_msg"></block>
 						</value>
 					</block>
 				</value>
 				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">群_发送时间</field>
+					<block type="variables_set">
+						<field name="VAR">群_消息发送者</field>
 						<value name="VALUE">
-							<block type="from_time" deletable="false" movable="false" editable="false"></block>
+							<block type="event_person"></block>
 						</value>
 					</block>
 				</value>
 				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">群_来源QQ</field>
+					<block type="variables_set">
+						<field name="VAR">群_消息来源</field>
 						<value name="VALUE">
-							<block type="from_person" deletable="false" movable="false" editable="false"></block>
+							<block type="event_msgfrom"></block>
 						</value>
 					</block>
 				</value>
 				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">群_来源群号</field>
+					<block type="variables_set">
+						<field name="VAR">群_消息序号</field>
 						<value name="VALUE">
-							<block type="fromgroup_group" deletable="false" movable="false" editable="false"></block>
+							<block type="event_msgnum"></block>
+						</value>
+					</block>
+				</value>
+				<value name="action">
+					<block type="variables_set">
+						<field name="VAR">群_消息ID</field>
+						<value name="VALUE">
+							<block type="event_msgid"></block>
+						</value>
+					</block>
+				</value>
+				<value name="action">
+					<block type="variables_set">
+						<field name="VAR">群_消息类型</field>
+						<value name="VALUE">
+							<block type="event_msgtype"></block>
+						</value>
+					</block>
+				</value>
+				<value name="action">
+					<block type="variables_set">
+						<field name="VAR">群_消息发送时间</field>
+						<value name="VALUE">
+							<block type="event_time"></block>
+						</value>
+					</block>
+				</value>
+				<value name="action">
+					<block type="variables_set">
+						<field name="VAR">群_机器人QQ</field>
+						<value name="VALUE">
+							<block type="event_rotqq"></block>
 						</value>
 					</block>
 				</value>
 			</block>
-			<block type="cqevent_allevent" data-keywords="好友消息|私聊|事件|酷q">
+			<block type="rotevent_allevent" data-keywords="私聊消息|事件|酷q|IR">
 				<value name="eventTypeInput">
-					<block type="event_cqsys">
-						<field name="event_type">CQFriendMsg</field>
-					</block>
+					<block type="event_rotsys">ROTFriendMsg</block>
 				</value>
 				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">私聊_消息ID</field>
-						<value name="VALUE">
-							<block type="msg_id" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
+					<block type="variables_set">
 						<field name="VAR">私聊_消息内容</field>
 						<value name="VALUE">
-							<block type="from_msg" deletable="false" movable="false" editable="false"></block>
+							<block type="event_msg"></block>
 						</value>
 					</block>
 				</value>
 				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">私聊_发送时间</field>
+					<block type="variables_set">
+						<field name="VAR">私聊_消息发送者</field>
 						<value name="VALUE">
-							<block type="from_time" deletable="false" movable="false" editable="false"></block>
+							<block type="event_person"></block>
 						</value>
 					</block>
 				</value>
 				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">私聊_来源QQ</field>
+					<block type="variables_set">
+						<field name="VAR">私聊_消息来源</field>
 						<value name="VALUE">
-							<block type="from_person" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-			</block>
-			<block type="cqevent_allevent" data-keywords="讨论组消息|事件|酷q">
-				<value name="eventTypeInput">
-					<block type="event_cqsys">
-						<field name="event_type">CQDiscussMsg</field>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">讨论组_消息ID</field>
-						<value name="VALUE">
-							<block type="msg_id" deletable="false" movable="false" editable="false"></block>
+							<block type="event_msgfrom"></block>
 						</value>
 					</block>
 				</value>
 				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">讨论组_消息内容</field>
+					<block type="variables_set">
+						<field name="VAR">私聊_消息序号</field>
 						<value name="VALUE">
-							<block type="from_msg" deletable="false" movable="false" editable="false"></block>
+							<block type="event_msgnum"></block>
 						</value>
 					</block>
 				</value>
 				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">讨论组_发送时间</field>
+					<block type="variables_set">
+						<field name="VAR">私聊_消息ID</field>
 						<value name="VALUE">
-							<block type="from_time" deletable="false" movable="false" editable="false"></block>
+							<block type="event_msgid"></block>
 						</value>
 					</block>
 				</value>
 				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">讨论组_来源QQ</field>
+					<block type="variables_set">
+						<field name="VAR">私聊_消息类型</field>
 						<value name="VALUE">
-							<block type="from_person" deletable="false" movable="false" editable="false"></block>
+							<block type="event_msgtype"></block>
 						</value>
 					</block>
 				</value>
 				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">讨论组_来源讨论组号</field>
+					<block type="variables_set">
+						<field name="VAR">私聊_消息发送时间</field>
 						<value name="VALUE">
-							<block type="fromdiscuss_discuss" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-			</block>
-			<block type="cqevent_allevent" data-keywords="群添加|群申请|事件|酷q">
-				<value name="eventTypeInput">
-					<block type="event_cqsys">
-						<field name="event_type">CQAddGroup</field>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">群添加_唯一标识</field>
-						<value name="VALUE">
-							<block type="responseFlag_addgroup" deletable="false" movable="false" editable="false"></block>
+							<block type="event_time"></block>
 						</value>
 					</block>
 				</value>
 				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">群添加_附加信息</field>
+					<block type="variables_set">
+						<field name="VAR">私聊_机器人QQ</field>
 						<value name="VALUE">
-							<block type="msg_addgroup" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">群添加_来源QQ</field>
-						<value name="VALUE">
-							<block type="fromqq_addgroup" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">群添加_来源群号</field>
-						<value name="VALUE">
-							<block type="fromgroup_addgroup" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">群添加_来源时间</field>
-						<value name="VALUE">
-							<block type="fromtime_addgroup" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">群添加_请求类型</field>
-						<value name="VALUE">
-							<block type="subtype_addgroup" deletable="false" movable="false" editable="false"></block>
+							<block type="event_rotqq"></block>
 						</value>
 					</block>
 				</value>
 			</block>
 		</category>
-		<category name="%{BKY_CATCQCODE}" colour="%{BKY_CQCODE_HUE}">
-			<block type="cqcode_at" data-keywords="at|@|cq码|酷q码|酷q">
+		<category name="%{BKY_CATROTCODE}" colour="%{BKY_ROTCODE_HUE}">
+			<block type="rotcode_at" data-keywords="at|@|cq码|酷q码|ir变量">
 				<value name="QQID">
 					<shadow type="math_number">
 						<field name="NUM">1234567</field>
 					</shadow>
 				</value>
 			</block>
-			<block type="cqcode_shake" data-keywords="抖一抖|戳一戳|窗口抖动|cq码|酷q码|酷q"></block>
-			<block type="cqcode_record" data-keywords="发送语音|cq码|酷q码|酷q">
+			<block type="rotcode_shake" data-keywords="抖一抖|戳一戳|窗口抖动|cq码|酷q码|ir变量"></block>
+			<block type="rotcode_record" data-keywords="发送语音|cq码|酷q码|ir变量">
 				<value name="filename">
 					<shadow type="ve_gettts">
 						<value name="content">
@@ -213,27 +165,34 @@
 					</shadow>
 				</value>
 			</block>
-			<block type="cqcode_contact" data-keywords="群名片|cq码|酷q码|酷q">
+			<block type="rotcode_contact" data-keywords="群名片|cq码|酷q码|ir变量">
 				<value name="number">
 					<shadow type="math_number">
 						<field name="NUM">1234567</field>
 					</shadow>
 				</value>
 			</block>
-			<block type="cqcode_emoji_1" data-keywords="emoji|cq码|酷q码|酷q"></block>
-			<block type="cqcode_emoji_2" data-keywords="emoji|cq码|酷q码|酷q"></block>
-			<block type="cqcode_sface_1" data-keywords="小表情|黄豆表情|cq码|酷q码|酷q"></block>
+			<block type="rotcode_emoji_1" data-keywords="emoji|cq码|酷q码|ir变量"></block>
+			<block type="rotcode_emoji_2" data-keywords="emoji|cq码|酷q码|ir变量"></block>
+			<block type="rotcode_sface_1" data-keywords="小表情|黄豆表情|cq码|酷q码|ir变量"></block>
 		</category>
-		<category name="%{BKY_CATCQFUNC}" colour="%{BKY_CQFUNC_HUE}">
-			<block type="cq_getgrouplist" data-keywords="获取群列表|酷q"></block>
-			<block type="cq_getusername" data-keywords="获取昵称|获取群名称|酷q">
+		<category name="%{BKY_CATROTFUNC}" colour="%{BKY_ROTFUNC_HUE}">
+			<block type="rot_getgrouplist" data-keywords="获取群列表|酷q|ir功能">
+				<value name="rotqq">
+					<shadow type="event_rotqq"></shadow>
+				</value>
+			</block>
+			<block type="rot_getusername" data-keywords="获取昵称|获取群名称|酷q|ir功能">
 				<value name="number">
 					<shadow type="math_number">
 						<field name="NUM">1234567</field>
 					</shadow>
 				</value>
 			</block>
-			<block type="cq_sendmsg" data-keywords="发送消息|群消息|私聊消息|讨论组消息|酷q">
+			<block type="rot_sendmsg" data-keywords="发送消息|群消息|私聊消息|讨论组消息|酷q|ir功能">
+				<value name="rotqq">
+					<shadow type="event_rotqq"></shadow>
+				</value>
 				<value name="idnumber">
 					<shadow type="math_number">
 						<field name="NUM">1234567</field>
@@ -245,7 +204,10 @@
 					</shadow>
 				</value>
 			</block>
-			<block type="cq_sendlike" data-keywords="点赞|名片赞|发送赞|酷q">
+			<block type="rot_sendlike" data-keywords="点赞|名片赞|发送赞|酷q|ir功能">
+				<value name="rotqq">
+					<shadow type="event_rotqq"></shadow>
+				</value>
 				<value name="idnumber">
 					<shadow type="math_number">
 						<field name="NUM">1234567</field>
@@ -257,7 +219,10 @@
 					</shadow>
 				</value>
 			</block>
-			<block type="cq_jinyan" data-keywords="禁言|酷q">
+			<block type="rot_jinyan" data-keywords="禁言|酷q|ir功能">
+				<value name="rotqq">
+					<shadow type="event_rotqq"></shadow>
+				</value>
 				<value name="groupnumber">
 					<shadow type="math_number">
 						<field name="NUM">1234567</field>
@@ -274,193 +239,22 @@
 					</shadow>
 				</value>
 			</block>
-			<block type="cq_deleteMsg" data-keywords="撤回消息|酷q">
+			<block type="rot_deleteMsg" data-keywords="撤回消息|酷q|ir功能">
+				<value name="rotqq">
+					<shadow type="event_rotqq"></shadow>
+				</value>
 				<value name="msgid">
-					<shadow type="text">
-						<field name="TEXT">1234567</field>
+					<shadow type="math_number">
+						<field name="NUM">1234567</field>
 					</shadow>
 				</value>
-			</block>
-			<block type="cq_addlog" data-keywords="日志|酷q">
-				<value name="content">
-					<shadow type="text">
-						<field name="TEXT">这是一条测试日志</field>
-					</shadow>
-				</value>
-			</block>
-		</category>
-	</category>
-	<category name="IR拼图" colour="#ff5080">
-		<category name="%{BKY_CATIREVENT}" colour="%{BKY_IREVENT_HUE}">
-			<block type="ir_irevent_allevent" data-keywords="事件|IR|cleverQQ">
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">IR_信息回传文本指针_Out</field>
-						<value name="VALUE">
-							<block type="ir_var_pointer" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">IR_Json</field>
-						<value name="VALUE">
-							<block type="ir_var_json" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">IR_原始信息</field>
-						<value name="VALUE">
-							<block type="ir_var_rawdata" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">IR_消息ID</field>
-						<value name="VALUE">
-							<block type="ir_var_msgid" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">IR_消息序号</field>
-						<value name="VALUE">
-							<block type="ir_var_msgnum" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">IR_消息内容</field>
-						<value name="VALUE">
-							<block type="ir_var_msgcontent" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">IR_触发对象_被动</field>
-						<value name="VALUE">
-							<block type="ir_var_trigger_passive" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">IR_触发对象_主动</field>
-						<value name="VALUE">
-							<block type="ir_var_trigger_active" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">IR_消息来源</field>
-						<value name="VALUE">
-							<block type="ir_var_msgfrom" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">IR_消息子类型</field>
-						<value name="VALUE">
-							<block type="ir_var_msgctype" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">IR_消息类型</field>
-						<value name="VALUE">
-							<block type="ir_var_msgtype" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set" deletable="false" movable="false" editable="false">
-						<field name="VAR">IR_机器人QQ</field>
-						<value name="VALUE">
-							<block type="ir_var_rotqq" deletable="false" movable="false" editable="false"></block>
-						</value>
-					</block>
-				</value>
-			</block>
-		</category>
-		<category name="%{BKY_CATIRCODE}" colour="%{BKY_IRCODE_HUE}">
-			<block type="ircode_at" data-keywords="at|@|ir码|ir变量|CleverQQ">
-				<value name="QQID">
+				<value name="msgnum">
 					<shadow type="math_number">
 						<field name="NUM">1234567</field>
 					</shadow>
 				</value>
 			</block>
-			<block type="ircode_record" data-keywords="发送语音|ir码|ir变量|CleverQQ">
-				<value name="filename">
-					<shadow type="ve_gettts">
-						<value name="content">
-							<shadow type="text">
-								<field name="TEXT">你好！语音时代！</field>
-							</shadow>
-						</value>
-						<value name="ttsgroup">
-							<shadow type="text">
-								<field name="TEXT">度丫丫.vdb</field>
-							</shadow>
-						</value>
-					</shadow>
-				</value>
-			</block>
-			<block type="ircode_emoji" data-keywords="emoji|ir码|ir变量|CleverQQ"></block>
-			<block type="ircode_sface" data-keywords="小表情|黄豆表情|ir码|ir变量|CleverQQ"></block>
-		</category>
-		<category name="%{BKY_CATIRFUNC}" colour="%{BKY_IRFUNC_HUE}">
-			<!-- 			<block type="cq_getusername" data-keywords="获取昵称|获取群名称|IR|CleverQQ"><value name="number"><shadow type="math_number"><field name="NUM">1234567</field></shadow></value></block> -->
-			<block type="ir_sendmsg" data-keywords="发送消息|群消息|私聊消息|讨论组消息|IR|CleverQQ">
-				<value name="rotnumber">
-					<shadow type="variables_get">
-						<field name="VAR" variabletype="">IR_机器人QQ</field>
-					</shadow>
-				</value>
-				<value name="idnumber">
-					<shadow type="math_number">
-						<field name="NUM">1234567</field>
-					</shadow>
-				</value>
-				<value name="msg">
-					<shadow type="text">
-						<field name="TEXT">这是一条测试消息</field>
-					</shadow>
-				</value>
-				<value name="qipao">
-					<shadow type="math_number">
-						<field name="NUM">-1</field>
-					</shadow>
-				</value>
-			</block>
-			<block type="ir_sendlike" data-keywords="点赞|名片赞|发送赞|IR|CleverQQ">
-				<value name="rotnumber">
-					<shadow type="variables_get">
-						<field name="VAR" variabletype="">IR_机器人QQ</field>
-					</shadow>
-				</value>
-				<value name="idnumber">
-					<shadow type="math_number">
-						<field name="NUM">1234567</field>
-					</shadow>
-				</value>
-				<value name="times">
-					<shadow type="math_number">
-						<field name="NUM">10</field>
-					</shadow>
-				</value>
-			</block>
-			<!-- 			<block type="cq_jinyan" data-keywords="禁言|IR|CleverQQ"><value name="groupnumber"><shadow type="math_number"><field name="NUM">1234567</field></shadow></value><value name="idnumber"><shadow type="math_number"><field name="NUM">1234567</field></shadow></value><value name="time"><shadow type="math_number"><field name="NUM">60</field></shadow></value></block> -->
-			<block type="ir_addlog" data-keywords="日志|IR|CleverQQ">
+			<block type="rot_addlog" data-keywords="日志|酷q|ir功能">
 				<value name="content">
 					<shadow type="text">
 						<field name="TEXT">这是一条测试日志</field>
@@ -840,7 +634,7 @@
 		<block type="lists_sort" data-keywords="排序|升序|降序|数组|列表"></block>
 	</category>
 	<category name="%{BKY_CATTIME}" colour="%{BKY_TIME_HUE}">
-		<block type="cq_timestamptostr" data-keywords="转换时间戳|time|时间">
+		<block type="rot_timestamptostr" data-keywords="转换时间戳|time|时间">
 			<value name="timestamp">
 				<shadow type="variables_get">
 					<field name="VAR">时间戳</field>
@@ -873,6 +667,95 @@
 					<field name="TEXT">聊天女仆.vos</field>
 				</shadow>
 			</value>
+		</block>
+	</category>
+	<category name="%{BKY_CATHTTP}" colour="%{BKY_HTTP_HUE}">
+		<block type="http_all">
+			<mutation method="GET"></mutation>
+			<field name="method">GET</field>
+			<value name="url">
+				<block type="text">
+					<field name="TEXT">https://example.com</field>
+				</block>
+			</value>
+			<statement name="callback">
+				<block type="variables_set">
+					<field name="VAR">code</field>
+					<value name="VALUE">
+						<block type="http_all_responsecode"></block>
+					</value>
+					<next>
+						<block type="variables_set">
+							<field name="VAR">body</field>
+							<value name="VALUE">
+								<block type="http_all_responsebody"></block>
+							</value>
+						</block>
+					</next>
+				</block>
+			</statement>
+		</block>
+		<block type="http_all">
+			<mutation method="POST"></mutation>
+			<field name="method">POST</field>
+			<field name="contentType">application/json</field>
+			<value name="url">
+				<block type="text">
+					<field name="TEXT">https://example.com</field>
+				</block>
+			</value>
+			<value name="params">
+				<block type="text">
+					<field name="TEXT">["a", "b"]</field>
+				</block>
+			</value>
+			<statement name="callback">
+				<block type="variables_set">
+					<field name="VAR">code</field>
+					<value name="VALUE">
+						<block type="http_all_responsecode"></block>
+					</value>
+					<next>
+						<block type="variables_set">
+							<field name="VAR">body</field>
+							<value name="VALUE">
+								<block type="http_all_responsebody"></block>
+							</value>
+						</block>
+					</next>
+				</block>
+			</statement>
+		</block>
+		<block type="http_all">
+			<mutation method="POST"></mutation>
+			<field name="method">POST</field>
+			<field name="contentType">x-www-form-urlencoded</field>
+			<value name="url">
+				<block type="text">
+					<field name="TEXT">https://example.com</field>
+				</block>
+			</value>
+			<value name="params">
+				<block type="text">
+					<field name="TEXT">value1=1&value2=2</field>
+				</block>
+			</value>
+			<statement name="callback">
+				<block type="variables_set">
+					<field name="VAR">code</field>
+					<value name="VALUE">
+						<block type="http_all_responsecode"></block>
+					</value>
+					<next>
+						<block type="variables_set">
+							<field name="VAR">body</field>
+							<value name="VALUE">
+								<block type="http_all_responsebody"></block>
+							</value>
+						</block>
+					</next>
+				</block>
+			</statement>
 		</block>
 	</category>
 	<category name="%{BKY_CATSYSDISK}" colour="%{BKY_SYSDISK_HUE}">

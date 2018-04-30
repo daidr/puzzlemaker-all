@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 goog.provide('Blockly.Blocks.time');  // Deprecated
 goog.provide('Blockly.Constants.time');
@@ -6,7 +6,7 @@ goog.provide('Blockly.Constants.time');
 goog.require('Blockly.Blocks');
 
 Blockly.defineBlocksWithJsonArray([{
-  "type": "cq_timestamptostr",
+  "type": "rot_timestamptostr",
   "message0": "10位时间戳转时间 %1 时间戳 %2",
   "args0": [
     {

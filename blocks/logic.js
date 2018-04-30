@@ -33,16 +33,13 @@ goog.provide('Blockly.Blocks.logic');  // Deprecated
 goog.provide('Blockly.Constants.Logic');
 
 goog.require('Blockly.Blocks');
-
+goog.require('Blockly');
 
 /**
- * Common HSV hue for all blocks in this category.
- * Should be the same as Blockly.Msg.LOGIC_HUE.
- * @readonly
+ * Unused constant for the common HSV hue for all blocks in this category.
+ * @deprecated Use Blockly.Msg.LOGIC_HUE. (2018 April 5)
  */
 Blockly.Constants.Logic.HUE = 210;
-/** @deprecated Use Blockly.Constants.Logic.HUE */
-Blockly.Blocks.logic.HUE = Blockly.Constants.Logic.HUE;
 
 Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
   // Block for boolean data type: true and false.
@@ -313,7 +310,7 @@ Blockly.Constants.Logic.CONTROLS_IF_MUTATOR_MIXIN = {
    * @return {Element} XML storage element.
    * @this Blockly.Block
    */
-  mutationToDom: function() {
+  mutationToDom: function () {
     if (!this.elseifCount_ && !this.elseCount_) {
       return null;
     }
@@ -331,7 +328,7 @@ Blockly.Constants.Logic.CONTROLS_IF_MUTATOR_MIXIN = {
    * @param {!Element} xmlElement XML storage element.
    * @this Blockly.Block
    */
-  domToMutation: function(xmlElement) {
+  domToMutation: function (xmlElement) {
     this.elseifCount_ = parseInt(xmlElement.getAttribute('elseif'), 10) || 0;
     this.elseCount_ = parseInt(xmlElement.getAttribute('else'), 10) || 0;
     this.updateShape_();
@@ -342,7 +339,7 @@ Blockly.Constants.Logic.CONTROLS_IF_MUTATOR_MIXIN = {
    * @return {!Blockly.Block} Root block in mutator.
    * @this Blockly.Block
    */
-  decompose: function(workspace) {
+  decompose: function (workspace) {
     var containerBlock = workspace.newBlock('controls_if_if');
     containerBlock.initSvg();
     var connection = containerBlock.nextConnection;
@@ -364,7 +361,7 @@ Blockly.Constants.Logic.CONTROLS_IF_MUTATOR_MIXIN = {
    * @param {!Blockly.Block} containerBlock Root block in mutator.
    * @this Blockly.Block
    */
-  compose: function(containerBlock) {
+  compose: function (containerBlock) {
     var clauseBlock = containerBlock.nextConnection.targetBlock();
     // Count number of inputs.
     this.elseifCount_ = 0;
@@ -387,7 +384,7 @@ Blockly.Constants.Logic.CONTROLS_IF_MUTATOR_MIXIN = {
           throw 'Unknown block type.';
       }
       clauseBlock = clauseBlock.nextConnection &&
-          clauseBlock.nextConnection.targetBlock();
+        clauseBlock.nextConnection.targetBlock();
     }
     this.updateShape_();
     // Reconnect any child blocks.
@@ -402,7 +399,7 @@ Blockly.Constants.Logic.CONTROLS_IF_MUTATOR_MIXIN = {
    * @param {!Blockly.Block} containerBlock Root block in mutator.
    * @this Blockly.Block
    */
-  saveConnections: function(containerBlock) {
+  saveConnections: function (containerBlock) {
     var clauseBlock = containerBlock.nextConnection.targetBlock();
     var i = 1;
     while (clauseBlock) {
@@ -411,21 +408,21 @@ Blockly.Constants.Logic.CONTROLS_IF_MUTATOR_MIXIN = {
           var inputIf = this.getInput('IF' + i);
           var inputDo = this.getInput('DO' + i);
           clauseBlock.valueConnection_ =
-              inputIf && inputIf.connection.targetConnection;
+            inputIf && inputIf.connection.targetConnection;
           clauseBlock.statementConnection_ =
-              inputDo && inputDo.connection.targetConnection;
+            inputDo && inputDo.connection.targetConnection;
           i++;
           break;
         case 'controls_if_else':
           var inputDo = this.getInput('ELSE');
           clauseBlock.statementConnection_ =
-              inputDo && inputDo.connection.targetConnection;
+            inputDo && inputDo.connection.targetConnection;
           break;
         default:
           throw 'Unknown block type.';
       }
       clauseBlock = clauseBlock.nextConnection &&
-          clauseBlock.nextConnection.targetBlock();
+        clauseBlock.nextConnection.targetBlock();
     }
   },
   /**
@@ -433,7 +430,7 @@ Blockly.Constants.Logic.CONTROLS_IF_MUTATOR_MIXIN = {
    * @this Blockly.Block
    * @private
    */
-  updateShape_: function() {
+  updateShape_: function () {
     // Delete everything.
     if (this.getInput('ELSE')) {
       this.removeInput('ELSE');
@@ -447,30 +444,30 @@ Blockly.Constants.Logic.CONTROLS_IF_MUTATOR_MIXIN = {
     // Rebuild block.
     for (var i = 1; i <= this.elseifCount_; i++) {
       this.appendValueInput('IF' + i)
-          .setCheck('Boolean')
-          .appendField(Blockly.Msg.CONTROLS_IF_MSG_ELSEIF);
+        .setCheck('Boolean')
+        .appendField(Blockly.Msg.CONTROLS_IF_MSG_ELSEIF);
       this.appendStatementInput('DO' + i)
-          .appendField(Blockly.Msg.CONTROLS_IF_MSG_THEN);
+        .appendField(Blockly.Msg.CONTROLS_IF_MSG_THEN);
     }
     if (this.elseCount_) {
       this.appendStatementInput('ELSE')
-          .appendField(Blockly.Msg.CONTROLS_IF_MSG_ELSE);
+        .appendField(Blockly.Msg.CONTROLS_IF_MSG_ELSE);
     }
   }
 };
 
 Blockly.Extensions.registerMutator('controls_if_mutator',
-    Blockly.Constants.Logic.CONTROLS_IF_MUTATOR_MIXIN, null,
-    ['controls_if_elseif', 'controls_if_else']);
+  Blockly.Constants.Logic.CONTROLS_IF_MUTATOR_MIXIN, null,
+  ['controls_if_elseif', 'controls_if_else']);
 /**
  * "controls_if" extension function. Adds mutator, shape updating methods, and
  * dynamic tooltip to "controls_if" blocks.
  * @this Blockly.Block
  * @package
  */
-Blockly.Constants.Logic.CONTROLS_IF_TOOLTIP_EXTENSION = function() {
+Blockly.Constants.Logic.CONTROLS_IF_TOOLTIP_EXTENSION = function () {
 
-  this.setTooltip(function() {
+  this.setTooltip(function () {
     if (!this.elseifCount_ && !this.elseCount_) {
       return Blockly.Msg.CONTROLS_IF_TOOLTIP_1;
     } else if (!this.elseifCount_ && this.elseCount_) {
@@ -493,7 +490,7 @@ Blockly.Extensions.register('controls_if_tooltip',
  * @package
  */
 Blockly.Constants.Logic.fixLogicCompareRtlOpLabels =
-  function() {
+  function () {
     var rtlOpLabels = {
       'LT': '\u200F<\u200F',
       'LTE': '\u200F\u2264\u200F',
@@ -523,34 +520,46 @@ Blockly.Constants.Logic.fixLogicCompareRtlOpLabels =
  * @readonly
  */
 Blockly.Constants.Logic.LOGIC_COMPARE_ONCHANGE_MIXIN = {
-  prevBlocks_: [null, null],
-
   /**
    * Called whenever anything on the workspace changes.
    * Prevent mismatched types from being compared.
    * @param {!Blockly.Events.Abstract} e Change event.
    * @this Blockly.Block
    */
-  onchange: function(e) {
+  onchange: function (e) {
+    if (!this.prevBlocks_) {
+      this.prevBlocks_ = [null, null];
+    }
+
     var blockA = this.getInputTargetBlock('A');
     var blockB = this.getInputTargetBlock('B');
     // Disconnect blocks that existed prior to this change if they don't match.
     if (blockA && blockB &&
-        !blockA.outputConnection.checkType_(blockB.outputConnection)) {
-      // Mismatch between two inputs.  Disconnect previous and bump it away.
-      // Ensure that any disconnections are grouped with the causing event.
+      !blockA.outputConnection.checkType_(blockB.outputConnection)) {
+      // Mismatch between two inputs.  Revert the block connections,
+      // bumping away the newly connected block(s).
       Blockly.Events.setGroup(e.group);
-      for (var i = 0; i < this.prevBlocks_.length; i++) {
-        var block = this.prevBlocks_[i];
-        if (block === blockA || block === blockB) {
-          block.unplug();
-          block.bumpNeighbours_();
+      var prevA = this.prevBlocks_[0];
+      if (prevA !== blockA) {
+        blockA.unplug();
+        if (prevA && !prevA.isShadow()) {
+          // The shadow block is automatically replaced during unplug().
+          this.getInput('A').connection.connect(prevA.outputConnection);
         }
       }
+      var prevB = this.prevBlocks_[1];
+      if (prevB !== blockB) {
+        blockB.unplug();
+        if (prevB && !prevB.isShadow()) {
+          // The shadow block is automatically replaced during unplug().
+          this.getInput('B').connection.connect(prevB.outputConnection);
+        }
+      }
+      this.bumpNeighbours_();
       Blockly.Events.setGroup(false);
     }
-    this.prevBlocks_[0] = blockA;
-    this.prevBlocks_[1] = blockB;
+    this.prevBlocks_[0] = this.getInputTargetBlock('A');
+    this.prevBlocks_[1] = this.getInputTargetBlock('B');
   }
 };
 
@@ -562,13 +571,13 @@ Blockly.Constants.Logic.LOGIC_COMPARE_ONCHANGE_MIXIN = {
  * @package
  * @readonly
  */
-Blockly.Constants.Logic.LOGIC_COMPARE_EXTENSION = function() {
-  // Fix operator labels in RTL
+Blockly.Constants.Logic.LOGIC_COMPARE_EXTENSION = function () {
+  // Fix operator labels in RTL.
   if (this.RTL) {
     Blockly.Constants.Logic.fixLogicCompareRtlOpLabels.apply(this);
   }
 
-  // Add onchange handler to ensure types are compatable.
+  // Add onchange handler to ensure types are compatible.
   this.mixin(Blockly.Constants.Logic.LOGIC_COMPARE_ONCHANGE_MIXIN);
 };
 
@@ -591,7 +600,7 @@ Blockly.Constants.Logic.LOGIC_TERNARY_ONCHANGE_MIXIN = {
    * @param {!Blockly.Events.Abstract} e Change event.
    * @this Blockly.Block
    */
-  onchange: function(e) {
+  onchange: function (e) {
     var blockA = this.getInputTargetBlock('THEN');
     var blockB = this.getInputTargetBlock('ELSE');
     var parentConnection = this.outputConnection.targetConnection;
@@ -621,11 +630,8 @@ Blockly.Extensions.registerMixin('logic_ternary',
   Blockly.Constants.Logic.LOGIC_TERNARY_ONCHANGE_MIXIN);
 
 
+Blockly.Blocks["logic_switch_default"] = { init: function () { this.appendDummyInput().appendField("当以上语句都不对时"); this.appendStatementInput("onDefault").setCheck(null).appendField("执行"); this.setPreviousStatement(true, "case"); this.setColour(Blockly.Msg.LOGIC_HUE); this.setTooltip("switch..case语句根(default)"); this.setHelpUrl(null) }, onchange: function (b) { var a = false; var c = this; do { if (true) { try { if (c.type == "logic_switch") { a = true; break } } catch (b) { } } c = c.getSurroundParent() } while (c); if (a) { this.setWarningText(null); } else { this.setWarningText("请配套使用该拼图"); } } };
 
+Blockly.Blocks["logic_case"] = { init: function () { this.appendValueInput("caseName").appendField("当变量为"); this.appendDummyInput().appendField("时"); this.appendStatementInput("call").appendField("执行"); this.setInputsInline(true); this.setPreviousStatement(true, "case"); this.setNextStatement(true, "case"); this.setColour(Blockly.Msg.LOGIC_HUE); this.setTooltip("switch..case语句根(case)"); this.setHelpUrl(null) }, onchange: function (b) { var a = false; var c = this; do { if (true) { try { if (c.type == "logic_switch") { a = true; break } } catch (b) { } } c = c.getSurroundParent() } while (c); if (a) { this.setWarningText(null); } else { this.setWarningText("请配套使用该拼图"); } } };
 
-
-Blockly.Blocks["logic_switch_default"]={init:function(){this.appendDummyInput().appendField("当以上语句都不对时");this.appendStatementInput("onDefault").setCheck(null).appendField("执行");this.setPreviousStatement(true,"case");this.setColour(Blockly.Blocks.logic.HUE);this.setTooltip("switch..case语句根(default)");this.setHelpUrl(null)},onchange:function(b){var a=false;var c=this;do{if(true){try{if(c.type == "logic_switch"){a=true;break}}catch(b){}}c=c.getSurroundParent()}while(c);if(a){this.setWarningText(null);}else{this.setWarningText("请配套使用该拼图");}}};
-
-Blockly.Blocks["logic_case"]={init:function(){this.appendValueInput("caseName").appendField("当变量为");this.appendDummyInput().appendField("时");this.appendStatementInput("call").appendField("执行");this.setInputsInline(true);this.setPreviousStatement(true,"case");this.setNextStatement(true,"case");this.setColour(Blockly.Blocks.logic.HUE);this.setTooltip("switch..case语句根(case)");this.setHelpUrl(null)},onchange:function(b){var a=false;var c=this;do{if(true){try{if(c.type == "logic_switch"){a=true;break}}catch(b){}}c=c.getSurroundParent()}while(c);if(a){this.setWarningText(null);}else{this.setWarningText("请配套使用该拼图");}}};
-
-Blockly.Blocks["logic_switch"]={init:function(){this.appendValueInput("value_name").setCheck(null).appendField("当变量");this.appendDummyInput().appendField("拥有以下情况时");this.appendStatementInput("calling").setCheck("case");this.setInputsInline(true);this.setPreviousStatement(true);this.setNextStatement(true);this.setColour(Blockly.Blocks.logic.HUE);this.setTooltip("switch..case语句根(switch)");this.setHelpUrl(null)}};
+Blockly.Blocks["logic_switch"] = { init: function () { this.appendValueInput("value_name").setCheck(null).appendField("当变量"); this.appendDummyInput().appendField("拥有以下情况时"); this.appendStatementInput("calling").setCheck("case"); this.setInputsInline(true); this.setPreviousStatement(true); this.setNextStatement(true); this.setColour(Blockly.Msg.LOGIC_HUE); this.setTooltip("switch..case语句根(switch)"); this.setHelpUrl(null) } };

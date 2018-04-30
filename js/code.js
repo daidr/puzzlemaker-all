@@ -252,7 +252,7 @@ Code.init = function() {
     }
   };
  window.addEventListener('resize', onresize, false);
- document.getElementById('docButton').addEventListener('click', onresize);
+  // document.getElementById('docButton').addEventListener('click', onresize);
   // The toolbox XML specifies each category name using Blockly's messaging
   // format (eg. `<category name="%{BKY_CATLOGIC}">`).
   // These message keys need to be defined in `Blockly.Msg` in order to
@@ -298,14 +298,14 @@ var toolboxXml = Blockly.Xml.textToDom(toolboxText);
 
   Code.tabClick(Code.selected);
 
-  Code.bindClick('trashButton',
-      function() {Code.discard(); Code.renderContent();});
+/*   Code.bindClick('trashButton',
+      function() {Code.discard(); Code.renderContent();}); */
 
-  for (var i = 0; i < Code.TABS_.length; i++) {
+/*   for (var i = 0; i < Code.TABS_.length; i++) {
     var name = Code.TABS_[i];
     Code.bindClick('tab_' + name,
         function(name_) {return function() {Code.tabClick(name_);};}(name));
-  }
+  } */
   onresize();
   Blockly.svgResize(Code.workspace);
 
@@ -340,16 +340,17 @@ Code.initLanguage = function() {
 
   // Inject language strings.
   document.title = MSG['title'];
-  //document.getElementById('tab_blocks').textContent = MSG['blocks'];
-  document.getElementById('loadButton').title = MSG['loadTooltip'];
-  document.getElementById('trashButton').title = MSG['trashTooltip'];
+  // document.getElementById('tab_blocks').textContent = MSG['blocks'];
+  /* document.getElementById('loadButton').title = MSG['loadTooltip'];
   document.getElementById('temporaryButton').title = MSG['temporaryTooltip'];
   document.getElementById('saveButton').title = MSG['saveTooltip'];
   document.getElementById('downloadButton').title = MSG['downloadTooltip'];
   document.getElementById('addButton').title = MSG['addTooltip'];
   document.getElementById('docButton').title = MSG['docTooltip'];
   document.getElementById('pullButton').title = MSG['pullTooltip'];
-  document.getElementById('switchButton').title = MSG['switchTooltip'];
+  document.getElementById('switchButton').title = MSG['switchTooltip']; 
+  document.getElementById('trashButton').title = MSG['trashTooltip']; */
+  
 };
 
 /**
@@ -365,12 +366,10 @@ Code.discard = function() {
   if (count < 2 ||
       window.confirm(Blockly.Msg.DELETE_ALL_BLOCKS.replace('%1', count))) {
     Code.workspace.clear();
-	//_czc.push(["_trackEvent", "菜单", "清空拼图", user.idstr, "确认操作", "trashButton"]);
 	cusnotify('success','mini',true,3000,MSG['DeleteBlocksSuccessful'].replace('%1', count));
     if (window.location.hash) {
       window.location.hash = '';
     } else {
-	 // _czc.push(["_trackEvent", "菜单", "清空拼图", user.idstr, "取消操作", "trashButton"]);
 	}
   }
   
@@ -394,12 +393,12 @@ $("#toolbox").load("blocks/blocks.xml",function(){
 			}
 		});
 		$(".searchSwitch").click(function() {
-			$("#searchBlockInput").val("");
+			$("#blocksearch_input").val("");
 			b()
 		});
-		$("#searchBlockInput").keyup(function(c) {
+		$("#blocksearch_input").keyup(function(c) {
 			a(function() {
-				var h = $("#searchBlockInput").val().toLowerCase();
+				var h = $("#blocksearch_input").val().toLowerCase();
 				if (h && h.trim() != "") {
 					var j = $("<xml>" + $("#toolbox")[0].innerHTML + "</xml>");
 					var d = $('<xml><category colour="233" expanded="true" id="catSearchResult" name="搜索结果"></category></xml>');

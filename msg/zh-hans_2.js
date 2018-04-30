@@ -254,8 +254,8 @@ Blockly.Msg["MATH_RANDOM_INT_TITLE"] = "从 %1 到 %2 之间的随机整数";
 Blockly.Msg["MATH_RANDOM_INT_TOOLTIP"] = "返回两个指定的范围（含）之间的随机整数。";
 Blockly.Msg["MATH_ROUND_HELPURL"] = "https://zh.wikipedia.org/wiki/数值修约";
 Blockly.Msg["MATH_ROUND_OPERATOR_ROUND"] = "四舍五入";
-Blockly.Msg["MATH_ROUND_OPERATOR_ROUNDDOWN"] = "退一法";
-Blockly.Msg["MATH_ROUND_OPERATOR_ROUNDUP"] = "进一法";
+Blockly.Msg["MATH_ROUND_OPERATOR_ROUNDDOWN"] = "退位";
+Blockly.Msg["MATH_ROUND_OPERATOR_ROUNDUP"] = "进一";
 Blockly.Msg["MATH_ROUND_TOOLTIP"] = "数字进行相应舍入。";
 Blockly.Msg["MATH_SINGLE_HELPURL"] = "https://zh.wikipedia.org/wiki/平方根";
 Blockly.Msg["MATH_SINGLE_OP_ABSOLUTE"] = "绝对";
@@ -417,10 +417,11 @@ Blockly.Msg.LISTS_INDEX_OF_INPUT_IN_LIST = Blockly.Msg.LISTS_INLIST;
 Blockly.Msg.PROCEDURES_DEFRETURN_COMMENT = Blockly.Msg.PROCEDURES_DEFNORETURN_COMMENT;
 
 Blockly.BlockSvg.START_HAT = true;
-Blockly.Msg["EVENT_GROUP_WARNING"] = "只能用在群消息事件内部";  // untranslated
-Blockly.Msg["EVENT_DISCUSS_WARNING"] = "只能用在讨论组消息事件内部";
-Blockly.Msg["EVENT_MSG_WARNING"] = "只能用在消息事件内部";
-Blockly.Msg["EVENT_ADDGROUP_WARNING"] = "只能用在群添加事件内部";
+//Blockly.Msg["EVENT_GROUP_WARNING"] = "只能用在群消息事件内部";  // untranslated
+//Blockly.Msg["EVENT_DISCUSS_WARNING"] = "只能用在讨论组消息事件内部";
+Blockly.Msg["EVENT_ROTEVENT_WARNING"] = "警告: 只能在机器人事件内部使用此块！";
+Blockly.Msg["EVENT_HTTP_WARNING"] = "警告: 只能在HTTP网络访问拼图中使用此块！";
+//Blockly.Msg["EVENT_ADDGROUP_WARNING"] = "只能用在群添加事件内部";
 
 
 Blockly.Msg["MATH_HUE"] = "230";
@@ -433,17 +434,13 @@ Blockly.Msg["PROCEDURES_HUE"] = "290";
 Blockly.Msg["COLOUR_HUE"] = "20";
 Blockly.Msg["TIME_HUE"] = "90";
 
-Blockly.Msg["CQCODE_HUE"] = "45";
-Blockly.Msg["CQEVENT_HUE"] = "300";
-Blockly.Msg["CQFUNC_HUE"] = "270";
-
-Blockly.Msg["IRCODE_HUE"] = "45";
-Blockly.Msg["IREVENT_HUE"] = "300";
-Blockly.Msg["IRFUNC_HUE"] = "270";
+Blockly.Msg["ROTCODE_HUE"] = "45";
+Blockly.Msg["ROTEVENT_HUE"] = "300";
+Blockly.Msg["ROTFUNC_HUE"] = "270";
 
 Blockly.Msg["VOICEERA_HUE"] = "#009AD2";
-
 Blockly.Msg["SYSDISK_HUE"] = "180";
+Blockly.Msg["HTTP_HUE"] = "200";
 
 Blockly.Msg["JSON_HUE"] = "240";
 
