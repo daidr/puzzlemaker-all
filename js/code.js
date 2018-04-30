@@ -251,7 +251,7 @@ Code.init = function() {
           // Account for the 19 pixel margin and on each side.
     }
   };
- window.addEventListener('resize', onresize, false);
+  window.addEventListener('resize', onresize, false);
   // document.getElementById('docButton').addEventListener('click', onresize);
   // The toolbox XML specifies each category name using Blockly's messaging
   // format (eg. `<category name="%{BKY_CATLOGIC}">`).

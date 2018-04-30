@@ -65,6 +65,7 @@
 			-moz-user-select: none;
 			-webkit-user-select: none;
 			user-select: none;
+			overflow: hidden;
 		}
 
 		input {
@@ -191,18 +192,7 @@
 								<i class="material-icons searchSwitch " style="cursor: pointer;transform: translateY(9px);color:#fff;">search</i>
 								<input autocomplete="off" class="form-control" id="blocksearch_input" placeholder="搜索拼图" type="search">
 							</div>
-							<!-- <a class="userinfobtn headerbtn ">用户信息</a>
-							<a class="menubtngroupbtn headerbtn ">功能按键</a> -->
-							<!-- <div style="top: -5px;position: relative;display: inline-block;" class="login tologin">
-								<div class="WB_loginButton WB_widgets">
-									<a href="javascript:void(0);">
-										<img src="media/loginButton_32.png">
-									</a>
-								</div>
-							</div> -->
-							<!-- <button id="trashButton" class="notext primary" style="padding:1px 7px;margin-top: 4px;" title="...">
-								<i class="material-icons " style="font-size:27px;">delete</i>
-							</button> -->
+
 						</td>
 					</tr>
 				</table>
@@ -214,81 +204,7 @@
 		</tr>
 	</table>
 	<div class="header_menu_mark"></div>
-	<!-- <div class="userinfo headermenu">
-		<span class="useroutput ">
-			<i class="material-icons">person</i>用户名：
-			<a class="username userinfo_val" href="#" target="_blank"></a>
-		</span>
-		<br />
-		<span class="useroutput ">
-			<i class="material-icons">vpn_key</i>唯一绑定码：
-			<a class="bindingcode userinfo_val"></a>
-		</span>
-		<br />
-		<span class="useroutput ">
-			<i class="material-icons">storage</i>已开通槽位：
-			<a class="slot userinfo_val">5</a>
-		</span>
-		<br />
-		<span class="useroutput ">
-			<i class="material-icons">account_balance_wallet</i>积分：
-			<a class="score userinfo_val" href="#"></a>
-		</span>
-		<br />
-		<br />
-		<span class="useroutput ">
-			<a class="loginout userinfo_val" href="#" style="float: right;font-size: 13px;">安全退出</a>
-		</span>
-	</div>
-	<div class="menubtngroup headermenu">
-		<button id="docButton" class="notext menu-btns" style="padding:1px 7px" title="...">
-			<i class="material-icons " style="font-size:27px;color:#5f5f5f;">live_help</i>
-			<span class="menubtngroup_btntext">打开帮助文档</span>
-		</button>
-		<br />
-		<select name="projectid" class="projectid menu-btns">
-			<option value="temp">浏览器本地缓存</option>
-		</select>
-		<button id="switchButton" class="notext menu-btns" style="padding:1px 7px;display:none" title="...">
-			<i class="material-icons " style="font-size:27px;color:#5f5f5f;">settings_input_svideo</i>
-		</button>
-		<br />
-		<button id="pullButton" class="notext menu-btns" style="padding:1px 7px;display:none" title="...">
-			<i class="material-icons " style="font-size:27px;color:#5f5f5f;">cloud_download</i>
-			<span class="menubtngroup_btntext">远程拉取代码</span>
-		</button>
-		<br class="nobr" />
-		<button id="saveButton" class="notext menu-btns" style="padding:1px 7px;display:none" title="...">
-			<i class="material-icons " style="font-size:27px;color:#5f5f5f;">cloud_upload</i>
-			<span class="menubtngroup_btntext">远程上传代码</span>
-		</button>
-		<br class="nobr" />
-		<input id="addcqwpk" type="file" name="addcqwpk" style="display: none;" accept="application/xml" />
-		<button id="addButton" class="notext menu-btns" style="padding:1px 7px" title="...">
-			<i class="material-icons " style="font-size:27px;color:#5f5f5f;">publish</i>
-			<span class="menubtngroup_btntext">追加拼图文件</span>
-		</button>
-		<br />
-		<input id="loadcqwpk" type="file" name="loadcqwpk" style="display: none;" accept="application/xml" />
-		<button id="loadButton" class="notext menu-btns" style="padding:1px 7px" title="...">
-			<i class="material-icons " style="font-size:27px;color:#5f5f5f;">file_upload</i>
-			<span class="menubtngroup_btntext">载入拼图文件</span>
-		</button>
-		<br />
-		<button id="downloadButton" class="notext menu-btns" style="padding:1px 7px" title="...">
-			<i class="material-icons " style="font-size:27px;color:#5f5f5f;">save</i>
-			<span class="menubtngroup_btntext">下载拼图文件</span>
-		</button>
-		<br />
-		<button id="temporaryButton" class="notext menu-btns" style="padding:1px 7px" title="...">
-			<i class="material-icons " style="font-size:27px;color:#5f5f5f;">sd_card</i>
-			<span class="menubtngroup_btntext">暂存到浏览器</span>
-		</button>
-	</div> -->
 	<div id="content_blocks" class="content"></div>
-	<!-- <div id="content_doc" class="content" style="visibility: visible; top: 41px; right: 0px;position: absolute;">
-			<div id="content_doc_in"></div>
-		</div> -->
 	<div></div>
 	<div id="toolbox" style="display: none"></div>
 	<div class="screen_rotation ">
@@ -441,76 +357,9 @@
 
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/LibsLoader.js"></script>
-
-	<!-- <link rel="stylesheet" href="style.day.css"> -->
 	<link rel="stylesheet" href="iconfont/material-icons.css">
-	<!-- <link rel="stylesheet" href="css/animate.min.css"> -->
-	<!-- <link rel="stylesheet" href="css/PuzzleTips.css"> -->
-
-	<!-- <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css"> -->
-	<!-- <link rel="stylesheet" href="css/Lobibox.min.css"> -->
-
-	<!-- <script type="text/javascript" src="js/Base64.js"></script> -->
-	<!-- <script src="js/jquery-ui-1.10.4.min.js"></script>
-	<script src="face/face.js"></script> -->
-	<!-- <script src="js/jquery.mCustomScrollbar.min.js"></script> -->
-	<!-- <script src="js/jquery.ba-resize.min.js"></script> -->
-	<!-- <script src="js/PuzzleTips.js"></script> -->
-	<!-- <script src="blockly_compressed.js"></script> -->
-	<!-- <script src="msg/zh-hans.js"></script> -->
-	<!-- <script src="msg/zh-hans_2.js"></script> -->
-
-	<!-- <script>
-		$(".loadingtext").text("正在获取拼图列表");
-	</script> -->
-	<!-- 拼图载入 -->
-	<!-- <script src="blocks/math.js"></script>
-	<script src="blocks/text.js"></script>
-	<script src="blocks/loops.js"></script>
-	<script src="blocks/procedures.js"></script> -->
-	<!-- <script src="blocks/colour.js"></script> -->
-	<!-- <script src="blocks/logic.js"></script>
-	<script src="blocks/lists.js"></script>
-	<script src="blocks/variables.js"></script>
-	<script src="blocks/rotcode.js"></script>
-	<script src="blocks/rotevent.js"></script>
-	<script src="blocks/rotfunc.js"></script>
-	<script src="blocks/sysdisk.js"></script>
-	<script src="blocks/time.js"></script>
-	<script src="blocks/voiceera.js"></script>
-	<script src="blocks/http.js"></script>
-	<script src="blocks/json.js"></script>
-
-	<script src="javascript.js"></script>
-	<script src="blocks/generators/math.js"></script>
-	<script src="blocks/generators/text.js"></script>
-	<script src="blocks/generators/loops.js"></script>
-	<script src="blocks/generators/procedures.js"></script> -->
-	<!-- <script src="blocks/generators/colour.js"></script> -->
-	<!-- <script src="blocks/generators/logic.js"></script>
-	<script src="blocks/generators/lists.js"></script>
-	<script src="blocks/generators/variables.js"></script>
-	<script src="blocks/generators/rotcode.js"></script>
-	<script src="blocks/generators/rotevent.js"></script>
-	<script src="blocks/generators/rotfunc.js"></script>
-	<script src="blocks/generators/sysdisk.js"></script>
-	<script src="blocks/generators/time.js"></script>
-	<script src="blocks/generators/voiceera.js"></script>
-	<script src="blocks/generators/http.js"></script>
-	<script src="blocks/generators/json.js"></script> -->
-
-	<!-- 拼图载入 -->
-
-	<!-- <script src="js/lobibox.min.js"></script> -->
-	<!-- <script src="js/des.js"></script>
-	<script src="js/code.js"></script>
-	<script src="js/encrypt.js"></script>
-	<script src="js/buttonevents.js"></script> -->
 	<script>
 		var PuzzleMakerGlobalSetting = {};
-	</script>
-	<script>
-		//$(".loadingpage").slideToggle();
 	</script>
 	<script>
 		(function () {

@@ -62,9 +62,9 @@ function LibsLoader() {
 
     var libsConfig = {
         libs: {
-            css: ["style.day.css", "iconfont/material-icons.css", "css/animate.min.css", "css/PuzzleTips.css", "css/Lobibox.min.css"],
+            css: ["style.day.min.css", "iconfont/material-icons.css", "css/PuzzleTips.css", "css/Lobibox.min.css"],
             js: ["js/Base64.js", "face/face.js", "js/jquery-ui-1.10.4.min.js", "js/PuzzleTips.js", "blockly_compressed.js", "msg/zh-hans.js", "msg/zh-hans_2.js", "js/lobibox.min.js", "js/aes.js", "js/encrypt.min.js"],
-            puzzle: ["blocks/math.js", "blocks/text.js", "blocks/loops.js", "blocks/procedures.js", "blocks/logic.js", "blocks/lists.js", "blocks/variables.js", "blocks/rotcode.js", "blocks/rotevent.js", "blocks/rotfunc.js", "blocks/sysdisk.js", "blocks/time.js", "blocks/voiceera.js", "blocks/http.js", "blocks/json.js", "javascript.js", "blocks/generators/math.js", "blocks/generators/text.js", "blocks/generators/loops.js", "blocks/generators/procedures.js", "blocks/generators/logic.js", "blocks/generators/lists.js", "blocks/generators/variables.js", "blocks/generators/rotcode.js", "blocks/generators/rotevent.js", "blocks/generators/rotfunc.js", "blocks/generators/sysdisk.js", "blocks/generators/time.js", "blocks/generators/voiceera.js", "blocks/generators/http.js", "blocks/generators/json.js", "js/code.js", "js/buttonevents.js"]
+            puzzle: ["blocks/math.js", "blocks/text.js", "blocks/loops.js", "blocks/procedures.js", "blocks/logic.js", "blocks/lists.js", "blocks/variables.js", "blocks/rotcode.js", "blocks/rotevent.js", "blocks/rotfunc.js", "blocks/sysdisk.js", "blocks/time.js", "blocks/voiceera.js", "blocks/http.js", "blocks/json.js", "javascript.js", "blocks/generators/math.js", "blocks/generators/text.js", "blocks/generators/loops.js", "blocks/generators/procedures.js", "blocks/generators/logic.js", "blocks/generators/lists.js", "blocks/generators/variables.js", "blocks/generators/rotcode.js", "blocks/generators/rotevent.js", "blocks/generators/rotfunc.js", "blocks/generators/sysdisk.js", "blocks/generators/time.js", "blocks/generators/voiceera.js", "blocks/generators/http.js", "blocks/generators/json.js", "js/code.min.js", "js/buttonevents.min.js"]
         }
     }
 
