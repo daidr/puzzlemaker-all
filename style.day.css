@@ -22,7 +22,7 @@ body {
     background-size: cover;
 }
 
-.header_background::before {
+.header_background .bg {
     content: '';
     background-image: url(media/headerSVG.svg);
     width: 1920px;

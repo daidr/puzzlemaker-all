@@ -44,8 +44,8 @@ function delCookie(name) {
 function clearCookies() {
 	var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
 	if (keys) {
-		for (var i = keys.length; i--;)
-			document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
+		for (var i = keys.length; i--;) { }
+		document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString();
 	}
 }
 
@@ -264,10 +264,10 @@ $(document).ready(function () {
 
 
 function setCookie(c_name, value, expiredays) {
-	var exdate = new Date()
-	exdate.setDate(exdate.getDate() + expiredays)
+	var exdate = new Date();
+	exdate.setDate(exdate.getDate() + expiredays);
 	document.cookie = c_name + "=" + escape(value) +
-		((expiredays == null) ? "" : ";expires=" + exdate.toGMTString())
+		((expiredays == null) ? "" : ";expires=" + exdate.toGMTString());
 }
 
 function getCookie(name) {
@@ -330,6 +330,11 @@ $("body").mouseup(function () {
 });
 
 function checkCode() {
+	//是否有警告图标
+	if ($(".blocklyIconShape[d='M2,15Q-1,15 0.5,12L6.5,1.7Q8,-1 9.5,1.7L15.5,12Q17,15 14,15z']").length != 0) {
+		cusnotify('error', 'mini', true, 3000, "请解决带有警告的拼图", false);
+		return false;
+	}
 	//是否有机器人事件
 	var hasROTEvents = 0;
 	for (var i = 0; i < Code.workspace.getTopBlocks().length; i++) {
@@ -467,6 +472,9 @@ function bindMoreBtn() {
 }
 
 $("#menu_unarchive").click(function () {
+	if (checkCode() === false) {
+		return;
+	}
 	exportWindow = Lobibox.window({
 		title: '导出拼图',
 		height: 280,
@@ -512,7 +520,7 @@ $("#menu_unarchive").click(function () {
 					cusnotify("error", "mini", true, 4000, "请填写主人密码", false, true);
 					return;
 				} else {
-					var reg = /^[0-9a-zA-Z]+$/
+					var reg = /^[0-9a-zA-Z]+$/;
 					if (!reg.test(pluginpassword)) {
 						cusnotify("error", "mini", true, 4000, "主人密码需为英文或数字", false, true);
 						return;
@@ -600,7 +608,7 @@ $("#PluginImportInput").change(function () {
 								try {
 									var realxml = PuzzleMaker.Plugin.doDecode({ xmlcontent: xmlcontent, password: password });
 								} catch (error) {
-									
+
 								}
 								if (realxml === "") {
 									cusnotify("error", "mini", true, 4000, "密码错误或文件无效", false, true);

@@ -67,7 +67,7 @@ Blockly.Blocks.http_all_responsebody = {
         if (a) {
             this.setWarningText(null)
         } else {
-            this.setWarningText(Blockly.Msg.HTTP_WARNING)
+            this.setWarningText(Blockly.Msg.EVENT_HTTP_WARNING)
         }
     }
 };
@@ -93,7 +93,7 @@ Blockly.Blocks.http_all_responsecode = {
         if (a) {
             this.setWarningText(null)
         } else {
-            this.setWarningText(Blockly.Msg.HTTP_WARNING)
+            this.setWarningText(Blockly.Msg.EVENT_HTTP_WARNING)
         }
     }
 };

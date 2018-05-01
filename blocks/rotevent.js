@@ -14,7 +14,7 @@ Blockly.defineBlocksWithJsonArray([{
 		{
 			"type": "input_value",
 			"name": "eventTypeInput",
-			"check": "eventType"
+			"check": "ROTEvent"
 		},
 		{
 			"type": "input_statement",
@@ -522,7 +522,7 @@ Blockly.Blocks.event_rotsys = {
 			["收到讨论组消息", "ROTDiscussMsg"],
 			//["收到群添加事件", "ROTAddGroup"]
 		]), "event_type");
-		this.setOutput(true, "eventType");
+		this.setOutput(true, "ROTEvent");
 		this.setColour(210);
 		this.setTooltip("机器人相关的事件");
 	}
