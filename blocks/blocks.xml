@@ -633,7 +633,7 @@
 		</block>
 		<block type="lists_sort" data-keywords="排序|升序|降序|数组|列表"></block>
 	</category>
-	<category name="%{BKY_CATTIME}" colour="%{BKY_TIME_HUE}">
+	<category name="%{BKY_CATTIME}" colour="%{TIME_HUE}">
 		<block type="rot_timestamptostr" data-keywords="转换时间戳|time|时间">
 			<value name="timestamp">
 				<shadow type="variables_get">
