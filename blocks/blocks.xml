@@ -72,7 +72,7 @@
 			</block>
 			<block type="rotevent_allevent" data-keywords="私聊消息|事件|酷q|IR">
 				<value name="eventTypeInput">
-					<block type="event_rotsys">ROTFriendMsg</block>
+					<block type="event_rotsys">ROTPrivateMsg</block>
 				</value>
 				<value name="action">
 					<block type="variables_set">
@@ -165,15 +165,7 @@
 					</shadow>
 				</value>
 			</block>
-			<block type="rotcode_contact" data-keywords="群名片|cq码|酷q码|ir变量">
-				<value name="number">
-					<shadow type="math_number">
-						<field name="NUM">1234567</field>
-					</shadow>
-				</value>
-			</block>
 			<block type="rotcode_emoji_1" data-keywords="emoji|cq码|酷q码|ir变量"></block>
-			<block type="rotcode_emoji_2" data-keywords="emoji|cq码|酷q码|ir变量"></block>
 			<block type="rotcode_sface_1" data-keywords="小表情|黄豆表情|cq码|酷q码|ir变量"></block>
 		</category>
 		<category name="%{BKY_CATROTFUNC}" colour="%{BKY_ROTFUNC_HUE}">
@@ -633,7 +625,7 @@
 		</block>
 		<block type="lists_sort" data-keywords="排序|升序|降序|数组|列表"></block>
 	</category>
-	<category name="%{BKY_CATTIME}" colour="%{TIME_HUE}">
+	<category name="%{BKY_CATTIME}" colour="%{BKY_TIME_HUE}">
 		<block type="rot_timestamptostr" data-keywords="转换时间戳|time|时间">
 			<value name="timestamp">
 				<shadow type="variables_get">

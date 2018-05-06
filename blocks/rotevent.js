@@ -71,7 +71,7 @@ Blockly.Blocks.event_rotqq = {
 			this.setWarningText(Blockly.Msg.EVENT_ROTEVENT_WARNING);
 		}
 	},
-	EVENT_TYPES: ["ROTGroupMsg", "ROTFriendMsg", "ROTDiscussMsg"]
+	EVENT_TYPES: ["ROTGroupMsg", "ROTPrivateMsg", "ROTDiscussMsg"]
 };
 
 Blockly.Blocks.event_time = {
@@ -101,7 +101,7 @@ Blockly.Blocks.event_time = {
 			this.setWarningText(Blockly.Msg.EVENT_ROTEVENT_WARNING);
 		}
 	},
-	EVENT_TYPES: ["ROTGroupMsg", "ROTFriendMsg", "ROTDiscussMsg"]
+	EVENT_TYPES: ["ROTGroupMsg", "ROTPrivateMsg", "ROTDiscussMsg"]
 };
 
 Blockly.Blocks.event_msgtype = {
@@ -118,7 +118,7 @@ Blockly.Blocks.event_msgtype = {
 			if (c.getInput("eventTypeInput") != null) {
 				try {
 					switch (c.inputList[0].connection.targetBlock().getFieldValue("event_type")) {
-						case "ROTFriendMsg":
+						case "ROTPrivateMsg":
 							this.removeInput('content');
 							this.appendDummyInput('content').appendField("私聊消息类型(详细请悬浮查看)");
 							this.setTooltip("1/来自好友 2/来自群 3/来自讨论组 4/来自在线状态");
@@ -153,7 +153,7 @@ Blockly.Blocks.event_msgtype = {
 			this.setWarningText(Blockly.Msg.EVENT_ROTEVENT_WARNING);
 		}
 	},
-	EVENT_TYPES: ["ROTGroupMsg", "ROTFriendMsg", "ROTDiscussMsg"]
+	EVENT_TYPES: ["ROTGroupMsg", "ROTPrivateMsg", "ROTDiscussMsg"]
 };
 
 Blockly.Blocks.event_msgid = {
@@ -183,7 +183,7 @@ Blockly.Blocks.event_msgid = {
 			this.setWarningText(Blockly.Msg.EVENT_ROTEVENT_WARNING);
 		}
 	},
-	EVENT_TYPES: ["ROTGroupMsg", "ROTFriendMsg", "ROTDiscussMsg"]
+	EVENT_TYPES: ["ROTGroupMsg", "ROTPrivateMsg", "ROTDiscussMsg"]
 };
 
 Blockly.Blocks.event_msgnum = {
@@ -213,7 +213,7 @@ Blockly.Blocks.event_msgnum = {
 			this.setWarningText(Blockly.Msg.EVENT_ROTEVENT_WARNING);
 		}
 	},
-	EVENT_TYPES: ["ROTGroupMsg", "ROTFriendMsg", "ROTDiscussMsg"]
+	EVENT_TYPES: ["ROTGroupMsg", "ROTPrivateMsg", "ROTDiscussMsg"]
 };
 
 Blockly.Blocks.event_msgfrom = {
@@ -230,7 +230,7 @@ Blockly.Blocks.event_msgfrom = {
 			if (c.getInput("eventTypeInput") != null) {
 				try {
 					switch (c.inputList[0].connection.targetBlock().getFieldValue("event_type")) {
-						case "ROTFriendMsg":
+						case "ROTPrivateMsg":
 							this.removeInput('content');
 							this.appendDummyInput('content').appendField("消息来源");
 							this.setTooltip("私聊: 消息类型不为1时返回群号或讨论组号");
@@ -265,7 +265,7 @@ Blockly.Blocks.event_msgfrom = {
 			this.setWarningText(Blockly.Msg.EVENT_ROTEVENT_WARNING);
 		}
 	},
-	EVENT_TYPES: ["ROTGroupMsg", "ROTFriendMsg", "ROTDiscussMsg"]
+	EVENT_TYPES: ["ROTGroupMsg", "ROTPrivateMsg", "ROTDiscussMsg"]
 };
 
 Blockly.Blocks.event_person = {
@@ -295,7 +295,7 @@ Blockly.Blocks.event_person = {
 			this.setWarningText(Blockly.Msg.EVENT_ROTEVENT_WARNING);
 		}
 	},
-	EVENT_TYPES: ["ROTGroupMsg", "ROTFriendMsg", "ROTDiscussMsg"]
+	EVENT_TYPES: ["ROTGroupMsg", "ROTPrivateMsg", "ROTDiscussMsg"]
 };
 
 Blockly.Blocks.event_msg = {
@@ -325,7 +325,7 @@ Blockly.Blocks.event_msg = {
 			this.setWarningText(Blockly.Msg.EVENT_ROTEVENT_WARNING);
 		}
 	},
-	EVENT_TYPES: ["ROTGroupMsg", "ROTFriendMsg", "ROTDiscussMsg"]
+	EVENT_TYPES: ["ROTGroupMsg", "ROTPrivateMsg", "ROTDiscussMsg"]
 };
 
 

@@ -77,7 +77,7 @@ Blockly.Blocks['ve_gettts'] = {
 		  return null;
 		}), "ttstype")
         .appendField("音源")
-        .appendField(new Blockly.FieldDropdown([["度娘","百度语音"], ["度丫丫","度丫丫"], ["糖糖","糖糖"]]), "tts");
+        .appendField(new Blockly.FieldDropdown([["度娘","百度语音"], ["度丫丫","度丫丫"], ["糖糖","糖糖"], ["V家","VOCALTTS"]]), "tts");
 	}
   },
    customContextMenu: function(options) {
