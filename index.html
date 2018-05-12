@@ -40,14 +40,6 @@
 			transform: translate(-50%, -50%);
 		}
 
-		.loadingtext {
-			position: absolute;
-			top: calc(50% + 250px);
-			left: 50%;
-			font-size: 16px;
-			color: rgba(70, 181, 255, 0.7);
-			transform: translate(-50%, -50%);
-		}
 
 		a[title='站长统计'] {
 			display: none;
@@ -82,61 +74,79 @@
 		<svg class="loadinglogo" height="300px" viewBox="0 0 1280 1280" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 		 xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
 			<style>
-				path.loadingpath {
+				.loadingpage path.loadingpath {
 					animation: dash 5s linear both infinite;
+					fill: #46b5ff;
+				}
+				.loadingpage.error path.loadingpath {
+					animation: dash 5s linear both infinite;
+					fill: #ff1818;
+				}
+				.loadingpage .loadingtext {
+					position: absolute;
+					top: calc(50% + 250px);
+					left: 50%;
+					font-size: 16px;
+					opacity: 0.7;
+					color: #46b5ff;
+					transform: translate(-50%, -50%);
+				}
+
+				.loadingpage.error .loadingtext {
+					color: #ff1818;
 				}
 
 				@keyframes dash {
 					0% {
-						fill: rgba(70, 181, 255, 0.1);
+						opacity: 0.1;
 					}
 					10% {
-						fill: rgba(70, 181, 255, 0.1);
+						opacity: 0.1;
 					}
 					11% {
-						fill: rgba(70, 181, 255, 0.4);
+						opacity: 0.4;
 					}
 					25% {
-						fill: rgba(70, 181, 255, 0.4);
+						opacity: 0.4;
 					}
 					26% {
-						fill: rgba(70, 181, 255, 0.1);
+						opacity: 0.1;
 					}
 					39% {
-						fill: rgba(70, 181, 255, 0.1);
+						opacity: 0.1;
 					}
 					40% {
-						fill: rgba(70, 181, 255, 0.4);
+						opacity: 0.4;
 					}
 					41% {
-						fill: rgba(70, 181, 255, 0.2);
+						opacity: 0.2;
 					}
 					43% {
-						fill: rgba(70, 181, 255, 0.5);
+						opacity: 0.5;
 					}
 					62% {
-						fill: rgba(70, 181, 255, 0.5);
+						opacity: 0.5;
 					}
 					65% {
-						fill: rgba(70, 181, 255, 0.2);
+						opacity: 0.2;
 					}
 					66% {
-						fill: rgba(70, 181, 255, 0.4);
+						opacity: 0.4;
 					}
 					89% {
-						fill: rgba(70, 181, 255, 0.4);
+						opacity: 0.4;
 					}
 					92% {
-						fill: rgba(70, 181, 255, 0.2);
+						opacity: 0.2;
 					}
 					97% {
-						fill: rgba(70, 181, 255, 0.2);
+						opacity: 0.2;
 					}
 					99% {
-						fill: rgba(70, 181, 255, 0.1);
+						opacity: 0.1;
 					}
 					100% {
-						fill: rgba(70, 181, 255, 0.4);
+						opacity: 0.4;
 					}
 				}
 			</style>
@@ -339,7 +349,7 @@
 			</div>
 
 			<br />
-			<i class="material-icons PuzzleHelpIcon " pdata-data-puzzletips="[必填]拼图源代码将被加密，这将是你<br />以后编辑该插件的密码，请务必牢记。">help</i>
+			<i class="material-icons PuzzleHelpIcon " pdata-data-puzzletips="[选填]拼图源代码将被加密，这将是你<br />以后编辑该插件的密码，请务必牢记。<br />留空则不设置主人密码">help</i>
 			<label>主人密码(请牢记)</label>
 			<br />
 			<input pdata-data-id="pluginpassword" type="url" autocomplete="new-password" onfocus="passwordFocus($(this))" onblur="passwordBlur($(this))" style="ime-mode: disabled;"

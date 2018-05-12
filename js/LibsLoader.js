@@ -8,6 +8,7 @@
  * 
  * */
 
+
 function outputLogo() {
     var outputjs = "var style_3d = \"text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba( 0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0 ,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15); font-size:5em;\";console.log(\"%c   PuzzleMaker\", \"padding:30px 30px;background:url('http://127.0.0.1/code/media/logo_console.svg') no-repeat;color:#4582ec;font-size:45px;line-height:30px;\");console.log(\"%c功能丰富 · 入门简单 · 操作便捷\", \"color:#4582ec;\");console.log(\"%c嘿嘿嘿你打开控制台干什么？在这里乱输入东西编辑器可是会坏掉的哦（滑稽\", \"color:#4582ec;\");console.log(\"%cLibsLoader %cv0.1 · 戴兜 · https://weibo.com/keaidaidou · https://daidr.me\", style_3d, \"\");";
     eval(outputjs);
@@ -32,24 +33,28 @@ function LibsLoader() {
     }
 
     var isCompleted = function () {
+        if (isContinue === 0) {
+            window.clearInterval(timer);
+            return;
+        }
         switch (step) {
             case "css":
                 loadCSS();
-                $(".loadingtext").text("正在加载样式");
+                $(".loadingtext").text("正在加载样式 (" + rcss + "/" + css + ")");
                 if (rcss === css) {
                     step = "js";
                 }
                 break;
             case "js":
                 loadJS(0, js - 1);
-                $(".loadingtext").text("正在加载必要库");
+                $(".loadingtext").text("正在加载必要库 (" + rjs + "/" + js + ")");
                 if (rjs === js) {
                     step = "puzzle";
                 }
                 break;
             case "puzzle":
                 loadPUZZLE(0, puzzle - 1);
-                $(".loadingtext").text("正在加载拼图列表");
+                $(".loadingtext").text("正在加载拼图列表 (" + rpuzzle + "/" + puzzle + ")");
                 if (rpuzzle === puzzle) {
                     step = "complete";
                 }
@@ -72,10 +77,11 @@ function LibsLoader() {
     var js = libsConfig.libs.js.length;
     var puzzle = libsConfig.libs.puzzle.length;
     var step = "css";
+    var isContinue = 1;
     var rcss = 0, rjs = 0, rpuzzle = 0;
     var acss = 0, ajs = 0, apuzzle = 0;
     var success = 0, error = 0;
-    var timer = window.setInterval(function () { isCompleted() }, 1000);
+    var timer = window.setInterval(function () { isCompleted() }, 100);
 
     var loadCSS = function () {
         if (acss === 0) {
@@ -105,9 +111,13 @@ function LibsLoader() {
                     var style_orange = "font-family:'微软雅黑';font-size:1em;background-color:#fe9d0b;color:#fff;padding:4px;";
                     if (status == 'timeout') {
                         error += 1;
+                        isContinue = 0;
+                        hasError();
                         console.log("%c错误%c「" + libsConfig.libs.css[i] + "」加载超时", style_red, style_orange);
                     } else if (status != "success") {
                         error += 1;
+                        isContinue = 0;
+                        hasError();
                         console.log("%c错误%c「" + libsConfig.libs.css[i] + "」加载失败", style_red, style_orange);
                     }
                 }
@@ -144,13 +154,19 @@ function LibsLoader() {
                 var style_orange = "font-family:'微软雅黑';font-size:1em;background-color:#fe9d0b;color:#fff;padding:4px;";
                 if (status == 'timeout') {
                     error += 1;
+                    isContinue = 0;
+                    hasError();
                     console.log("%c错误%c「" + libsConfig.libs.js[i] + "」加载超时", style_red, style_orange);
                 } else if (status != "success") {
                     error += 1;
+                    isContinue = 0;
+                    hasError();
                     console.log("%c错误%c「" + libsConfig.libs.js[i] + "」加载失败", style_red, style_orange);
                 }
                 if (i != t) {
-                    loadJS(i + 1, t);
+                    if (isContinue === 1) {
+                        loadJS(i + 1, t);
+                    }
                 }
             }
         });
@@ -184,16 +200,27 @@ function LibsLoader() {
                 var style_orange = "font-family:'微软雅黑';font-size:1em;background-color:#fe9d0b;color:#fff;padding:4px;";
                 if (status == 'timeout') {
                     error += 1;
+                    isContinue = 0;
+                    hasError();
                     console.log("%c错误%c「" + libsConfig.libs.puzzle[i] + "」加载超时", style_red, style_orange);
                 } else if (status != "success") {
                     error += 1;
+                    isContinue = 0;
+                    hasError();
                     console.log("%c错误%c「" + libsConfig.libs.puzzle[i] + "」加载失败", style_red, style_orange);
                 }
                 if (i != t) {
-                    loadPUZZLE(i + 1, t);
+                    if (isContinue === 1) {
+                        loadPUZZLE(i + 1, t);
+                    }
                 }
             }
         });
+    }
+
+    var hasError = function () {
+        $(".loadingtext").text("加载错误，请重试");
+        $(".loadingpage").addClass("error");
     }
 
     var complete = function () {

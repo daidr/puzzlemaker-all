@@ -516,10 +516,7 @@ $("#menu_unarchive").click(function () {
 					return;
 				}
 				var pluginpassword = $("#ExportWindow #pluginpassword").val().trim();
-				if (pluginpassword == "") {
-					cusnotify("error", "mini", true, 4000, "请填写主人密码", false, true);
-					return;
-				} else {
+				if (pluginpassword !== "") {
 					var reg = /^[0-9a-zA-Z]+$/;
 					if (!reg.test(pluginpassword)) {
 						cusnotify("error", "mini", true, 4000, "主人密码需为英文或数字", false, true);
@@ -539,7 +536,7 @@ $("#menu_unarchive").click(function () {
 					pluginauthor = "没有描述";
 				}
 
-				PuzzleMaker.Plugin.doEncode({
+				plugin_doEncode({
 					name: pluginname,
 					version: pluginver,
 					author: pluginauthor,
@@ -561,72 +558,85 @@ $("#PluginImportInput").change(function () {
 	var objFile = this;
 	//console.log(objFile.files[0].size); //文件字节数
 	var files = $(this).prop('files'); //获取到文件列表
-	if (files.length == 0) {
-		cusnotify("error", "mini", true, 3000, "文件无效", false, true);
+	if (files.length == 0) { //文件数为0
+		cusnotify("error", "mini", true, 3000, "未选择文件", false, true);
 	} else {
 		var reader = new FileReader(); //新建一个FileReader
 		reader.readAsText(files[0], "UTF-8"); //读取文件 
-		reader.onload = function (evt) { //读取完文件之后会回来这里
+		reader.onload = function (evt) { //读取完文件之后会执行这里
 			var fileString = evt.target.result; //读取文件内容
 			var fileLength = objFile.files[0].size;
 			clearInputFile(objFile); //清空input
-			if (PuzzleMaker.Plugin.isPlugin(fileString) === true) {
-				var xmlcontent = doEncode(PuzzleMaker.Plugin.getPluginXmlsrc(fileString));
-				var plugininfo = doEncode(JSON.stringify(PuzzleMaker.Plugin.getPluginInfo(fileString)));
+			if (plugin_isPlugin(fileString) === true) {
+				var xmlcontent = doEncode(plugin_getPluginXmlsrc(fileString)); //获取原始xml数据
+				var plugininfo = doEncode(JSON.stringify(plugin_getPluginInfo(fileString))); //获取插件信息
 				if (xmlcontent != "") {
-					passwordWindow = Lobibox.window({
-						title: '验证密码',
-						content: function () {
-							var content = $(".PuzzleMakerWindow[pdata-data-id=PasswordWindow]").prop("outerHTML");
-							content = content.replace(/pdata-/g, "");
-							content = content.replace(/data-id/g, "id");
-							content = content.replace("{$XMLCONTENT$}", xmlcontent);
-							content = content.replace("{$PLUGININFO$}", plugininfo);
-							return content;
-						},
-						height: 195,
-						buttons: {
-							ok: {
-								text: '确定',
-								class: 'lobibox_button',
-								closeOnClick: false
-							}
-						},
-						callback: function ($this, type, ev) {
-							if (type == "ok") {
-								var xmlcontent = doDecode($("#password_xmlcontent").text());
-								try {
-									var pluginInfo = JSON.parse(doDecode($("#password_plugininfo").text()));
-								} catch (err) {
-								}
-								var password = $("#PasswordWindow #password").val().trim();
-								if (password == "") {
-									cusnotify("error", "mini", true, 4000, "请填写主人密码", false, true);
-									return;
-								};
-								var realxml = "";
-								try {
-									var realxml = PuzzleMaker.Plugin.doDecode({ xmlcontent: xmlcontent, password: password });
-								} catch (error) {
-
-								}
-								if (realxml === "") {
-									cusnotify("error", "mini", true, 4000, "密码错误或文件无效", false, true);
-									return;
-								}
-								if (realxml === false) {
-									cusnotify("error", "mini", true, 4000, "密码错误或文件无效", false, true);
-									return;
-								} else {
-									PuzzleMakerGlobalSetting.PluginInfo = pluginInfo;
-									Code.workspace.clear();
-									Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(realxml), Code.workspace);
-									cusnotify("success", "mini", true, 4000, "导入成功", false, true);
-								}
-								passwordWindow.destroy();
-							}
+					if (plugin_hasPassword(fileString) === false) { //没有主人密码
+						try {
+							plugininfo = JSON.parse(doDecode(plugininfo));
+						} catch (err) {
 						}
-					});
+						PuzzleMakerGlobalSetting.PluginInfo = plugininfo; //保存插件信息到全局设置
+						Code.workspace.clear(); //清空拼图工作区
+						var realxml = plugin_doDecode({ xmlcontent: plugin_getPluginXmlsrc(fileString), password: "" }); //解密插件数据
+						Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(realxml), Code.workspace); //将插件载入工作区
+						cusnotify("success", "mini", true, 4000, "导入成功", false, true);
+					} else {                                        //有主人密码
+						passwordWindow = Lobibox.window({
+							title: '验证密码',
+							content: function () {
+								var content = $(".PuzzleMakerWindow[pdata-data-id=PasswordWindow]").prop("outerHTML");
+								content = content.replace(/pdata-/g, "");
+								content = content.replace(/data-id/g, "id");
+								content = content.replace("{$XMLCONTENT$}", xmlcontent);
+								content = content.replace("{$PLUGININFO$}", plugininfo);
+								return content;
+							},
+							height: 195,
+							buttons: {
+								ok: {
+									text: '确定',
+									class: 'lobibox_button',
+									closeOnClick: false
+								}
+							},
+							callback: function ($this, type, ev) {
+								if (type == "ok") {
+									var xmlcontent = doDecode($("#password_xmlcontent").text());
+									try {
+										var pluginInfo = JSON.parse(doDecode($("#password_plugininfo").text()));
+									} catch (err) {
+									}
+									var password = $("#PasswordWindow #password").val().trim();
+									if (password == "") {
+										cusnotify("error", "mini", true, 4000, "请填写主人密码", false, true);
+										return;
+									};
+									var realxml = "";
+									try {
+										var realxml = plugin_doDecode({ xmlcontent: xmlcontent, password: password });
+									} catch (error) {
+
+									}
+									if (realxml === "") {
+										cusnotify("error", "mini", true, 4000, "密码错误或文件无效", false, true);
+										return;
+									}
+									if (realxml === false) {
+										cusnotify("error", "mini", true, 4000, "密码错误或文件无效", false, true);
+										return;
+									} else {
+										PuzzleMakerGlobalSetting.PluginInfo = pluginInfo;
+										Code.workspace.clear();
+										Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(realxml), Code.workspace);
+										cusnotify("success", "mini", true, 4000, "导入成功", false, true);
+									}
+									passwordWindow.destroy();
+								}
+							}
+						});
+					}
+
 				} else {
 					cusnotify("error", "mini", true, 3000, "文件无效", false, true);
 				}
