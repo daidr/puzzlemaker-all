@@ -43,7 +43,7 @@ function randomString(len) {
 
 
 if (getCookie("test") !== "true") {
-    var theDevKey = 0, theKey = "", hasBeta = 111;
+    hasBeta = 111;
 
     $(document).keypress(function (e) {
         if (e.shiftKey && e.keyCode == 68) {
