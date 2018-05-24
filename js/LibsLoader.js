@@ -7,6 +7,91 @@
  * ============================================
  * 
  * */
+var theDevKey = 0, theKey = "", hasBeta = 0;
+var libsConfig = {
+    libs: {
+        css: ["style.day.min.css", "iconfont/material-icons.css", "css/PuzzleTips.css", "css/Lobibox.min.css"],
+        js: ["js/Base64.js", "face/face.js", "js/jquery-ui-1.10.4.min.js", "js/PuzzleTips.js", "blockly_compressed.js", "msg/zh-hans.js", "msg/zh-hans_2.js", "js/lobibox.min.js", "js/aes.js", "js/encrypt.min.js"],
+        puzzle: ["blocks/math.js", "blocks/text.js", "blocks/loops.js", "blocks/procedures.js", "blocks/logic.js", "blocks/lists.js", "blocks/variables.js", "blocks/rotcode.js", "blocks/rotevent.js", "blocks/rotfunc.js", "blocks/sysdisk.js", "blocks/time.js", "blocks/voiceera.js", "blocks/http.js", "blocks/json.js", "javascript.js", "blocks/generators/math.js", "blocks/generators/text.js", "blocks/generators/loops.js", "blocks/generators/procedures.js", "blocks/generators/logic.js", "blocks/generators/lists.js", "blocks/generators/variables.js", "blocks/generators/rotcode.js", "blocks/generators/rotevent.js", "blocks/generators/rotfunc.js", "blocks/generators/sysdisk.js", "blocks/generators/time.js", "blocks/generators/voiceera.js", "blocks/generators/http.js", "blocks/generators/json.js", "js/code.min.js", "js/buttonevents.min.js"]
+    }
+}
+function setCookie(c_name, value, expiredays) {
+	var exdate = new Date();
+	exdate.setDate(exdate.getDate() + expiredays);
+	document.cookie = c_name + "=" + escape(value) +
+		((expiredays == null) ? "" : ";expires=" + exdate.toGMTString());
+}
+
+function getCookie(name) {
+	var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+	if (arr = document.cookie.match(reg))
+		return unescape(arr[2]);
+	else
+		return null;
+}
+function randomString(len) {
+    len = len || 32;
+    var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';
+    var maxPos = $chars.length;
+    var pwd = '';
+    for (i = 0; i < len; i++) {
+        pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+    }
+    return pwd;
+}
+
+
+
+if (getCookie("test") !== "true") {
+    var theDevKey = 0, theKey = "", hasBeta = 111;
+
+    $(document).keypress(function (e) {
+        if (e.shiftKey && e.keyCode == 68) {
+            theDevKey = 1;
+        }
+        if (e.shiftKey && e.keyCode == 69 && theDevKey == 1) {
+            theDevKey = 2;
+        }
+        if (e.shiftKey && e.keyCode == 86 && theDevKey == 2) {
+            theDevKey = 0;
+            theKey = randomString(32);
+            console.log("进入内测模式：请输入 imADeveloper(\"" + theKey + "\") 以进入调试模式");
+            Lobibox.window({
+                title: '打开开发者内测模式',
+                content: "<p style='color:#fff;text-align:center;font-size:20px;'>请打开Console，按照提示输入内容。</p>",
+                height: 165,
+                buttons: {
+                    ok: {
+                        text: '确定',
+                        class: 'lobibox_button',
+                        closeOnClick: true
+                    }
+                }
+            });
+        }
+    });
+} else {
+    $(".style-beta").text(".loadingpage path.loadingpath {fill: #8bc34a !important;}.loadingpage .loadingtext {color: #8bc34a !important;}");
+    libsConfig = {
+        libs: {
+            css: ["test/style.day.css", "iconfont/material-icons.css", "css/PuzzleTips.css", "css/Lobibox.min.css"],
+            js: ["js/Base64.js", "face/face.js", "js/jquery-ui-1.10.4.min.js", "test/js/PuzzleTips.js", "blockly_compressed.js", "test/msg/zh-hans.js", "test/msg/zh-hans_2.js", "test/js/lobibox.min.js", "test/js/aes.js", "test/js/encrypt.js"],
+            puzzle: ["test/blocks/math.js", "test/blocks/text.js", "test/blocks/loops.js", "test/blocks/procedures.js", "test/blocks/logic.js", "test/blocks/lists.js", "test/blocks/variables.js", "test/blocks/rotcode.js", "test/blocks/rotevent.js", "test/blocks/rotfunc.js", "test/blocks/sysdisk.js", "test/blocks/time.js", "test/blocks/voiceera.js", "test/blocks/http.js", "test/blocks/json.js", "javascript.js", "test/blocks/generators/math.js", "test/blocks/generators/text.js", "test/blocks/generators/loops.js", "test/blocks/generators/procedures.js", "test/blocks/generators/logic.js", "test/blocks/generators/lists.js", "test/blocks/generators/variables.js", "test/blocks/generators/rotcode.js", "test/blocks/generators/rotevent.js", "test/blocks/generators/rotfunc.js", "test/blocks/generators/sysdisk.js", "test/blocks/generators/time.js", "test/blocks/generators/voiceera.js", "test/blocks/generators/http.js", "test/blocks/generators/json.js", "test/js/code.js", "test/js/buttonevents.js"]
+        }
+    }
+}
+
+function imADeveloper(text) {
+    if (hasBeta !== 111) {
+        return undefined;
+    }
+    if (text !== theKey || text == "") {
+        return undefined;
+    } else {
+        setCookie("test", "true", 999999);
+        location.reload();
+    }
+}
 
 
 function outputLogo() {
@@ -65,13 +150,6 @@ function LibsLoader() {
         }
     }
 
-    var libsConfig = {
-        libs: {
-            css: ["style.day.min.css", "iconfont/material-icons.css", "css/PuzzleTips.css", "css/Lobibox.min.css"],
-            js: ["js/Base64.js", "face/face.js", "js/jquery-ui-1.10.4.min.js", "js/PuzzleTips.js", "blockly_compressed.js", "msg/zh-hans.js", "msg/zh-hans_2.js", "js/lobibox.min.js", "js/aes.js", "js/encrypt.min.js"],
-            puzzle: ["blocks/math.js", "blocks/text.js", "blocks/loops.js", "blocks/procedures.js", "blocks/logic.js", "blocks/lists.js", "blocks/variables.js", "blocks/rotcode.js", "blocks/rotevent.js", "blocks/rotfunc.js", "blocks/sysdisk.js", "blocks/time.js", "blocks/voiceera.js", "blocks/http.js", "blocks/json.js", "javascript.js", "blocks/generators/math.js", "blocks/generators/text.js", "blocks/generators/loops.js", "blocks/generators/procedures.js", "blocks/generators/logic.js", "blocks/generators/lists.js", "blocks/generators/variables.js", "blocks/generators/rotcode.js", "blocks/generators/rotevent.js", "blocks/generators/rotfunc.js", "blocks/generators/sysdisk.js", "blocks/generators/time.js", "blocks/generators/voiceera.js", "blocks/generators/http.js", "blocks/generators/json.js", "js/code.min.js", "js/buttonevents.min.js"]
-        }
-    }
 
     var css = libsConfig.libs.css.length;
     var js = libsConfig.libs.js.length;
