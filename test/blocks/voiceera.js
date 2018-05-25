@@ -12,7 +12,7 @@ Blockly.Blocks['ve_gettts'] = {
   init: function() {
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/voiceera.png", 25, 20, "*"))
-        .appendField("语音时代_语音合成");
+        .appendField("语音合成");
     this.appendValueInput("content")
         .setCheck(null)
         .setAlign(Blockly.ALIGN_RIGHT)
@@ -94,7 +94,7 @@ Blockly.Blocks['ve_getos'] = {
   init: function() {
     this.appendDummyInput()
 		.appendField(new Blockly.FieldImage("media/voiceera.png", 25, 20, "*"))
-        .appendField("语音时代_词库交互");
+        .appendField("词库交互");
     this.appendValueInput("content")
         .setCheck(null)
         .setAlign(Blockly.ALIGN_RIGHT)

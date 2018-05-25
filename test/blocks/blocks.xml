@@ -21,7 +21,7 @@
 		<block type="rotcode_at" data-keywords="at|@|cq码|酷q码|ir变量">
 			<value name="QQID">
 				<shadow type="math_number">
-					<field name="NUM">1234567</field>
+					<field name="NUM"></field>
 				</shadow>
 			</value>
 		</block>
@@ -31,7 +31,7 @@
 				<shadow type="ve_gettts">
 					<value name="content">
 						<shadow type="text">
-							<field name="TEXT">你好！语音时代！</field>
+							<field name="TEXT"></field>
 						</shadow>
 					</value>
 					<value name="ttsgroup">
@@ -54,7 +54,7 @@
 		<block type="rot_getusername" data-keywords="获取昵称|获取群名称|酷q|ir功能">
 			<value name="number">
 				<shadow type="math_number">
-					<field name="NUM">1234567</field>
+					<field name="NUM"></field>
 				</shadow>
 			</value>
 		</block>
@@ -64,12 +64,12 @@
 			</value>
 			<value name="idnumber">
 				<shadow type="math_number">
-					<field name="NUM">1234567</field>
+					<field name="NUM"></field>
 				</shadow>
 			</value>
 			<value name="msg">
 				<shadow type="text">
-					<field name="TEXT">这是一条测试消息</field>
+					<field name="TEXT"></field>
 				</shadow>
 			</value>
 		</block>
@@ -79,7 +79,7 @@
 			</value>
 			<value name="idnumber">
 				<shadow type="math_number">
-					<field name="NUM">1234567</field>
+					<field name="NUM"></field>
 				</shadow>
 			</value>
 			<value name="times">
@@ -94,12 +94,12 @@
 			</value>
 			<value name="groupnumber">
 				<shadow type="math_number">
-					<field name="NUM">1234567</field>
+					<field name="NUM"></field>
 				</shadow>
 			</value>
 			<value name="idnumber">
 				<shadow type="math_number">
-					<field name="NUM">1234567</field>
+					<field name="NUM"></field>
 				</shadow>
 			</value>
 			<value name="time">
@@ -114,19 +114,19 @@
 			</value>
 			<value name="msgid">
 				<shadow type="math_number">
-					<field name="NUM">1234567</field>
+					<field name="NUM"></field>
 				</shadow>
 			</value>
 			<value name="msgnum">
 				<shadow type="math_number">
-					<field name="NUM">1234567</field>
+					<field name="NUM"></field>
 				</shadow>
 			</value>
 		</block>
 		<block type="rot_addlog" data-keywords="日志|酷q|ir功能">
 			<value name="content">
 				<shadow type="text">
-					<field name="TEXT">这是一条测试日志</field>
+					<field name="TEXT"></field>
 				</shadow>
 			</value>
 		</block>
@@ -153,7 +153,7 @@
 				<block type="logic_case">
 					<value name="caseName">
 						<shadow type="text">
-							<field name="TEXT">abc</field>
+							<field name="TEXT"></field>
 						</shadow>
 					</value>
 				</block>
@@ -169,7 +169,7 @@
 		<block type="logic_case" data-keywords="case|逻辑">
 			<value name="caseName">
 				<shadow type="text">
-					<field name="TEXT">abc</field>
+					<field name="TEXT"></field>
 				</shadow>
 			</value>
 		</block>
@@ -513,10 +513,10 @@
 	</category>
 	<sep></sep>
 	<category name="%{BKY_CATVOICEERA}" colour="%{BKY_VOICEERA_HUE}">
-		<block type="ve_gettts" data-keywords="语音合成|语音时代|酷q">
+		<block type="ve_gettts" data-keywords="语音合成|语音时代|酷q|IR">
 			<value name="content">
 				<shadow type="text">
-					<field name="TEXT">你好！语音时代！</field>
+					<field name="TEXT"></field>
 				</shadow>
 			</value>
 			<value name="ttsgroup">
@@ -525,10 +525,10 @@
 				</shadow>
 			</value>
 		</block>
-		<block type="ve_getos" data-keywords="词库|词库交互|语音时代|酷q">
+		<block type="ve_getos" data-keywords="词库|词库交互|语音时代|酷q|IR">
 			<value name="content">
 				<shadow type="text">
-					<field name="TEXT">你好啊</field>
+					<field name="TEXT"></field>
 				</shadow>
 			</value>
 			<value name="osgroup">
