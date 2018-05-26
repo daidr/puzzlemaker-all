@@ -306,7 +306,9 @@ function LibsLoader() {
         $(".header_menu").css("margin-top", "-" + ($(".header_menu").height() + 100) + "px");
         $(".loadingtext").text("Having fun!");
         $(".loadingpage").slideToggle();
-        var topHost = window.top.location.host;
+        var referrer = document.createElement('a');
+        referrer.href = document.referrer;
+        var topHost = referrer.hostname;
         switch (topHost) {
             case "app.daidr.me":
                 break;
