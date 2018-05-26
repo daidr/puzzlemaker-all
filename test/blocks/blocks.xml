@@ -7,12 +7,16 @@
 		</block>
 		<block type="rotevent_allevent" data-keywords="私聊消息|事件|酷q|IR">
 			<value name="eventTypeInput">
-				<block type="event_rotsys"><field name="event_type">ROTPrivateMsg</field></block>
+				<block type="event_rotsys">
+					<field name="event_type">ROTPrivateMsg</field>
+				</block>
 			</value>
 		</block>
 		<block type="rotevent_allevent" data-keywords="讨论组消息|事件|酷q|IR">
 			<value name="eventTypeInput">
-				<block type="event_rotsys"><field name="event_type">ROTDiscussMsg</field></block>
+				<block type="event_rotsys">
+					<field name="event_type">ROTDiscussMsg</field>
+				</block>
 			</value>
 		</block>
 		<block type="event_values"></block>
@@ -47,9 +51,6 @@
 	</category>
 	<category name="%{BKY_CATROTFUNC}" colour="%{BKY_ROTFUNC_HUE}">
 		<block type="rot_getgrouplist" data-keywords="获取群列表|酷q|ir功能">
-			<value name="rotqq">
-				<shadow type="event_values"><field name="event_values">0</field></shadow>
-			</value>
 		</block>
 		<block type="rot_getusername" data-keywords="获取昵称|获取群名称|酷q|ir功能">
 			<value name="number">
@@ -59,9 +60,18 @@
 			</value>
 		</block>
 		<block type="rot_sendmsg" data-keywords="发送消息|群消息|私聊消息|讨论组消息|酷q|ir功能">
-			<value name="rotqq">
-				<shadow type="event_values"><field name="event_values">0</field></shadow>
+			<value name="idnumber">
+				<shadow type="math_number">
+					<field name="NUM"></field>
+				</shadow>
 			</value>
+			<value name="msg">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+		</block>
+		<block type="rot_sendvoicemsg" data-keywords="发送消息|群消息|私聊消息|讨论组消息|酷q|ir功能|语音时代">
 			<value name="idnumber">
 				<shadow type="math_number">
 					<field name="NUM"></field>
@@ -74,9 +84,6 @@
 			</value>
 		</block>
 		<block type="rot_sendlike" data-keywords="点赞|名片赞|发送赞|酷q|ir功能">
-			<value name="rotqq">
-				<shadow type="event_values"><field name="event_values">0</field></shadow>
-			</value>
 			<value name="idnumber">
 				<shadow type="math_number">
 					<field name="NUM"></field>
@@ -89,9 +96,6 @@
 			</value>
 		</block>
 		<block type="rot_jinyan" data-keywords="禁言|酷q|ir功能">
-			<value name="rotqq">
-				<shadow type="event_values"><field name="event_values">0</field></shadow>
-			</value>
 			<value name="groupnumber">
 				<shadow type="math_number">
 					<field name="NUM"></field>
@@ -109,17 +113,19 @@
 			</value>
 		</block>
 		<block type="rot_deleteMsg" data-keywords="撤回消息|酷q|ir功能">
-			<value name="rotqq">
-				<shadow type="event_values"><field name="event_values">0</field></shadow>
+			<value name="groupnum">
+				<shadow type="event_values">
+					<field name="event_values">5</field>
+				</shadow>
 			</value>
 			<value name="msgid">
-				<shadow type="math_number">
-					<field name="NUM"></field>
+				<shadow type="event_values">
+					<field name="event_values">3</field>
 				</shadow>
 			</value>
 			<value name="msgnum">
-				<shadow type="math_number">
-					<field name="NUM"></field>
+				<shadow type="event_values">
+					<field name="event_values">4</field>
 				</shadow>
 			</value>
 		</block>

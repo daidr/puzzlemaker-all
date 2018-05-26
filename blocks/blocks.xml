@@ -1,260 +1,143 @@
 <xml id="toolbox_xml">
-	<category name="机器人拼图" colour="#ff9921">
-		<category name="%{BKY_CATROTEVENT}" colour="%{BKY_ROTEVENT_HUE}">
-			<block type="rotevent_allevent" data-keywords="群消息|事件|酷q|IR">
-				<value name="eventTypeInput">
-					<block type="event_rotsys"></block>
-				</value>
-				<value name="action">
-					<block type="variables_set">
-						<field name="VAR">群_消息内容</field>
-						<value name="VALUE">
-							<block type="event_msg"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set">
-						<field name="VAR">群_消息发送者</field>
-						<value name="VALUE">
-							<block type="event_person"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set">
-						<field name="VAR">群_消息来源</field>
-						<value name="VALUE">
-							<block type="event_msgfrom"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set">
-						<field name="VAR">群_消息序号</field>
-						<value name="VALUE">
-							<block type="event_msgnum"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set">
-						<field name="VAR">群_消息ID</field>
-						<value name="VALUE">
-							<block type="event_msgid"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set">
-						<field name="VAR">群_消息类型</field>
-						<value name="VALUE">
-							<block type="event_msgtype"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set">
-						<field name="VAR">群_消息发送时间</field>
-						<value name="VALUE">
-							<block type="event_time"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set">
-						<field name="VAR">群_机器人QQ</field>
-						<value name="VALUE">
-							<block type="event_rotqq"></block>
-						</value>
-					</block>
-				</value>
-			</block>
-			<block type="rotevent_allevent" data-keywords="私聊消息|事件|酷q|IR">
-				<value name="eventTypeInput">
-					<block type="event_rotsys">ROTPrivateMsg</block>
-				</value>
-				<value name="action">
-					<block type="variables_set">
-						<field name="VAR">私聊_消息内容</field>
-						<value name="VALUE">
-							<block type="event_msg"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set">
-						<field name="VAR">私聊_消息发送者</field>
-						<value name="VALUE">
-							<block type="event_person"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set">
-						<field name="VAR">私聊_消息来源</field>
-						<value name="VALUE">
-							<block type="event_msgfrom"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set">
-						<field name="VAR">私聊_消息序号</field>
-						<value name="VALUE">
-							<block type="event_msgnum"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set">
-						<field name="VAR">私聊_消息ID</field>
-						<value name="VALUE">
-							<block type="event_msgid"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set">
-						<field name="VAR">私聊_消息类型</field>
-						<value name="VALUE">
-							<block type="event_msgtype"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set">
-						<field name="VAR">私聊_消息发送时间</field>
-						<value name="VALUE">
-							<block type="event_time"></block>
-						</value>
-					</block>
-				</value>
-				<value name="action">
-					<block type="variables_set">
-						<field name="VAR">私聊_机器人QQ</field>
-						<value name="VALUE">
-							<block type="event_rotqq"></block>
-						</value>
-					</block>
-				</value>
-			</block>
-		</category>
-		<category name="%{BKY_CATROTCODE}" colour="%{BKY_ROTCODE_HUE}">
-			<block type="rotcode_at" data-keywords="at|@|cq码|酷q码|ir变量">
-				<value name="QQID">
-					<shadow type="math_number">
-						<field name="NUM">1234567</field>
-					</shadow>
-				</value>
-			</block>
-			<block type="rotcode_shake" data-keywords="抖一抖|戳一戳|窗口抖动|cq码|酷q码|ir变量"></block>
-			<block type="rotcode_record" data-keywords="发送语音|cq码|酷q码|ir变量">
-				<value name="filename">
-					<shadow type="ve_gettts">
-						<value name="content">
-							<shadow type="text">
-								<field name="TEXT">你好！语音时代！</field>
-							</shadow>
-						</value>
-						<value name="ttsgroup">
-							<shadow type="text">
-								<field name="TEXT">度丫丫.vdb</field>
-							</shadow>
-						</value>
-					</shadow>
-				</value>
-			</block>
-			<block type="rotcode_emoji_1" data-keywords="emoji|cq码|酷q码|ir变量"></block>
-			<block type="rotcode_sface_1" data-keywords="小表情|黄豆表情|cq码|酷q码|ir变量"></block>
-		</category>
-		<category name="%{BKY_CATROTFUNC}" colour="%{BKY_ROTFUNC_HUE}">
-			<block type="rot_getgrouplist" data-keywords="获取群列表|酷q|ir功能">
-				<value name="rotqq">
-					<shadow type="event_rotqq"></shadow>
-				</value>
-			</block>
-			<block type="rot_getusername" data-keywords="获取昵称|获取群名称|酷q|ir功能">
-				<value name="number">
-					<shadow type="math_number">
-						<field name="NUM">1234567</field>
-					</shadow>
-				</value>
-			</block>
-			<block type="rot_sendmsg" data-keywords="发送消息|群消息|私聊消息|讨论组消息|酷q|ir功能">
-				<value name="rotqq">
-					<shadow type="event_rotqq"></shadow>
-				</value>
-				<value name="idnumber">
-					<shadow type="math_number">
-						<field name="NUM">1234567</field>
-					</shadow>
-				</value>
-				<value name="msg">
-					<shadow type="text">
-						<field name="TEXT">这是一条测试消息</field>
-					</shadow>
-				</value>
-			</block>
-			<block type="rot_sendlike" data-keywords="点赞|名片赞|发送赞|酷q|ir功能">
-				<value name="rotqq">
-					<shadow type="event_rotqq"></shadow>
-				</value>
-				<value name="idnumber">
-					<shadow type="math_number">
-						<field name="NUM">1234567</field>
-					</shadow>
-				</value>
-				<value name="times">
-					<shadow type="math_number">
-						<field name="NUM">10</field>
-					</shadow>
-				</value>
-			</block>
-			<block type="rot_jinyan" data-keywords="禁言|酷q|ir功能">
-				<value name="rotqq">
-					<shadow type="event_rotqq"></shadow>
-				</value>
-				<value name="groupnumber">
-					<shadow type="math_number">
-						<field name="NUM">1234567</field>
-					</shadow>
-				</value>
-				<value name="idnumber">
-					<shadow type="math_number">
-						<field name="NUM">1234567</field>
-					</shadow>
-				</value>
-				<value name="time">
-					<shadow type="math_number">
-						<field name="NUM">60</field>
-					</shadow>
-				</value>
-			</block>
-			<block type="rot_deleteMsg" data-keywords="撤回消息|酷q|ir功能">
-				<value name="rotqq">
-					<shadow type="event_rotqq"></shadow>
-				</value>
-				<value name="msgid">
-					<shadow type="math_number">
-						<field name="NUM">1234567</field>
-					</shadow>
-				</value>
-				<value name="msgnum">
-					<shadow type="math_number">
-						<field name="NUM">1234567</field>
-					</shadow>
-				</value>
-			</block>
-			<block type="rot_addlog" data-keywords="日志|酷q|ir功能">
-				<value name="content">
-					<shadow type="text">
-						<field name="TEXT">这是一条测试日志</field>
-					</shadow>
-				</value>
-			</block>
-		</category>
+	<category name="%{BKY_CATROTEVENT}" colour="%{BKY_ROTEVENT_HUE}">
+		<block type="rotevent_allevent" data-keywords="群消息|事件|酷q|IR">
+			<value name="eventTypeInput">
+				<block type="event_rotsys"></block>
+			</value>
+		</block>
+		<block type="rotevent_allevent" data-keywords="私聊消息|事件|酷q|IR">
+			<value name="eventTypeInput">
+				<block type="event_rotsys">
+					<field name="event_type">ROTPrivateMsg</field>
+				</block>
+			</value>
+		</block>
+		<block type="rotevent_allevent" data-keywords="讨论组消息|事件|酷q|IR">
+			<value name="eventTypeInput">
+				<block type="event_rotsys">
+					<field name="event_type">ROTDiscussMsg</field>
+				</block>
+			</value>
+		</block>
+		<block type="event_values"></block>
 	</category>
+	<category name="%{BKY_CATROTCODE}" colour="%{BKY_ROTCODE_HUE}">
+		<block type="rotcode_at" data-keywords="at|@|cq码|酷q码|ir变量">
+			<value name="QQID">
+				<shadow type="math_number">
+					<field name="NUM"></field>
+				</shadow>
+			</value>
+		</block>
+		<block type="rotcode_shake" data-keywords="抖一抖|戳一戳|窗口抖动|cq码|酷q码|ir变量"></block>
+		<block type="rotcode_record" data-keywords="发送语音|cq码|酷q码|ir变量">
+			<value name="filename">
+				<shadow type="ve_gettts">
+					<value name="content">
+						<shadow type="text">
+							<field name="TEXT"></field>
+						</shadow>
+					</value>
+					<value name="ttsgroup">
+						<shadow type="text">
+							<field name="TEXT">度丫丫.vdb</field>
+						</shadow>
+					</value>
+				</shadow>
+			</value>
+		</block>
+		<block type="rotcode_emoji_1" data-keywords="emoji|cq码|酷q码|ir变量"></block>
+		<block type="rotcode_sface_1" data-keywords="小表情|黄豆表情|cq码|酷q码|ir变量"></block>
+	</category>
+	<category name="%{BKY_CATROTFUNC}" colour="%{BKY_ROTFUNC_HUE}">
+		<block type="rot_getgrouplist" data-keywords="获取群列表|酷q|ir功能">
+		</block>
+		<block type="rot_getusername" data-keywords="获取昵称|获取群名称|酷q|ir功能">
+			<value name="number">
+				<shadow type="math_number">
+					<field name="NUM"></field>
+				</shadow>
+			</value>
+		</block>
+		<block type="rot_sendmsg" data-keywords="发送消息|群消息|私聊消息|讨论组消息|酷q|ir功能">
+			<value name="idnumber">
+				<shadow type="math_number">
+					<field name="NUM"></field>
+				</shadow>
+			</value>
+			<value name="msg">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+		</block>
+		<block type="rot_sendvoicemsg" data-keywords="发送消息|群消息|私聊消息|讨论组消息|酷q|ir功能|语音时代">
+			<value name="idnumber">
+				<shadow type="math_number">
+					<field name="NUM"></field>
+				</shadow>
+			</value>
+			<value name="msg">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+		</block>
+		<block type="rot_sendlike" data-keywords="点赞|名片赞|发送赞|酷q|ir功能">
+			<value name="idnumber">
+				<shadow type="math_number">
+					<field name="NUM"></field>
+				</shadow>
+			</value>
+			<value name="times">
+				<shadow type="math_number">
+					<field name="NUM">10</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="rot_jinyan" data-keywords="禁言|酷q|ir功能">
+			<value name="groupnumber">
+				<shadow type="math_number">
+					<field name="NUM"></field>
+				</shadow>
+			</value>
+			<value name="idnumber">
+				<shadow type="math_number">
+					<field name="NUM"></field>
+				</shadow>
+			</value>
+			<value name="time">
+				<shadow type="math_number">
+					<field name="NUM">60</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="rot_deleteMsg" data-keywords="撤回消息|酷q|ir功能">
+			<value name="groupnum">
+				<shadow type="event_values">
+					<field name="event_values">5</field>
+				</shadow>
+			</value>
+			<value name="msgid">
+				<shadow type="event_values">
+					<field name="event_values">3</field>
+				</shadow>
+			</value>
+			<value name="msgnum">
+				<shadow type="event_values">
+					<field name="event_values">4</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="rot_addlog" data-keywords="日志|酷q|ir功能">
+			<value name="content">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+		</block>
+	</category>
+	<sep></sep>
 	<category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
 		<block type="controls_if" data-keywords="如果|if|逻辑"></block>
 		<block type="logic_compare" data-keywords="=|!=|≠|条件|if|逻辑"></block>
@@ -276,7 +159,7 @@
 				<block type="logic_case">
 					<value name="caseName">
 						<shadow type="text">
-							<field name="TEXT">abc</field>
+							<field name="TEXT"></field>
 						</shadow>
 					</value>
 				</block>
@@ -292,7 +175,7 @@
 		<block type="logic_case" data-keywords="case|逻辑">
 			<value name="caseName">
 				<shadow type="text">
-					<field name="TEXT">abc</field>
+					<field name="TEXT"></field>
 				</shadow>
 			</value>
 		</block>
@@ -636,10 +519,10 @@
 	</category>
 	<sep></sep>
 	<category name="%{BKY_CATVOICEERA}" colour="%{BKY_VOICEERA_HUE}">
-		<block type="ve_gettts" data-keywords="语音合成|语音时代|酷q">
+		<block type="ve_gettts" data-keywords="语音合成|语音时代|酷q|IR">
 			<value name="content">
 				<shadow type="text">
-					<field name="TEXT">你好！语音时代！</field>
+					<field name="TEXT"></field>
 				</shadow>
 			</value>
 			<value name="ttsgroup">
@@ -648,10 +531,10 @@
 				</shadow>
 			</value>
 		</block>
-		<block type="ve_getos" data-keywords="词库|词库交互|语音时代|酷q">
+		<block type="ve_getos" data-keywords="词库|词库交互|语音时代|酷q|IR">
 			<value name="content">
 				<shadow type="text">
-					<field name="TEXT">你好啊</field>
+					<field name="TEXT"></field>
 				</shadow>
 			</value>
 			<value name="osgroup">

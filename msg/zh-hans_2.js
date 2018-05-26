@@ -12,6 +12,29 @@ Blockly.Msg["CHANGE_VALUE_TITLE"] = "更改值：";
 Blockly.Msg["CLEAN_UP"] = "整理块";
 Blockly.Msg["COLLAPSE_ALL"] = "折叠块";
 Blockly.Msg["COLLAPSE_BLOCK"] = "折叠块";
+
+Blockly.Msg["ROTFUNC_GROUP"] = "群";
+Blockly.Msg["ROTFUNC_DISCUSS"] = "讨论组";
+Blockly.Msg["ROTFUNC_PRIVATE"] = "私聊";
+Blockly.Msg["ROTFUNC_SENDMSG"] = "发送 %1 消息 %2 号码 %3 消息内容 %4";
+Blockly.Msg["ROTFUNC_SENDMSG_TOOLTIP"] = "发送各类QQ消息";
+Blockly.Msg["ROTFUNC_SENDVOICEMSG"] = "发送 %1 语音消息 %2 号码 %3 消息内容 %4";
+Blockly.Msg["ROTFUNC_SENDVOICEMSG_TOOLTIP"] = "直接发送语音消息。本拼图需要安装「语音时代」。";
+Blockly.Msg["ROTFUNC_SENDLIKE"] = "发送赞 %1 号码 %2 次数 %3";
+Blockly.Msg["ROTFUNC_SENDLIKE_TOOLTIP"] = "向指定QQ发送赞，最多10次";
+Blockly.Msg["ROTFUNC_ADDLOG"] = "输出 %1 日志 %2 日志内容 %3";
+Blockly.Msg["ROTFUNC_ADDLOG_TOOLTIP"] = "输出各类型的日志，方便调试";
+Blockly.Msg["ROTFUNC_JINYAN"] = "禁言指定Q号 %1 群号 %2 Q号 %3 时长(秒) %4";
+Blockly.Msg["ROTFUNC_JINYAN_TOOLTIP"] = "禁言指定QQ号，时间单位为秒。如果时间为0则为解禁。本参数无返回值";
+Blockly.Msg["ROTFUNC_GETGROUPLIST"] = "获取机器人加的所有群";
+Blockly.Msg["ROTFUNC_GETGROUPLIST_TOOLTIP"] = "输出机器人所加的所有群，格式为“xxxxxxx|xxxxxxx|xxxxxxx”";
+Blockly.Msg["ROTFUNC_DELETEMSG"] = "撤回指定消息 %1 群号 %2 消息ID %3 消息序号 %4";
+Blockly.Msg["ROTFUNC_DELETEMSG_TOOLTIP"] = "撤回指定消息";
+Blockly.Msg["ROTFUNC_GETUSERNAME_GET"] = "获取";
+Blockly.Msg["ROTFUNC_GETUSERNAME_NICKNAME"] = "的昵称";
+Blockly.Msg["ROTFUNC_GETUSERNAME_GROUPNAME"] = "的群名称";
+Blockly.Msg["ROTFUNC_GETUSERNAME_TOOLTIP"] = "根据号码输出昵称，如果没有获取到则返回空";
+
 Blockly.Msg["COLOUR_BLEND_COLOUR1"] = "颜色1";
 Blockly.Msg["COLOUR_BLEND_COLOUR2"] = "颜色2";
 Blockly.Msg["COLOUR_BLEND_HELPURL"] = "http://meyerweb.com/eric/tools/color-blend/";  // untranslated
@@ -435,6 +458,7 @@ Blockly.Msg["COLOUR_HUE"] = "20";
 Blockly.Msg["TIME_HUE"] = "90";
 
 Blockly.Msg["ROTCODE_HUE"] = "45";
+//Blockly.Msg["ROTEVENT_HUE"] = "300";
 Blockly.Msg["ROTEVENT_HUE"] = "300";
 Blockly.Msg["ROTFUNC_HUE"] = "270";
 

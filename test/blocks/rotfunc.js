@@ -38,15 +38,6 @@ Blockly.defineBlocksWithJsonArray([
       },
       {
         "type": "input_value",
-        "name": "rotqq",
-        "check": [
-          "Number",
-          "String"
-        ],
-        "align": "RIGHT"
-      },
-      {
-        "type": "input_value",
         "name": "idnumber",
         "check": [
           "Number",
@@ -68,20 +59,59 @@ Blockly.defineBlocksWithJsonArray([
     "helpUrl": ""
   },
   {
-    "type": "rot_sendlike",
-    "message0": "%{BKY_ROTFUNC_SENDLIKE}",
+    "type": "rot_sendvoicemsg",
+    "message0": "%{BKY_ROTFUNC_SENDVOICEMSG}",
     "args0": [
       {
-        "type": "input_dummy"
+        "type": "field_dropdown",
+        "name": "type",
+        "options": [
+          [
+            "%{BKY_ROTFUNC_GROUP}",
+            "group"
+          ],
+          [
+            "%{BKY_ROTFUNC_PRIVATE}",
+            "private"
+          ],
+          [
+            "%{BKY_ROTFUNC_DISCUSS}",
+            "discuss"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy",
+        "align": "RIGHT"
       },
       {
         "type": "input_value",
-        "name": "rotqq",
+        "name": "idnumber",
         "check": [
           "Number",
           "String"
         ],
         "align": "RIGHT"
+      },
+      {
+        "type": "input_value",
+        "name": "msg",
+        "check": "String",
+        "align": "RIGHT"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "%{BKY_ROTFUNC_HUE}",
+    "tooltip": "%{BKY_ROTFUNC_SENDVOICEMSG_TOOLTIP}",
+    "helpUrl": ""
+  },
+  {
+    "type": "rot_sendlike",
+    "message0": "%{BKY_ROTFUNC_SENDLIKE}",
+    "args0": [
+      {
+        "type": "input_dummy"
       },
       {
         "type": "input_value",
@@ -156,15 +186,6 @@ Blockly.defineBlocksWithJsonArray([
       },
       {
         "type": "input_value",
-        "name": "rotqq",
-        "check": [
-          "Number",
-          "String"
-        ],
-        "align": "RIGHT"
-      },
-      {
-        "type": "input_value",
         "name": "groupnumber",
         "check": [
           "Number",
@@ -202,19 +223,6 @@ Blockly.defineBlocksWithJsonArray([
     "lastDummyAlign0": "RIGHT",
     "message0": "%{BKY_ROTFUNC_GETGROUPLIST}",
     "args0": [
-      {
-        "type": "input_dummy",
-        "align": "RIGHT"
-      },
-      {
-        "type": "input_value",
-        "name": "rotqq",
-        "check": [
-          "Number",
-          "String"
-        ],
-        "align": "RIGHT"
-      }
     ],
     "inputsInline": false,
     "output": null,
@@ -231,7 +239,7 @@ Blockly.defineBlocksWithJsonArray([
       },
       {
         "type": "input_value",
-        "name": "rotqq",
+        "name": "groupnum",
         "check": [
           "Number",
           "String"

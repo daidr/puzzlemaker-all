@@ -374,7 +374,7 @@ Code.discard = function() {
   }
   
 };
-$("#toolbox").load("blocks/blocks.xml",function(){
+$("#toolbox").load("test/blocks/blocks.xml",function(){
 	Code.init();
 	var b = function() {
 				Code.workspace.updateToolbox($("#toolbox_xml")[0]);

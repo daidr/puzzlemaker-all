@@ -8,22 +8,17 @@ Blockly.JavaScript['rotevent_allevent'] = function (block) {
   var value_eventtypeinput = Blockly.JavaScript.valueToCode(block, 'eventTypeInput', Blockly.JavaScript.ORDER_ATOMIC);
   var statements_action = Blockly.JavaScript.statementToCode(block, 'action');
   var dropdown_dispose = block.getFieldValue('dispose');
-  var code = "function " + value_eventtypeinput + "(event){\n  var eventarray = event.split('|,|,|,|,|');\n" + statements_action;
+  Blockly.JavaScript.provideFunction_(
+    'setValue',
+    ['var eventarray = {};']);
+  var code = "function " + value_eventtypeinput + "(event){\n  eventarray = event.split('|,|,|,|,|');\n" + statements_action;
   code = code + "return \"" + dropdown_dispose + "\";" + "\n}\n";
   return code;
 };
 
 Blockly.JavaScript['event_rotsys'] = function (block) { var a = block.getFieldValue("event_type"); return [a, Blockly.JavaScript.ORDER_ATOMIC] };
-Blockly.JavaScript['event_rotqq'] = function (b) { var a = "eventarray[0]"; return [a, Blockly.JavaScript.ORDER_ATOMIC] };
-Blockly.JavaScript['event_time'] = function (b) { var a = "eventarray[1]"; return [a, Blockly.JavaScript.ORDER_ATOMIC] };
-Blockly.JavaScript['event_msgtype'] = function (b) { var a = "eventarray[2]"; return [a, Blockly.JavaScript.ORDER_ATOMIC] };
-Blockly.JavaScript['event_msgid'] = function (b) { var a = "eventarray[3]"; return [a, Blockly.JavaScript.ORDER_ATOMIC] };
-Blockly.JavaScript['event_msgnum'] = function (b) { var a = "eventarray[4]"; return [a, Blockly.JavaScript.ORDER_ATOMIC] };
-Blockly.JavaScript['event_msgfrom'] = function (b) { var a = "eventarray[5]"; return [a, Blockly.JavaScript.ORDER_ATOMIC] };
-Blockly.JavaScript['event_person'] = function (b) { var a = "eventarray[6]"; return [a, Blockly.JavaScript.ORDER_ATOMIC] };
-Blockly.JavaScript['event_msg'] = function (b) { var a = "eventarray[7]"; return [a, Blockly.JavaScript.ORDER_ATOMIC] };
 
-
+Blockly.JavaScript['event_values'] = function (block) { var a = "eventarray[" + block.getFieldValue("event_values") + "]"; return [a, Blockly.JavaScript.ORDER_ATOMIC] };
 
 /* 
 Blockly.JavaScript['subtype_addgroup'] = function(b){var a="eventarray[0]";return[a,Blockly.JavaScript.ORDER_ATOMIC]};

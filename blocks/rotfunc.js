@@ -12,37 +12,28 @@ Blockly.Blocks.rotfunc.HUE = Blockly.Constants.rotfunc.HUE;
 Blockly.defineBlocksWithJsonArray([
   {
     "type": "rot_sendmsg",
-    "message0": "机器人_发送 %1 消息 %2 机器人QQ %3 号码 %4 消息内容 %5",
+    "message0": "%{BKY_ROTFUNC_SENDMSG}",
     "args0": [
       {
         "type": "field_dropdown",
         "name": "type",
         "options": [
           [
-            "群",
+            "%{BKY_ROTFUNC_GROUP}",
             "group"
           ],
           [
-            "私聊",
+            "%{BKY_ROTFUNC_PRIVATE}",
             "private"
           ],
           [
-            "讨论组",
+            "%{BKY_ROTFUNC_DISCUSS}",
             "discuss"
           ]
         ]
       },
       {
         "type": "input_dummy",
-        "align": "RIGHT"
-      },
-      {
-        "type": "input_value",
-        "name": "rotqq",
-        "check": [
-          "Number",
-          "String"
-        ],
         "align": "RIGHT"
       },
       {
@@ -64,24 +55,63 @@ Blockly.defineBlocksWithJsonArray([
     "previousStatement": null,
     "nextStatement": null,
     "colour": "%{BKY_ROTFUNC_HUE}",
-    "tooltip": "发送各类QQ消息",
+    "tooltip": "%{BKY_ROTFUNC_SENDMSG_TOOLTIP}",
     "helpUrl": ""
   },
   {
-    "type": "rot_sendlike",
-    "message0": "发送赞 %1 机器人QQ %2 号码 %3 次数 %4",
+    "type": "rot_sendvoicemsg",
+    "message0": "%{BKY_ROTFUNC_SENDVOICEMSG}",
     "args0": [
       {
-        "type": "input_dummy"
+        "type": "field_dropdown",
+        "name": "type",
+        "options": [
+          [
+            "%{BKY_ROTFUNC_GROUP}",
+            "group"
+          ],
+          [
+            "%{BKY_ROTFUNC_PRIVATE}",
+            "private"
+          ],
+          [
+            "%{BKY_ROTFUNC_DISCUSS}",
+            "discuss"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy",
+        "align": "RIGHT"
       },
       {
         "type": "input_value",
-        "name": "rotqq",
+        "name": "idnumber",
         "check": [
           "Number",
           "String"
         ],
         "align": "RIGHT"
+      },
+      {
+        "type": "input_value",
+        "name": "msg",
+        "check": "String",
+        "align": "RIGHT"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "%{BKY_ROTFUNC_HUE}",
+    "tooltip": "%{BKY_ROTFUNC_SENDVOICEMSG_TOOLTIP}",
+    "helpUrl": ""
+  },
+  {
+    "type": "rot_sendlike",
+    "message0": "%{BKY_ROTFUNC_SENDLIKE}",
+    "args0": [
+      {
+        "type": "input_dummy"
       },
       {
         "type": "input_value",
@@ -105,12 +135,12 @@ Blockly.defineBlocksWithJsonArray([
     "previousStatement": null,
     "nextStatement": null,
     "colour": "%{BKY_ROTFUNC_HUE}",
-    "tooltip": "向指定QQ发送赞，最多10次",
+    "tooltip": "%{BKY_ROTFUNC_SENDLIKE_TOOLTIP}",
     "helpUrl": ""
   },
   {
     "type": "rot_addlog",
-    "message0": "输出 %1 日志 %2 日志内容 %3",
+    "message0": "%{BKY_ROTFUNC_ADDLOG}",
     "args0": [
       {
         "type": "field_dropdown",
@@ -143,24 +173,15 @@ Blockly.defineBlocksWithJsonArray([
     "previousStatement": null,
     "nextStatement": null,
     "colour": "%{BKY_ROTFUNC_HUE}",
-    "tooltip": "输出各类型的日志，方便调试",
+    "tooltip": "%{BKY_ROTFUNC_ADDLOG_TOOLTIP}",
     "helpUrl": ""
   },
   {
     "type": "rot_jinyan",
-    "message0": "禁言指定Q号 %1 机器人QQ %2 群号 %3 Q号 %4 时长(秒) %5",
+    "message0": "%{BKY_ROTFUNC_JINYAN}",
     "args0": [
       {
         "type": "input_dummy",
-        "align": "RIGHT"
-      },
-      {
-        "type": "input_value",
-        "name": "rotqq",
-        "check": [
-          "Number",
-          "String"
-        ],
         "align": "RIGHT"
       },
       {
@@ -194,44 +215,31 @@ Blockly.defineBlocksWithJsonArray([
     "previousStatement": null,
     "nextStatement": null,
     "colour": "%{BKY_ROTFUNC_HUE}",
-    "tooltip": "禁言指定QQ号，时间单位为秒。如果时间为0则为解禁。本参数无返回值",
+    "tooltip": "%{BKY_ROTFUNC_JINYAN_TOOLTIP}",
     "helpUrl": ""
   },
   {
     "type": "rot_getgrouplist",
     "lastDummyAlign0": "RIGHT",
-    "message0": "获取机器人加的所有群 %1 机器人QQ %2",
+    "message0": "%{BKY_ROTFUNC_GETGROUPLIST}",
     "args0": [
-      {
-        "type": "input_dummy",
-        "align": "RIGHT"
-      },
-      {
-        "type": "input_value",
-        "name": "rotqq",
-        "check": [
-          "Number",
-          "String"
-        ],
-        "align": "RIGHT"
-      }
     ],
     "inputsInline": false,
     "output": null,
     "colour": "%{BKY_ROTFUNC_HUE}",
-    "tooltip": "输出机器人所加的所有群，格式为“xxxxxxx|xxxxxxx|xxxxxxx”",
+    "tooltip": "%{BKY_ROTFUNC_GETGROUPLIST_TOOLTIP}",
     "helpUrl": ""
   },
   {
     "type": "rot_deleteMsg",
-    "message0": "撤回指定消息 %1 机器人QQ %2 消息ID %3 消息序号 %4",
+    "message0": "%{BKY_ROTFUNC_DELETEMSG}",
     "args0": [
       {
         "type": "input_dummy"
       },
       {
         "type": "input_value",
-        "name": "rotqq",
+        "name": "groupnum",
         "check": [
           "Number",
           "String"
@@ -260,7 +268,7 @@ Blockly.defineBlocksWithJsonArray([
     "previousStatement": null,
     "nextStatement": null,
     "colour": "%{BKY_ROTFUNC_HUE}",
-    "tooltip": "撤回指定消息",
+    "tooltip": "%{BKY_ROTFUNC_DELETEMSG_TOOLTIP}",
     "helpUrl": ""
   }
 ]);
@@ -268,7 +276,7 @@ Blockly.defineBlocksWithJsonArray([
 Blockly.Blocks['rot_getusername'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("获取")
+      .appendField(Blockly.Msg["ROTFUNC_GETUSERNAME_GET"])
       .appendField(new Blockly.FieldDropdown([["QQ", "qq"]], function (value) {
         var newQQ = (value == 'qq');
         var block = this.sourceBlock_;
@@ -280,11 +288,11 @@ Blockly.Blocks['rot_getusername'] = {
       .setCheck(["Number", "String"])
       .setAlign(Blockly.ALIGN_RIGHT);
     this.appendDummyInput('content')
-      .appendField("的昵称");
+      .appendField(Blockly.Msg["ROTFUNC_GETUSERNAME_NICKNAME"]);
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(Blockly.Blocks.rotfunc.HUE);
-    this.setTooltip("根据号码输出昵称，如果没有获取到则返回空");
+    this.setTooltip(Blockly.Msg["ROTFUNC_GETUSERNAME_TOOLTIP"]);
     this.setHelpUrl("");
     thisBlock = this;
   },
@@ -302,10 +310,10 @@ Blockly.Blocks['rot_getusername'] = {
     this.removeInput('content');
     if (isQQ) {
       this.appendDummyInput('content')
-        .appendField("的昵称");
+        .appendField(Blockly.Msg["ROTFUNC_GETUSERNAME_NICKNAME"]);
     } else {
       this.appendDummyInput('content')
-        .appendField("的群名称");
+        .appendField(Blockly.Msg["ROTFUNC_GETUSERNAME_GROUPNAME"]);
     }
   }
 };

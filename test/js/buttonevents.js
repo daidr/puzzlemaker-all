@@ -262,9 +262,6 @@ $(document).ready(function () {
 	setTimeout("readTemporary();", 500);
 });
 
-
-
-
 function getNonFunctions(c) {
 	var e = c.getTopBlocks();
 	var a = [];

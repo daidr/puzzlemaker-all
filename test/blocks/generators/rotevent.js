@@ -8,7 +8,10 @@ Blockly.JavaScript['rotevent_allevent'] = function (block) {
   var value_eventtypeinput = Blockly.JavaScript.valueToCode(block, 'eventTypeInput', Blockly.JavaScript.ORDER_ATOMIC);
   var statements_action = Blockly.JavaScript.statementToCode(block, 'action');
   var dropdown_dispose = block.getFieldValue('dispose');
-  var code = "function " + value_eventtypeinput + "(event){\n  var eventarray = event.split('|,|,|,|,|');\n" + statements_action;
+  Blockly.JavaScript.provideFunction_(
+    'setValue',
+    ['var eventarray = {};']);
+  var code = "function " + value_eventtypeinput + "(event){\n  eventarray = event.split('|,|,|,|,|');\n" + statements_action;
   code = code + "return \"" + dropdown_dispose + "\";" + "\n}\n";
   return code;
 };
