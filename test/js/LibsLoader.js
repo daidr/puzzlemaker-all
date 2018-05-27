@@ -306,45 +306,47 @@ function LibsLoader() {
         $(".header_menu").css("margin-top", "-" + ($(".header_menu").height() + 100) + "px");
         $(".loadingtext").text("Having fun!");
         $(".loadingpage").slideToggle();
-        var referrer = document.createElement('a');
-        referrer.href = document.referrer;
-        var topHost = referrer.hostname;
-        switch (topHost) {
-            case "app.daidr.me":
-                break;
-            case "127.0.0.1":
-                break;
-            case "www.lastdream.net":
-                Lobibox.window({
-                    title: '内嵌编辑器提醒',
-                    content: "<p style='color:#fff;text-align:center;font-size:20px;'>www.lastdream.net为官方认证编辑器站点，你可以在这里放心地进行你的创作。</p>",
-                    height: 170,
-                    buttons: {
-                        ok: {
-                            text: '确定',
-                            class: 'lobibox_button',
-                            closeOnClick: true
+        if (self != top) {
+            var referrer = document.createElement('a');
+            referrer.href = document.referrer;
+            var topHost = referrer.hostname;
+            switch (topHost) {
+                case "app.daidr.me":
+                    break;
+                case "127.0.0.1":
+                    break;
+                case "www.lastdream.net":
+                    Lobibox.window({
+                        title: '内嵌编辑器提醒',
+                        content: "<p style='color:#fff;text-align:center;font-size:20px;'>www.lastdream.net为官方认证编辑器站点，你可以在这里放心地进行你的创作。</p>",
+                        height: 170,
+                        buttons: {
+                            ok: {
+                                text: '确定',
+                                class: 'lobibox_button',
+                                closeOnClick: true
+                            }
                         }
-                    }
-                });
-                break;
-            default:
-                Lobibox.window({
-                    title: '内嵌编辑器提醒',
-                    content: "<p style='color:#fff;text-align:center;font-size:20px;'>当前站点" + topHost + "不是官方认证站点，在这里进行操作可能会导致隐私数据泄漏，请谨慎操作！</p>",
-                    height: 175,
-                    buttons: {
-                        ok: {
-                            text: '确定',
-                            class: 'lobibox_button',
-                            closeOnClick: true
+                    });
+                    break;
+                default:
+                    Lobibox.window({
+                        title: '内嵌编辑器提醒',
+                        content: "<p style='color:#fff;text-align:center;font-size:20px;'>当前站点" + topHost + "不是官方认证站点，在这里进行操作可能会导致隐私数据泄漏，请谨慎操作！</p>",
+                        height: 175,
+                        buttons: {
+                            ok: {
+                                text: '确定',
+                                class: 'lobibox_button',
+                                closeOnClick: true
+                            }
                         }
-                    }
-                });
-                break;
+                    });
+                    break;
+            }
         }
+
     }
 
 }
-
 LibsLoader();
