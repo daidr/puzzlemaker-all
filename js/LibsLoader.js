@@ -7,7 +7,6 @@
  * ============================================
  * 
  * */
-var theDevKey = 0, theKey = "", hasBeta = 0;
 var libsConfig = {
     libs: {
         css: ["style.day.min.css", "iconfont/material-icons.css", "css/PuzzleTips.css", "css/Lobibox.min.css"],
@@ -16,18 +15,18 @@ var libsConfig = {
     }
 }
 function setCookie(c_name, value, expiredays) {
-	var exdate = new Date();
-	exdate.setDate(exdate.getDate() + expiredays);
-	document.cookie = c_name + "=" + escape(value) +
-		((expiredays == null) ? "" : ";expires=" + exdate.toGMTString());
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + expiredays);
+    document.cookie = c_name + "=" + escape(value) +
+        ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString());
 }
 
 function getCookie(name) {
-	var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
-	if (arr = document.cookie.match(reg))
-		return unescape(arr[2]);
-	else
-		return null;
+    var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+    if (arr = document.cookie.match(reg))
+        return unescape(arr[2]);
+    else
+        return null;
 }
 function randomString(len) {
     len = len || 32;
@@ -39,60 +38,6 @@ function randomString(len) {
     }
     return pwd;
 }
-
-
-
-if (getCookie("test") !== "true") {
-    hasBeta = 111;
-
-    $(document).keypress(function (e) {
-        if (e.shiftKey && e.keyCode == 68) {
-            theDevKey = 1;
-        }
-        if (e.shiftKey && e.keyCode == 69 && theDevKey == 1) {
-            theDevKey = 2;
-        }
-        if (e.shiftKey && e.keyCode == 86 && theDevKey == 2) {
-            theDevKey = 0;
-            theKey = randomString(32);
-            console.log("进入内测模式：请输入 imADeveloper(\"" + theKey + "\") 以进入调试模式");
-            Lobibox.window({
-                title: '打开开发者内测模式',
-                content: "<p style='color:#fff;text-align:center;font-size:20px;'>请打开Console，按照提示输入内容。</p>",
-                height: 165,
-                buttons: {
-                    ok: {
-                        text: '确定',
-                        class: 'lobibox_button',
-                        closeOnClick: true
-                    }
-                }
-            });
-        }
-    });
-} else {
-    $(".style-beta").text(".loadingpage path.loadingpath {fill: #8bc34a !important;}.loadingpage .loadingtext {color: #8bc34a !important;}");
-    libsConfig = {
-        libs: {
-            css: ["test/style.day.css", "iconfont/material-icons.css", "css/PuzzleTips.css", "css/Lobibox.min.css"],
-            js: ["js/Base64.js", "face/face.js", "js/jquery-ui-1.10.4.min.js", "test/js/PuzzleTips.js", "blockly_compressed.js", "test/msg/zh-hans.js", "test/msg/zh-hans_2.js", "test/js/lobibox.min.js", "test/js/aes.js", "test/js/encrypt.js"],
-            puzzle: ["test/blocks/math.js", "test/blocks/text.js", "test/blocks/loops.js", "test/blocks/procedures.js", "test/blocks/logic.js", "test/blocks/lists.js", "test/blocks/variables.js", "test/blocks/rotcode.js", "test/blocks/rotevent.js", "test/blocks/rotfunc.js", "test/blocks/sysdisk.js", "test/blocks/time.js", "test/blocks/voiceera.js", "test/blocks/http.js", "test/blocks/json.js", "javascript.js", "test/blocks/generators/math.js", "test/blocks/generators/text.js", "test/blocks/generators/loops.js", "test/blocks/generators/procedures.js", "test/blocks/generators/logic.js", "test/blocks/generators/lists.js", "test/blocks/generators/variables.js", "test/blocks/generators/rotcode.js", "test/blocks/generators/rotevent.js", "test/blocks/generators/rotfunc.js", "test/blocks/generators/sysdisk.js", "test/blocks/generators/time.js", "test/blocks/generators/voiceera.js", "test/blocks/generators/http.js", "test/blocks/generators/json.js", "test/js/code.js", "test/js/buttonevents.js"]
-        }
-    }
-}
-
-function imADeveloper(text) {
-    if (hasBeta !== 111) {
-        return undefined;
-    }
-    if (text !== theKey || text == "") {
-        return undefined;
-    } else {
-        setCookie("test", "true", 999999);
-        location.reload();
-    }
-}
-
 
 function outputLogo() {
     var outputjs = "var style_3d = \"text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba( 0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0 ,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15); font-size:5em;\";console.log(\"%c   PuzzleMaker\", \"padding:30px 30px;background:url('http://127.0.0.1/code/media/logo_console.svg') no-repeat;color:#4582ec;font-size:45px;line-height:30px;\");console.log(\"%c功能丰富 · 入门简单 · 操作便捷\", \"color:#4582ec;\");console.log(\"%c嘿嘿嘿你打开控制台干什么？在这里乱输入东西编辑器可是会坏掉的哦（滑稽\", \"color:#4582ec;\");console.log(\"%cLibsLoader %cv0.1 · 戴兜 · https://weibo.com/keaidaidou · https://daidr.me\", style_3d, \"\");";
@@ -307,8 +252,47 @@ function LibsLoader() {
         $(".header_menu").css("margin-top", "-" + ($(".header_menu").height() + 100) + "px");
         $(".loadingtext").text("Having fun!");
         $(".loadingpage").slideToggle();
+        if (self != top) {
+            var referrer = document.createElement('a');
+            referrer.href = document.referrer;
+            var topHost = referrer.hostname;
+            switch (topHost) {
+                case "app.daidr.me":
+                    break;
+                case "127.0.0.1":
+                    break;
+                case "www.lastdream.net":
+                    Lobibox.window({
+                        title: '内嵌编辑器提醒',
+                        content: "<p style='color:#fff;text-align:center;font-size:20px;'>www.lastdream.net为官方认证编辑器站点，你可以在这里放心地进行你的创作。</p>",
+                        height: 170,
+                        buttons: {
+                            ok: {
+                                text: '确定',
+                                class: 'lobibox_button',
+                                closeOnClick: true
+                            }
+                        }
+                    });
+                    break;
+                default:
+                    Lobibox.window({
+                        title: '内嵌编辑器提醒',
+                        content: "<p style='color:#fff;text-align:center;font-size:20px;'>当前站点" + topHost + "不是官方认证站点，在这里进行操作可能会导致隐私数据泄漏，请谨慎操作！</p>",
+                        height: 175,
+                        buttons: {
+                            ok: {
+                                text: '确定',
+                                class: 'lobibox_button',
+                                closeOnClick: true
+                            }
+                        }
+                    });
+                    break;
+            }
+        }
+
     }
 
 }
-
 LibsLoader();

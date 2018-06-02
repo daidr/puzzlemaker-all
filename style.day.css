@@ -215,6 +215,10 @@ body {
     content: "\E872";
 }
 
+.header_menu a#menu_about:before {
+    content: "info";
+}
+
 .header_menu li:hover a:before {
     left: -11px;
     filter: alpha(opacity=100);
