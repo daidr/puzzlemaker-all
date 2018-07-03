@@ -71,7 +71,32 @@
 				</shadow>
 			</value>
 		</block>
-		<block type="rot_sendvoicemsg" data-keywords="发送消息|群消息|私聊消息|讨论组消息|酷q|ir功能|语音时代">
+		<block type="rot_sendmsg" data-keywords="发送消息|群消息|私聊消息|讨论组消息|酷q|ir功能">
+			<value name="idnumber">
+				<shadow type="math_number">
+					<field name="NUM"></field>
+				</shadow>
+			</value>
+			<value name="msg">
+				<shadow type="rotcode_record" data-keywords="发送语音|cq码|酷q码|ir变量">
+					<value name="filename">
+						<shadow type="ve_gettts">
+							<value name="content">
+								<shadow type="text">
+									<field name="TEXT"></field>
+								</shadow>
+							</value>
+							<value name="ttsgroup">
+								<shadow type="text">
+									<field name="TEXT">度丫丫.vdb</field>
+								</shadow>
+							</value>
+						</shadow>
+					</value>
+				</shadow>
+			</value>
+		</block>
+		<!-- 		<block type="rot_sendvoicemsg" data-keywords="发送消息|群消息|私聊消息|讨论组消息|酷q|ir功能|语音时代">
 			<value name="idnumber">
 				<shadow type="math_number">
 					<field name="NUM"></field>
@@ -82,7 +107,7 @@
 					<field name="TEXT"></field>
 				</shadow>
 			</value>
-		</block>
+		</block> -->
 		<block type="rot_sendlike" data-keywords="点赞|名片赞|发送赞|酷q|ir功能">
 			<value name="idnumber">
 				<shadow type="math_number">

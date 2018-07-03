@@ -58,7 +58,7 @@ Blockly.defineBlocksWithJsonArray([
     "tooltip": "%{BKY_ROTFUNC_SENDMSG_TOOLTIP}",
     "helpUrl": ""
   },
-  {
+  /* {
     "type": "rot_sendvoicemsg",
     "message0": "%{BKY_ROTFUNC_SENDVOICEMSG}",
     "args0": [
@@ -105,7 +105,7 @@ Blockly.defineBlocksWithJsonArray([
     "colour": "%{BKY_ROTFUNC_HUE}",
     "tooltip": "%{BKY_ROTFUNC_SENDVOICEMSG_TOOLTIP}",
     "helpUrl": ""
-  },
+  }, */
   {
     "type": "rot_sendlike",
     "message0": "%{BKY_ROTFUNC_SENDLIKE}",

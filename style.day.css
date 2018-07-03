@@ -216,7 +216,7 @@ body {
 }
 
 .header_menu a#menu_about:before {
-    content: "info";
+    content: "\E88E";
 }
 
 .header_menu li:hover a:before {

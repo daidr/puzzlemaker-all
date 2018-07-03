@@ -258,8 +258,26 @@ function readTemporary() {
 	}
 }
 
+function welcome() {
+	if (getCookie("douSessionShare") !== null) {
+		var json = {};
+		var error = "";
+		try {
+			json = JSON.parse(doDecode(getCookie("douSessionShare")));
+		} catch (e) {
+			error = e;
+		}
+		if (error === "") {
+			if (json.uid !== 0) {
+				cusnotify('info', 'mini', true, 3000, MSG['LoginSuccessful'].replace('%1', json.fullname), false, false);
+			}
+		}
+	}
+}
+
 $(document).ready(function () {
-	setTimeout("readTemporary();", 500);
+	setTimeout("readTemporary();", 300);
+	setTimeout("welcome();", 100);
 });
 
 function getNonFunctions(c) {

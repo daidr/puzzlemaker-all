@@ -49,7 +49,7 @@ var MSG = {
   LoadFileWarning: "导入文件的大小 %1字节 超出正常值(可能导致浏览器卡顿)",
   LoadFileError: "导入文件的大小 %1字节 严重超出正常值(将导致浏览器卡顿)",
   LoginError: "请点击登录按钮，重新确认您的身份",
-  LoginSuccessful: "欢迎，%1",
+  LoginSuccessful: "欢迎回来，%1",
   LoginoutSuccessful: "退出成功",
   NotLoggedIn: "未登录，请登录后继续操作",
   UploadSuccessful: "代码上传完成，你的唯一绑定码为：<br /><br />%1",

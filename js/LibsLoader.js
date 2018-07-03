@@ -14,6 +14,7 @@ var libsConfig = {
         puzzle: ["blocks/math.js", "blocks/text.js", "blocks/loops.js", "blocks/procedures.js", "blocks/logic.js", "blocks/lists.js", "blocks/variables.js", "blocks/rotcode.js", "blocks/rotevent.js", "blocks/rotfunc.js", "blocks/sysdisk.js", "blocks/time.js", "blocks/voiceera.js", "blocks/http.js", "blocks/json.js", "javascript.js", "blocks/generators/math.js", "blocks/generators/text.js", "blocks/generators/loops.js", "blocks/generators/procedures.js", "blocks/generators/logic.js", "blocks/generators/lists.js", "blocks/generators/variables.js", "blocks/generators/rotcode.js", "blocks/generators/rotevent.js", "blocks/generators/rotfunc.js", "blocks/generators/sysdisk.js", "blocks/generators/time.js", "blocks/generators/voiceera.js", "blocks/generators/http.js", "blocks/generators/json.js", "js/code.min.js", "js/buttonevents.min.js"]
     }
 }
+var setTimeOutNumber = 5000;
 function setCookie(c_name, value, expiredays) {
     var exdate = new Date();
     exdate.setDate(exdate.getDate() + expiredays);
@@ -46,6 +47,14 @@ function outputLogo() {
 
 function LibsLoader() {
     outputLogo();
+    if (location.host === "test.app.daidr.me") {
+        if (getCookie("BetaRight") !== "true") {
+            alert("你正在尝试进入PuzzleMaker实时编译版本，该版本效果不代表最终产品效果，仅供内部调试使用！");
+            setCookie("BetaRight", "true", 9999999);
+        }
+        var setTimeOutNumber = 20000;
+        $(".style-beta").text(".loadingpage path.loadingpath{fill: #26a69a;}.loadingpage .loadingtext{color: #26a69a;}");
+    }
     var loadStyle = function (url) {
         var link = document.createElement('link');
         link.type = 'text/css';
@@ -117,7 +126,7 @@ function LibsLoader() {
         for (var i = 0, l = libsConfig.libs.css.length; i < l; i++) {
             $.ajax({
                 url: libsConfig.libs.css[i],
-                timeout: 5000,
+                timeout: setTimeOutNumber,
                 type: 'get',
                 cache: false,
                 async: true,
@@ -160,7 +169,7 @@ function LibsLoader() {
         //JS加载
         $.ajax({
             url: libsConfig.libs.js[i],
-            timeout: 5000,
+            timeout: setTimeOutNumber,
             type: 'get',
             cache: false,
             async: true,
@@ -206,7 +215,7 @@ function LibsLoader() {
         //PUZZLE加载
         $.ajax({
             url: libsConfig.libs.puzzle[i],
-            timeout: 5000,
+            timeout: setTimeOutNumber,
             cache: false,
             async: true,
             type: 'get',
@@ -262,6 +271,20 @@ function LibsLoader() {
                 case "127.0.0.1":
                     break;
                 case "www.lastdream.net":
+                    Lobibox.window({
+                        title: '内嵌编辑器提醒',
+                        content: "<p style='color:#fff;text-align:center;font-size:20px;'>www.lastdream.net为官方认证编辑器站点，你可以在这里放心地进行你的创作。</p>",
+                        height: 170,
+                        buttons: {
+                            ok: {
+                                text: '确定',
+                                class: 'lobibox_button',
+                                closeOnClick: true
+                            }
+                        }
+                    });
+                    break;
+                case "lastdream.net":
                     Lobibox.window({
                         title: '内嵌编辑器提醒',
                         content: "<p style='color:#fff;text-align:center;font-size:20px;'>www.lastdream.net为官方认证编辑器站点，你可以在这里放心地进行你的创作。</p>",

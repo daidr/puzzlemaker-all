@@ -20,7 +20,7 @@ Blockly.JavaScript['rot_sendmsg'] = function (block) {
   return code;
 };
 
-Blockly.JavaScript['rot_sendvoicemsg'] = function (block) {
+/* Blockly.JavaScript['rot_sendvoicemsg'] = function (block) {
   var dropdown_type = block.getFieldValue('type');
   //var value_rotqq = Blockly.JavaScript.valueToCode(block, 'rotqq', Blockly.JavaScript.ORDER_ATOMIC);
   var value_idnumber = Blockly.JavaScript.valueToCode(block, 'idnumber', Blockly.JavaScript.ORDER_ATOMIC);
@@ -34,7 +34,7 @@ Blockly.JavaScript['rot_sendvoicemsg'] = function (block) {
     var code = "sendDiscussVoiceMsg(eventarray[0]," + value_idnumber + "," + value_msg + ");\n"
   }
   return code;
-};
+}; */
 
 
 Blockly.JavaScript['rot_sendlike'] = function (block) {
