@@ -33,7 +33,7 @@ Blockly.Blocks['ve_gettts'] = {
     this.setInputsInline(false);
     this.setOutput(true, null);
     this.setColour(Blockly.Blocks.voiceera.HUE);
- this.setTooltip("合成成功返回音频文件名。合成失败返回-1。本拼图需要安装「语音时代」。\n自定义声源为「bin/VoiceDB」目录下的音源文件");
+ this.setTooltip("合成成功返回音频CQ/IR码。合成失败返回-1。本拼图需要安装「语音时代」。\n自定义声源为「bin/VoiceDB」目录下的音源文件");
  this.setHelpUrl("");
   },
   mutationToDom: function() {
@@ -49,7 +49,7 @@ Blockly.Blocks['ve_gettts'] = {
   updateAt_: function(isTTSC) {
     this.removeInput('ttsgroup');
     if (isTTSC) {
-      this.setTooltip("合成成功返回音频文件名。合成失败返回-1。本拼图需要安装「语音时代」。\n自定义声源为「bin/VoiceDB」目录下的音源文件");
+      this.setTooltip("合成成功返回音频CQ/IR码。合成失败返回-1。本拼图需要安装「语音时代」。\n自定义声源为「bin/VoiceDB」目录下的音源文件");
       this.appendValueInput("ttsgroup")
         .setCheck(null)
         .setAlign(Blockly.ALIGN_RIGHT)
@@ -64,7 +64,7 @@ Blockly.Blocks['ve_gettts'] = {
 		}), "ttstype")
         .appendField("音源");
     } else {
-      this.setTooltip("合成成功返回音频文件名。合成失败返回-1。本拼图需要安装「语音时代」。\n内置音源不需要「bin/VoiceDB」目录下含有音源文件");
+      this.setTooltip("合成成功返回音频CQ/IR码。合成失败返回-1。本拼图需要安装「语音时代」。\n内置音源不需要「bin/VoiceDB」目录下含有音源文件");
 	  this.appendDummyInput("ttsgroup")
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(new Blockly.FieldDropdown([["自定义","outtts"],["内置","intts"]],function(value) {
@@ -84,7 +84,7 @@ Blockly.Blocks['ve_gettts'] = {
 	var name = "了解「语音时代」";
     var option = {enabled: true};
     option.text = name;
-    var learnVoiceEra = function(){window.open("https://cqp.cc/t/33196");};
+    var learnVoiceEra = function(){window.open("https://cqp.cc/t/38141");};
     option.callback = learnVoiceEra;
     options.push(option);
   }

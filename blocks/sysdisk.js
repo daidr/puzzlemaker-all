@@ -17,7 +17,7 @@ Blockly.defineBlocksWithJsonArray([
 ,
 {
   "type": "sysdisk_writefile",
-  "message0": "磁盘_写文件 %1 完整路径 %2 文件内容 %3",
+  "message0": "写文件 %1 完整路径 %2 文件内容 %3",
   "args0": [
     {
       "type": "input_dummy"
@@ -44,7 +44,7 @@ Blockly.defineBlocksWithJsonArray([
 ,
 {
   "type": "sysdisk_readfile",
-  "message0": "磁盘_读文件 %1 完整路径 %2",
+  "message0": "读文件 %1 完整路径 %2",
   "args0": [
     {
       "type": "input_dummy"

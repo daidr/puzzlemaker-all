@@ -443,7 +443,7 @@ Blockly.BlockSvg.START_HAT = true;
 //Blockly.Msg["EVENT_GROUP_WARNING"] = "只能用在群消息事件内部";  // untranslated
 //Blockly.Msg["EVENT_DISCUSS_WARNING"] = "只能用在讨论组消息事件内部";
 Blockly.Msg["EVENT_ROTEVENT_WARNING"] = "警告: 只能在机器人事件内部使用此块！";
-Blockly.Msg["EVENT_HTTP_WARNING"] = "警告: 只能在HTTP网络访问拼图中使用此块！";
+Blockly.Msg["EVENT_REQUEST_WARNING"] = "警告: 只能在网络访问拼图中使用此块！";
 //Blockly.Msg["EVENT_ADDGROUP_WARNING"] = "只能用在群添加事件内部";
 
 
@@ -464,8 +464,6 @@ Blockly.Msg["ROTFUNC_HUE"] = "270";
 
 Blockly.Msg["VOICEERA_HUE"] = "#009AD2";
 Blockly.Msg["SYSDISK_HUE"] = "180";
-Blockly.Msg["HTTP_HUE"] = "200";
+Blockly.Msg["REQUEST_HUE"] = "200";
 
 Blockly.Msg["JSON_HUE"] = "240";
-
-Blockly.Msg["REQUEST_HUE"] = "20";

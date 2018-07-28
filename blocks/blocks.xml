@@ -78,19 +78,15 @@
 				</shadow>
 			</value>
 			<value name="msg">
-				<shadow type="rotcode_record" data-keywords="发送语音|cq码|酷q码|ir变量">
-					<value name="filename">
-						<shadow type="ve_gettts">
-							<value name="content">
-								<shadow type="text">
-									<field name="TEXT"></field>
-								</shadow>
-							</value>
-							<value name="ttsgroup">
-								<shadow type="text">
-									<field name="TEXT">度丫丫.vdb</field>
-								</shadow>
-							</value>
+				<shadow type="ve_gettts">
+					<value name="content">
+						<shadow type="text">
+							<field name="TEXT"></field>
+						</shadow>
+					</value>
+					<value name="ttsgroup">
+						<shadow type="text">
+							<field name="TEXT">度丫丫.vdb</field>
 						</shadow>
 					</value>
 				</shadow>
@@ -569,8 +565,8 @@
 			</value>
 		</block>
 	</category>
-	<category name="%{BKY_CATHTTP}" colour="%{BKY_HTTP_HUE}">
-		<block type="http_all">
+	<category name="%{BKY_CATREQUEST}" colour="%{BKY_REQUEST_HUE}">
+		<block type="request_all">
 			<mutation method="GET"></mutation>
 			<field name="method">GET</field>
 			<value name="url">
@@ -582,20 +578,20 @@
 				<block type="variables_set">
 					<field name="VAR">code</field>
 					<value name="VALUE">
-						<block type="http_all_responsecode"></block>
+						<block type="request_all_responsecode"></block>
 					</value>
 					<next>
 						<block type="variables_set">
 							<field name="VAR">body</field>
 							<value name="VALUE">
-								<block type="http_all_responsebody"></block>
+								<block type="request_all_responsebody"></block>
 							</value>
 						</block>
 					</next>
 				</block>
 			</statement>
 		</block>
-		<block type="http_all">
+		<block type="request_all">
 			<mutation method="POST"></mutation>
 			<field name="method">POST</field>
 			<field name="contentType">application/json</field>
@@ -613,20 +609,20 @@
 				<block type="variables_set">
 					<field name="VAR">code</field>
 					<value name="VALUE">
-						<block type="http_all_responsecode"></block>
+						<block type="request_all_responsecode"></block>
 					</value>
 					<next>
 						<block type="variables_set">
 							<field name="VAR">body</field>
 							<value name="VALUE">
-								<block type="http_all_responsebody"></block>
+								<block type="request_all_responsebody"></block>
 							</value>
 						</block>
 					</next>
 				</block>
 			</statement>
 		</block>
-		<block type="http_all">
+		<block type="request_all">
 			<mutation method="POST"></mutation>
 			<field name="method">POST</field>
 			<field name="contentType">x-www-form-urlencoded</field>
@@ -637,20 +633,20 @@
 			</value>
 			<value name="params">
 				<block type="text">
-					<field name="TEXT">value1=1&value2=2</field>
+					<field name="TEXT">value1=1&amp;value2=2</field>
 				</block>
 			</value>
 			<statement name="callback">
 				<block type="variables_set">
 					<field name="VAR">code</field>
 					<value name="VALUE">
-						<block type="http_all_responsecode"></block>
+						<block type="request_all_responsecode"></block>
 					</value>
 					<next>
 						<block type="variables_set">
 							<field name="VAR">body</field>
 							<value name="VALUE">
-								<block type="http_all_responsebody"></block>
+								<block type="request_all_responsebody"></block>
 							</value>
 						</block>
 					</next>

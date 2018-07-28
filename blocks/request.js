@@ -1,14 +1,14 @@
 'use strict';
 
-goog.provide('Blockly.Blocks.http');  // Deprecated
-goog.provide('Blockly.Constants.http');
+goog.provide('Blockly.Blocks.request');  // Deprecated
+goog.provide('Blockly.Constants.request');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Constants.http.HUE = Blockly.Msg["HTTP_HUE"];
-Blockly.Blocks.http.HUE = Blockly.Constants.http.HUE;
+Blockly.Constants.request.HUE = Blockly.Msg["REQUEST_HUE"];
+Blockly.Blocks.request.HUE = Blockly.Constants.request.HUE;
 
-Blockly.Blocks.http_all = {
+Blockly.Blocks.request_all = {
     init: function () {
         this.appendDummyInput().appendField("HTTP网络访问");
         this.appendDummyInput().appendField("请求方法：").appendField(new Blockly.FieldDropdown([["GET", "GET"], ["POST", "POST"]], function (a) {
@@ -18,7 +18,7 @@ Blockly.Blocks.http_all = {
         this.appendStatementInput("callback").appendField("响应处理");
         this.setPreviousStatement(true);
         this.setNextStatement(true);
-        this.setColour(Blockly.Blocks.http.HUE);
+        this.setColour(Blockly.Blocks.request.HUE);
         this.setTooltip("HTTP网络访问");
         this.setHelpUrl("")
     }, mutationToDom: function () {
@@ -46,7 +46,7 @@ Blockly.Blocks.http_all = {
         }
     }
 };
-Blockly.Blocks.http_all_responsebody = {
+Blockly.Blocks.request_all_responsebody = {
     init: function () {
         this.appendDummyInput().appendField("HTTP响应内容");
         this.setOutput(true);
@@ -59,7 +59,7 @@ Blockly.Blocks.http_all_responsebody = {
         var a = false;
         var b = this;
         do {
-            if (b.type == "http_all") {
+            if (b.type == "request_all") {
                 a = true;
                 break
             } b = b.getSurroundParent()
@@ -67,11 +67,11 @@ Blockly.Blocks.http_all_responsebody = {
         if (a) {
             this.setWarningText(null)
         } else {
-            this.setWarningText(Blockly.Msg.EVENT_HTTP_WARNING)
+            this.setWarningText(Blockly.Msg.EVENT_REQUEST_WARNING)
         }
     }
 };
-Blockly.Blocks.http_all_responsecode = {
+Blockly.Blocks.request_all_responsecode = {
     init: function () {
         this.appendDummyInput().appendField("HTTP响应状态码");
         this.setOutput(true);
@@ -84,7 +84,7 @@ Blockly.Blocks.http_all_responsecode = {
         var a = false;
         var b = this;
         do {
-            if (b.type == "http_all") {
+            if (b.type == "request_all") {
                 a = true;
                 break
             }
@@ -93,7 +93,7 @@ Blockly.Blocks.http_all_responsecode = {
         if (a) {
             this.setWarningText(null)
         } else {
-            this.setWarningText(Blockly.Msg.EVENT_HTTP_WARNING)
+            this.setWarningText(Blockly.Msg.EVENT_REQUEST_WARNING)
         }
     }
 };
