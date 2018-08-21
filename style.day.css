@@ -751,3 +751,8 @@ a[title='站长统计'] {
     /* Mozilla Firefox 4 to 18*/
     color: #fff;
 }
+
+iframe {
+    border: none;
+    background: transparent;
+}

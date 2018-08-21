@@ -78,10 +78,12 @@
 					animation: dash 5s linear both infinite;
 					fill: #46b5ff;
 				}
+
 				.loadingpage.error path.loadingpath {
 					animation: dash 5s linear both infinite;
 					fill: #ff1818;
 				}
+
 				.loadingpage .loadingtext {
 					position: absolute;
 					top: calc(50% + 250px);
@@ -190,7 +192,7 @@
 					<a id="menu_delete">清空拼图</a>
 				</li>
 				<li>
-					<a id="menu_about">关于我们</a>
+					<a id="menu_about">更多信息</a>
 				</li>
 			</ul>
 		</div>
@@ -285,12 +287,23 @@
 				margin: 0 70px;
 			}
 
+			.PuzzleMakerWindow a {
+				color: #fff;
+				font-size: 14px;
+			}
+
+			.PuzzleMakerWindow hr {
+				border: none;
+				border-bottom: #fff solid 2px;
+				opacity: 0.7;
+			}
+
 			.PuzzleMakerWindow .PuzzleHelpIcon {
 				cursor: help;
 				transform: translateY(3px);
 				color: #fff;
 				font-size: 20px;
-				z-index:5000;
+				z-index: 5000;
 				position: relative;
 			}
 
@@ -332,8 +345,8 @@
 			<i class="material-icons PuzzleHelpIcon " pdata-data-puzzletips="[必填]插件的名称，支持任意字符">help</i>
 			<label>插件名称</label>
 			<br />
-			<input pdata-data-id="pluginname" type="text" style="border-radius: 100px 0 0 100px;width: 210px;transform: translateX(-20px);" autocomplete="new-password"
-			 value="{$PLUGINNAME$}" />
+			<input pdata-data-id="pluginname" type="text" style="border-radius: 100px 0 0 100px;width: 210px;transform: translateX(-20px);"
+			 autocomplete="new-password" value="{$PLUGINNAME$}" />
 			<br />
 			<i class="material-icons PuzzleMoreBtn " pdata-data-moreid="1">arrow_drop_down</i>
 			<div class="PuzzleMoreContainer" pdata-data-open="0" pdata-data-moreid="1" style="display: none;">
@@ -357,8 +370,8 @@
 			<i class="material-icons PuzzleHelpIcon " pdata-data-puzzletips="[选填]拼图源代码将被加密，这将是你<br />以后编辑该插件的密码，请务必牢记。<br />留空则不设置主人密码">help</i>
 			<label>主人密码(请牢记)</label>
 			<br />
-			<input pdata-data-id="pluginpassword" type="url" autocomplete="new-password" onfocus="passwordFocus($(this))" onblur="passwordBlur($(this))" style="ime-mode: disabled;"
-			 onkeyup="" />
+			<input pdata-data-id="pluginpassword" type="url" autocomplete="new-password" onfocus="passwordFocus($(this))" onblur="passwordBlur($(this))"
+			 style="ime-mode: disabled;" onkeyup="" />
 		</div>
 		<div class="PuzzleMakerWindow" pdata-data-id="PasswordWindow">
 			<i class="material-icons PuzzleHelpIcon " pdata-data-puzzletips="拼图插件源代码被密码加密，并且不<br />会保存在任何地方，如果忘记了主人<br />密码，神仙都救不了你">help</i>
@@ -369,28 +382,32 @@
 			<div pdata-data-id="password_xmlcontent" style="display: none;">{$XMLCONTENT$}</div>
 			<div pdata-data-id="password_plugininfo" style="display: none;">{$PLUGININFO$}</div>
 		</div>
+		<div class="PuzzleMakerWindow" pdata-data-id="AboutWindow">
+			<p>PuzzleMaker是一个使用Google Blockly构建的可视化QQ机器人插件编辑器。能够帮助机器人主人快速编写QQ机器人插件。</p>
+			<p>交流社区：
+				<a href="https://bbs.app.daidr.me" target="_blank">https://bbs.app.daidr.me</a>
+			</p>
+			<p>Q群：
+				<a href="https://jq.qq.com/?_wv=1027&k=55e4LfK" target="_blank">580202355</a>
+			</p>
+			<p>Discord：
+				<a href="https://discord.gg/4Q3NugN" target="_blank">PuzzleMaker</a>
+			</p>
+			<p>微博：
+				<a href="https://weibo.com/keaidaidou" target="_blank">@戴兜_DaiDR</a>
+			</p>
+			<hr />
+			<p>当前插件在线</p>
+			<pm-iframe src="https://stats.app.daidr.me" height="75px" width="375px"></pm-iframe>
+			<hr />
+			<p>给我来杯咖啡呗(〃'▽'〃)</p>
+			<pm-iframe src="https://daidr.me/donate" height="220px" width="330px"></pm-iframe>
+		</div>
 	</div>
 
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/LibsLoader.min.js"></script>
 	<link rel="stylesheet" href="iconfont/material-icons.css">
-	<script>
-		var PuzzleMakerGlobalSetting = {};
-	</script>
-	<script>
-		(function () {
-			var bp = document.createElement('script');
-			var curProtocol = window.location.protocol.split(':')[0];
-			if (curProtocol === 'https') {
-				bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-			}
-			else {
-				bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-			}
-			var s = document.getElementsByTagName("script")[0];
-			s.parentNode.insertBefore(bp, s);
-		})();
-	</script>
 </body>
 
 </html>
