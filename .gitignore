@@ -5,3 +5,6 @@
 /*.html 的副本
 /.project
 /apps
+/js/code.js
+/js/buttonevents.js
+/js/LibsLoader.js
