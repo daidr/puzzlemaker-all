@@ -35,6 +35,6 @@ Blockly.JavaScript['sysdisk_getkeytext'] = function(block) {
   var value_inipath = Blockly.JavaScript.valueToCode(block, 'inipath', Blockly.JavaScript.ORDER_ATOMIC);
   var value_inisection = Blockly.JavaScript.valueToCode(block, 'inisection', Blockly.JavaScript.ORDER_ATOMIC);
   var value_inikey = Blockly.JavaScript.valueToCode(block, 'inikey', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = "getKeyText(" + value_inipath + "," + value_inisection + "," + value_inikey + ");\n";
-  return code;
+  var code = "getKeyText(" + value_inipath + "," + value_inisection + "," + value_inikey + ")";
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
