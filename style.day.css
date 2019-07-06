@@ -24,7 +24,7 @@ body {
 
 .header_background .bg {
     content: '';
-    background-image: url(media/headerSVG.svg);
+    background-image: url(./media/headerSVG.svg);
     width: 1920px;
     height: 100px;
     position: fixed;

@@ -748,6 +748,10 @@
 		</block>
 	</category>
 	<sep></sep>
+	<category name="额外拓展" colour="242" custom="">
+		<label text="额外拓展"></label>
+	</category>
+	<sep></sep>
 	<category name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
 	<category name="%{BKY_CATFUNCTIONS}" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
 </xml>
