@@ -537,6 +537,23 @@
 				</shadow>
 			</value>
 		</block>
+		<block type="rot_timestamptostrx" data-keywords="转换时间戳|time|时间">
+			<value name="timestamp">
+				<shadow type="variables_get">
+					<field name="VAR">时间戳</field>
+				</shadow>
+			</value>
+			<value name="dateformat">
+				<shadow type="text">
+					<field name="TEXT">yyyy/MM/dd </field>
+				</shadow>
+			</value>
+			<value name="timeformat">
+				<shadow type="text">
+					<field name="TEXT">hh:mm:ss</field>
+				</shadow>
+			</value>
+		</block>
 	</category>
 	<sep></sep>
 	<category name="%{BKY_CATVOICEERA}" colour="%{BKY_VOICEERA_HUE}">

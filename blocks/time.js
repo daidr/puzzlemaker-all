@@ -30,3 +30,45 @@ Blockly.defineBlocksWithJsonArray([{
   "helpUrl": ""
 }
 ]);
+
+Blockly.defineBlocksWithJsonArray([{
+  "type": "rot_timestamptostrx",
+  "message0": "10位时间戳转时间 %1 时间戳 %2 日期格式 %3 时间格式 %4",
+  "args0": [
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "input_value",
+      "name": "timestamp",
+      "check": [
+        "Number",
+        "String"
+      ],
+      "align": "RIGHT"
+    },
+    {
+      "type": "input_value",
+      "name": "dateformat",
+      "check": [
+        "String"
+      ],
+      "align": "RIGHT"
+    },
+    {
+      "type": "input_value",
+      "name": "timeformat",
+      "check": [
+        "String"
+      ],
+      "align": "RIGHT"
+    }
+  ],
+  "inputsInline": false,
+  "output": "String",
+  "colour": "%{BKY_TIME_HUE}",
+  "tooltip": "将10位数的时间戳转为文本。输出格式按照你的设定而定",
+  "helpUrl": ""
+}
+]);
