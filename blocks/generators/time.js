@@ -17,3 +17,20 @@ Blockly.JavaScript['rot_timestamptostrx'] = function (block) {
   var code = 'timestampToStrX(' + value_timestamp + "," + value_dateformat + "," + value_timeformat + ')';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+
+Blockly.JavaScript['rot_sleep'] = function (block) {
+  var value_time = Blockly.JavaScript.valueToCode(block, 'time', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = 'sleep(' + value_time + ');\n';
+  return code;
+};
+
+Blockly.JavaScript['rot_gettimestamp'] = function () {
+  var code = 'new Date().getTime()';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['rot_timestamptogmtstring'] = function (block) {
+  var value_timestamp = Blockly.JavaScript.valueToCode(block, 'timestamp', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = 'new Date(' + value_timestamp + ').toUTCString()';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};

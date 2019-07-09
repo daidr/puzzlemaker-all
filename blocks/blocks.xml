@@ -530,6 +530,7 @@
 		<block type="lists_sort" data-keywords="排序|升序|降序|数组|列表"></block>
 	</category>
 	<category name="%{BKY_CATTIME}" colour="%{BKY_TIME_HUE}">
+		<block type="rot_gettimestamp" data-keywords="获取时间戳|time|时间"></block>
 		<block type="rot_timestamptostr" data-keywords="转换时间戳|time|时间">
 			<value name="timestamp">
 				<shadow type="variables_get">
@@ -551,6 +552,20 @@
 			<value name="timeformat">
 				<shadow type="text">
 					<field name="TEXT">hh:mm:ss</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="rot_timestamptogmtstring" data-keywords="转换时间戳|time|时间">
+			<value name="timestamp">
+				<shadow type="variables_get">
+					<field name="VAR">时间戳</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="rot_sleep" data-keywords="延时|计时器|延迟|time|时间">
+			<value name="time">
+				<shadow type="math_number">
+					<field name="NUM">1000</field>
 				</shadow>
 			</value>
 		</block>
@@ -705,6 +720,20 @@
 							<field name="TEXT">/file.txt</field>
 						</shadow>
 					</value>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_hasfile" data-keywords="检测文件|文件是否存在|磁盘操作">
+			<value name="filepath">
+				<shadow type="text">
+					<field name="TEXT">/file.txt</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_deletefile" data-keywords="删除文件|清除文件|磁盘操作">
+			<value name="filepath">
+				<shadow type="text">
+					<field name="TEXT">/file.txt</field>
 				</shadow>
 			</value>
 		</block>

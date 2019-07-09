@@ -131,5 +131,35 @@ Blockly.defineBlocksWithJsonArray([
     "colour": "%{BKY_SYSDISK_HUE}",
     "tooltip": "从指定ini文件读入配置",
     "helpUrl": ""
+  },
+  {
+    "type": "sysdisk_hasfile",
+    "message0": "文件 %1 是否存在",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "filepath",
+        "check": "String"
+      }
+    ],
+    "output": "Boolean",
+    "colour": 180,
+    "tooltip": "检测磁盘上某个文件是否存在，返回逻辑型",
+    "helpUrl": ""
+  },
+  {
+    "type": "sysdisk_deletefile",
+    "message0": "删除文件 %1",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "filepath",
+        "check": "String"
+      }
+    ],
+    "output": "Boolean",
+    "colour": 180,
+    "tooltip": "删除磁盘上的某个文件，返回逻辑型",
+    "helpUrl": ""
   }
 ]);
