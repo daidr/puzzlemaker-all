@@ -35,6 +35,15 @@ Blockly.JavaScript['text'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
+Blockly.JavaScript.text.forceString_ = function(value) {
+  if (Blockly.JavaScript.text.forceString_.strRegExp.test(value)) {
+    return value;
+  }
+  return 'String(' + value + ')';
+};
+
+Blockly.JavaScript.text.forceString_.strRegExp = /^\s*'([^']|\\')*'\s*$/;
+
 Blockly.JavaScript['text_join'] = function(block) {
   // Create a string made up of any number of elements of any type.
   switch (block.itemCount_) {
@@ -43,14 +52,15 @@ Blockly.JavaScript['text_join'] = function(block) {
     case 1:
       var element = Blockly.JavaScript.valueToCode(block, 'ADD0',
           Blockly.JavaScript.ORDER_NONE) || '\'\'';
-      var code = 'String(' + element + ')';
+      var code = Blockly.JavaScript.text.forceString_(element);
       return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
     case 2:
       var element0 = Blockly.JavaScript.valueToCode(block, 'ADD0',
           Blockly.JavaScript.ORDER_NONE) || '\'\'';
       var element1 = Blockly.JavaScript.valueToCode(block, 'ADD1',
           Blockly.JavaScript.ORDER_NONE) || '\'\'';
-      var code = 'String(' + element0 + ') + String(' + element1 + ')';
+      var code = Blockly.JavaScript.text.forceString_(element0) + ' + ' +
+          Blockly.JavaScript.text.forceString_(element1);
       return [code, Blockly.JavaScript.ORDER_ADDITION];
     default:
       var elements = new Array(block.itemCount_);
