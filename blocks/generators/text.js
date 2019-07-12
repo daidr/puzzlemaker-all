@@ -408,7 +408,7 @@ Blockly.JavaScript['text_midx'] = function (block) {
   var value_substring1 = Blockly.JavaScript.valueToCode(block, 'subString1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_substring2 = Blockly.JavaScript.valueToCode(block, 'subString2', Blockly.JavaScript.ORDER_ATOMIC);
 
-  var code = value_mainstring + '.slice(' + value_mainstring + '.indexOf(' + value_substring1 + ')+' + value_substring1 + '.length,' + value_mainstring + '.indexOf(' + value_substring2 + '))';
+  var code = value_mainstring + '.indexOf(' + value_substring1 + ') != -1 &&' + value_mainstring + '.indexOf(' + value_substring2 + ') != -1 ? ' + value_mainstring + '.slice(' + value_mainstring + '.indexOf(' + value_substring1 + ') + ' + value_substring1 + '.length, ' + value_mainstring + '.indexOf(' + value_substring2 + ')) : ""';
 
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
