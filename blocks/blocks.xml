@@ -397,6 +397,23 @@
 				</shadow>
 			</value>
 		</block>
+		<block type="text_midx" data-keywords="middle|取出中间文本|文字|文本">
+			<value name="mainString">
+				<shadow type="text">
+					<field name="TEXT">abcdefg</field>
+				</shadow>
+			</value>
+			<value name="subString1">
+				<shadow type="text">
+					<field name="TEXT">c</field>
+				</shadow>
+			</value>
+			<value name="subString2">
+				<shadow type="text">
+					<field name="TEXT">g</field>
+				</shadow>
+			</value>
+		</block>
 		<block type="text_REtest" data-keywords="测试正则表达式|re|文字|文本">
 			<value name="tester">
 				<block type="text_newRE">
@@ -569,7 +586,7 @@
 				</shadow>
 			</value>
 		</block>
-		<block type="time_timer_folder">
+		<block type="time_timer_folder" data-keywords="延时|计时器|延迟|time|时间">
 			<value name="timeout">
 				<shadow type="math_number">
 					<field name="NUM">5000</field>

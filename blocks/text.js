@@ -917,3 +917,24 @@ Blockly.Blocks['text_newRE'] = { init: function () { this.appendValueInput("text
 Blockly.Blocks['text_REtest'] = { init: function () { this.appendValueInput("tester").setCheck("RegExp").appendField("用正则表达式"); this.appendValueInput("testee").setCheck("String").appendField("测试字符串"); this.setInputsInline(true); this.setOutput(true, "Boolean"); this.setColour(Blockly.Msg.TEXTS_HUE); this.setTooltip("匹配返回true，反之返回false（test代码块）"); this.setHelpUrl(null); this.setInputsInline(false); } };
 
 Blockly.Blocks['text_REexec'] = { init: function () { this.appendValueInput("tester").setCheck("RegExp").appendField("用正则表达式"); this.appendValueInput("testee").setCheck("String").appendField("匹配字符串"); this.setInputsInline(true); this.setOutput(true, "Array"); this.setColour(Blockly.Msg.TEXTS_HUE); this.setTooltip("返回一个匹配的字符串列表（exec代码块）"); this.setHelpUrl(null); this.setInputsInline(false); } };
+
+Blockly.Blocks['text_midx'] = {
+  init: function () {
+    this.appendValueInput("mainString")
+      .setCheck("String")
+      .appendField("取出");
+    this.appendValueInput("subString1")
+      .setCheck("String")
+      .appendField("中在");
+    this.appendValueInput("subString2")
+      .setCheck("String")
+      .appendField("和");
+    this.appendDummyInput()
+      .appendField("之间的部分");
+    this.setInputsInline(true);
+    this.setOutput(true, "String");
+    this.setTooltip("根据给出的2个子串提取出字符串中位于两者之间的内容");
+    this.setHelpUrl("");
+    this.setColour(Blockly.Msg.TEXTS_HUE);
+  }
+};
