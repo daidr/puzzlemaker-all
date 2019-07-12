@@ -29,8 +29,20 @@ Blockly.JavaScript['rot_gettimestamp'] = function () {
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
+function formatFunction(text) {
+  return text.replace(/(?<!\\)\"/g, "\\\"").replace(/\n/g, "");
+}
+
 Blockly.JavaScript['rot_timestamptogmtstring'] = function (block) {
   var value_timestamp = Blockly.JavaScript.valueToCode(block, 'timestamp', Blockly.JavaScript.ORDER_ATOMIC);
   var code = 'new Date(' + value_timestamp + ').toUTCString()';
   return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['time_timer_folder'] = function (block) {
+  var value_timeout = Blockly.JavaScript.valueToCode(block, 'timeout', Blockly.JavaScript.ORDER_ATOMIC);
+  var statements_actions = Blockly.JavaScript.statementToCode(block, 'actions');
+  // TODO: Assemble JavaScript into code variable.
+  var code = "time_Timer(\"" + formatFunction(statements_actions) + "\"," + value_timeout + ",eventarray[8]);\n";
+  return code;
 };

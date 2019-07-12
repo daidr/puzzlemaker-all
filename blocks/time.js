@@ -125,3 +125,21 @@ Blockly.defineBlocksWithJsonArray([{
   "helpUrl": ""
 }
 ]);
+
+Blockly.Blocks['time_timer_folder'] = {
+  init: function () {
+    this.appendValueInput("timeout")
+      .setCheck(["Number", "String"])
+      .appendField("在");
+    this.appendDummyInput()
+      .appendField("毫秒后执行");
+    this.appendStatementInput("actions")
+      .setCheck("Action")
+      .appendField("计时器");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(90);
+    this.setTooltip("根据设定的时间延迟执行内部拼图，不会阻塞后面拼图的执行");
+    this.setHelpUrl("");
+  }
+};
