@@ -211,6 +211,10 @@ body {
     content: "\E169";
 }
 
+.header_menu a#menu_addtoworkspace:before {
+    content: "\E168";
+}
+
 .header_menu a#menu_delete:before {
     content: "\E872";
 }
