@@ -6,52 +6,90 @@ goog.provide('Blockly.Constants.rotevent');
 goog.require('Blockly.Blocks');
 
 
-Blockly.defineBlocksWithJsonArray([{
-	"type": "rotevent_allevent",
-	"lastDummyAlign0": "RIGHT",
-	"message0": "创建机器人事件 响应 %1 %2 将消息 %3",
-	"args0": [
-		{
-			"type": "input_value",
-			"name": "eventTypeInput",
-			"check": "ROTEvent"
-		},
-		{
-			"type": "input_statement",
-			"name": "action",
-			"check": "Action"
-		},
-		{
-			"type": "field_dropdown",
-			"name": "dispose",
-			"options": [
-				[
-					"拦截",
-					"1"
-				],
-				[
-					"忽略",
-					"0"
-				]
-			]
+Blockly.Blocks['rotevent_allevent'] = {
+	init: function () {
+		this.appendValueInput("eventTypeInput")
+			.setCheck("ROTEvent")
+			.appendField("创建机器人事件 响应");
+		this.appendStatementInput("action")
+			.setCheck("Action");
+		this.appendDummyInput("dispose_container")
+			.setAlign(Blockly.ALIGN_RIGHT)
+			.appendField("将消息")
+			.appendField(new Blockly.FieldDropdown([["拦截", "1"], ["忽略", "0"]]), "dispose");
+		this.setColour(Blockly.Msg.ROTEVENT_HUE);
+		this.setTooltip("创建一个事件来响应相关操作");
+		this.setHelpUrl("");
+	},
+	onchange: function (b) {
+		if (!this.inputList[0].connection.targetBlock() || this.inputList[0].connection.targetBlock()["type"] != "event_rotsys") {
+			this.setWarningText("缺少事件类型拼图配合使用");
+			this.setTooltip("创建一个事件来响应相关操作");
+			if (this.getFieldValue("dispose") == null) {
+				this.appendDummyInput("dispose_container")
+					.setAlign(Blockly.ALIGN_RIGHT)
+					.appendField("将消息")
+					.appendField(new Blockly.FieldDropdown([["拦截", "1"], ["忽略", "0"]]), "dispose");
+			}
+			return;
+		} else {
+			this.setWarningText(null);
 		}
-	],
-	"colour": "%{BKY_ROTEVENT_HUE}",
-	"tooltip": "机器人收到群消息会调用本函数",
-	"helpUrl": ""
-}
-]);
+		if (this.inputList[0].connection.targetBlock().getFieldValue("event_type") != "ROTAddonsReload") {
+			if (this.getFieldValue("dispose") == null) {
+				this.appendDummyInput("dispose_container")
+					.setAlign(Blockly.ALIGN_RIGHT)
+					.appendField("将消息")
+					.appendField(new Blockly.FieldDropdown([["拦截", "1"], ["忽略", "0"]]), "dispose");
+			}
+		} else {
+			this.removeInput('dispose_container', true);
+		}
+	}
+};
 
 Blockly.Blocks.event_rotsys = {
 	init: function () {
 		this.appendDummyInput().appendField(new Blockly.FieldDropdown([
 			["收到群消息", "ROTGroupMsg"],
 			["收到私聊消息", "ROTPrivateMsg"],
-			["收到讨论组消息", "ROTDiscussMsg"]
+			["收到讨论组消息", "ROTDiscussMsg"],
+			["插件被重载", "ROTAddonsReload"]
 		]), "event_type");
 		this.setOutput(true, "ROTEvent");
 		this.setColour(210);
-		this.setTooltip("机器人相关的事件");
+		this.setTooltip("所要绑定的事件类型");
+	},
+	onchange: function (b) {
+		if (!this.parentBlock_ || this.parentBlock_["type"] != "rotevent_allevent") {
+			this.setWarningText("只能与创建事件拼图配合使用");
+			return;
+		} else {
+			this.setWarningText(null);
+		}
+		switch (this.getFieldValue("event_type")) {
+			case "ROTGroupMsg":
+				this.setTooltip("绑定机器人收到群消息的事件");
+				this.parentBlock_.setTooltip("绑定机器人收到群消息的事件");
+				this.parentBlock_.setTooltip("当机器人收到群消息时触发");
+				break;
+			case "ROTPrivateMsg":
+				this.setTooltip("绑定机器人收到私聊消息的事件");
+				this.parentBlock_.setTooltip("当机器人收到私聊消息时触发");
+				break;
+			case "ROTDiscussMsg":
+				this.setTooltip("绑定机器人收到讨论组消息的事件");
+				this.parentBlock_.setTooltip("当机器人收到讨论组消息时触发");
+				break;
+			case "ROTAddonsReload":
+				this.setTooltip("绑定PuzzleMaker重载插件的事件(只执行一次)");
+				this.parentBlock_.setTooltip("当PuzzleMaker重载插件时触发一次（可用于插件参数初始化）");
+				break;
+			default:
+				this.setTooltip("所要绑定的事件类型");
+				this.parentBlock_.setTooltip("创建一个事件来响应相关操作");
+				break;
+		}
 	}
 };
 
@@ -113,7 +151,7 @@ Blockly.Blocks.event_values = {
 							}
 							break;
 						case "3":
-							this.setTooltip("酷Q输出消息ID，IR输出消息ID");
+							this.setTooltip("酷Q、IR均输出消息ID");
 							break;
 						case "4":
 							this.setTooltip("酷Q恒为0，IR输出消息序号");
