@@ -43,6 +43,6 @@ Blockly.JavaScript['time_timer_folder'] = function (block) {
   var value_timeout = Blockly.JavaScript.valueToCode(block, 'timeout', Blockly.JavaScript.ORDER_ATOMIC);
   var statements_actions = Blockly.JavaScript.statementToCode(block, 'actions');
   // TODO: Assemble JavaScript into code variable.
-  var code = "time_Timer(\"" + formatFunction(statements_actions) + "\"," + value_timeout + ",eventarray[8]);\n";
+  var code = "time_Timer(\"(function (){var eventarray = BdLQAWLWDxkDJQUy2i.split('|,|,|,|,|');" + formatFunction(statements_actions) + "})()\"," + value_timeout + ",eventarray[8],event);\n";
   return code;
 };

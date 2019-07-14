@@ -19,6 +19,13 @@
 				</block>
 			</value>
 		</block>
+		<block type="rotevent_allevent" data-keywords="插件被重载|事件|酷q|IR">
+			<value name="eventTypeInput">
+				<block type="event_rotsys">
+					<field name="event_type">ROTAddonsReload</field>
+				</block>
+			</value>
+		</block>
 		<block type="event_values"></block>
 	</category>
 	<category name="%{BKY_CATROTCODE}" colour="%{BKY_ROTCODE_HUE}">
