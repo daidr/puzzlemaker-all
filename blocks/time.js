@@ -119,7 +119,7 @@ Blockly.defineBlocksWithJsonArray([{
     }
   ],
   "inputsInline": false,
-  "output": "String",
+  "output": ["String", "Number"],
   "colour": "%{BKY_TIME_HUE}",
   "tooltip": "将时间戳转为GMT时间格式。输出格式为“Wed, 01 Nov 2017 03:11:11 GMT”",
   "helpUrl": ""
