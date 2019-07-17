@@ -93,7 +93,7 @@ Blockly.defineBlocksWithJsonArray([{
 {
   "type": "rot_gettimestamp",
   "message0": "获取实际时间戳",
-  "output": "String",
+  "output": ["String", "Number"],
   "colour": "%{BKY_TIME_HUE}",
   "tooltip": "获取运行时的实际时间戳(13位)",
   "helpUrl": ""
@@ -119,7 +119,7 @@ Blockly.defineBlocksWithJsonArray([{
     }
   ],
   "inputsInline": false,
-  "output": ["String", "Number"],
+  "output": "String",
   "colour": "%{BKY_TIME_HUE}",
   "tooltip": "将时间戳转为GMT时间格式。输出格式为“Wed, 01 Nov 2017 03:11:11 GMT”",
   "helpUrl": ""
