@@ -1,21 +1,46 @@
 {
-    "files": [
+    "libs": [
         {
-	    "zhname": "PuzzleMaker解析插件",
-	    "version": "0.5.8 Beta",
-	    "filename": "me.daidr.puzzle.cpk",
-            "path": "{cqfile}\\app\\me.daidr.puzzle.cpk",
-            "md5": "ea6935b2bc5210ff5326bc244ed977b8",
-            "url": "https://cqpm.daidr.me/download/me.daidr.puzzle.cpk"
+            "zhname": "拼图解析组件",
+            "filename": "mujs.dll",
+            "path": "{path}\\bin\\mujs.dll",
+            "md5": "f5b0862bc057b7aaa2638a70765c722c",
+            "url": "https://app.daidr.me/download/mujs.dll"
         },
-	{
-	    "zhname": "MUJS解析组件",
-	    "version": "1.0.1 Release",
-	    "filename": "mujs.dll",
-            "path": "{cqfile}\\bin\\mujs.dll",
-            "md5": "9c1b8ea10dd1144345bac88412fd0c69",
-            "url": "https://cqpm.daidr.me/download/mujs.dll"
+        {
+            "zhname": "界面组件",
+            "filename": "htmlayout.dll",
+            "path": "{path}\\bin\\htmlayout.dll",
+            "md5": "dd305582564b7973909265167faacce4",
+            "url": "https://app.daidr.me/download/htmlayout.dll"
+        },
+        {
+            "zhname": "gzip必要组件",
+            "filename": "gzip.dll",
+            "path": "{path}\\bin\\htmlayout.dll",
+            "md5": "5eb4e7c1a48e211c2645080d4fb9d7b4",
+            "url": "https://app.daidr.me/download/gzip.dll"
         }
     ],
-    "notice": "PuzzleMaker目前还不是很完善，拼图会不定期增加，感谢您的支持。\n0.5.7B -> 0.5.8B的更新内容：\n将错误统一管理"
+    "plugin": {
+        "cq": {
+            "latest": "461ee720585691d30f34a2c088794311",
+            "info_group": {
+                "zhname": "Puzzle拼图管理器",
+                "filename": "me.daidr.puzzle.cpk",
+                "path": "{path}\\app\\me.daidr.puzzle.cpk",
+                "url": "https://app.daidr.me/download/me.daidr.puzzle.cpk"
+            }
+        },
+        "ir": {
+            "latest": "9adfa7667c89806665731add883984bb",
+            "info_group": {
+                "zhname": "Puzzle拼图管理器",
+                "filename": "Puzzle插件管理器.IR.dll",
+                "path": "{path}\\bin\\Puzzle拼图管理器.IR.dll",
+                "url": "https://app.daidr.me/download/app.dll"
+            }
+        }
+    },
+    "notice": "PuzzleMaker目前还处于测试阶段，更新比较频繁，感谢您的支持。\ud83d\ude09\n建议加下群哦：580202355"
 }
