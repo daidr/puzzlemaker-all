@@ -579,13 +579,13 @@
 				</shadow>
 			</value>
 		</block>
-		<block type="rot_timestamptogmtstring" data-keywords="转换时间戳|time|时间">
+		<!-- <block type="rot_timestamptogmtstring" data-keywords="转换时间戳|time|时间">
 			<value name="timestamp">
 				<shadow type="variables_get">
 					<field name="VAR">时间戳</field>
 				</shadow>
 			</value>
-		</block>
+		</block> -->
 		<block type="rot_sleep" data-keywords="延时|计时器|延迟|time|时间">
 			<value name="time">
 				<shadow type="math_number">
