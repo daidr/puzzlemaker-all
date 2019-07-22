@@ -23,7 +23,7 @@ body {
 }
 
 .header_background .bg {
-    content: '';
+    content: "";
     background-image: url(./media/headerSVG.svg);
     width: 1920px;
     height: 100px;
@@ -46,7 +46,7 @@ body {
     cursor: pointer;
     border-radius: 100px;
     background-color: transparent;
-    transition: all .3s;
+    transition: all 0.3s;
 }
 
 .header_menubtn path {
@@ -62,17 +62,17 @@ body {
 }
 
 .header_menubtn:hover .header_menubtn_path {
-    -webkit-animation: BtnBreath .5s ease-in-out infinite;
-    -moz-animation: BtnBreath .5s ease-in-out infinite;
-    animation: BtnBreath .5s ease-in-out infinite;
+    -webkit-animation: BtnBreath 0.5s ease-in-out infinite;
+    -moz-animation: BtnBreath 0.5s ease-in-out infinite;
+    animation: BtnBreath 0.5s ease-in-out infinite;
 }
 
 .header_menubtn:hover path {
     fill: #46b5ff;
-    transition: all .3s;
+    transition: all 0.3s;
 }
 
-.header_menubtn[menu-open='1'] {
+.header_menubtn[menu-open="1"] {
     transform: rotate(180deg);
 }
 
@@ -80,43 +80,43 @@ body {
 
 @keyframes BtnBreath {
     0% {
-        transform: scale(1)
+        transform: scale(1);
     }
     50% {
-        transform: scale(1.05)
+        transform: scale(1.05);
     }
     100% {
-        transform: scale(1)
+        transform: scale(1);
     }
 }
 
 @-webkit-keyframes BtnBreath {
     0% {
-        transform: scale(1)
+        transform: scale(1);
     }
     50% {
-        transform: scale(1.05)
+        transform: scale(1.05);
     }
     100% {
-        transform: scale(1)
+        transform: scale(1);
     }
 }
 
 @-moz-keyframes BtnBreath {
     0% {
-        transform: scale(1)
+        transform: scale(1);
     }
     50% {
-        transform: scale(1.05)
+        transform: scale(1.05);
     }
     100% {
-        transform: scale(1)
+        transform: scale(1);
     }
 }
 
 /* 头部菜单容器 */
 
-.header_menubtn[menu-open='0']+.header_menu {
+.header_menubtn[menu-open="0"] + .header_menu {
     background-color: #fff;
 }
 
@@ -138,7 +138,7 @@ body {
     background-color: #46b5ff;
     z-index: 5;
     border-radius: 0 0 20px 20px;
-    transition: margin .3s;
+    transition: margin 0.3s;
 }
 
 .header_menu ul {
@@ -151,9 +151,9 @@ body {
     font-size: 25px;
     text-align: center;
     display: inline-block;
-    -webkit-transition: all .2s cubic-bezier(.175, .885, .32, 1);
-    -o-transition: all .2s cubic-bezier(.175, .885, .32, 1);
-    transition: all .2s cubic-bezier(.175, .885, .32, 1);
+    -webkit-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1);
+    -o-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1);
     cursor: pointer;
 }
 
@@ -178,16 +178,16 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: 'liga';
+    font-feature-settings: "liga";
     filter: alpha(opacity=0);
     opacity: 0;
-    -webkit-transition: all .2s cubic-bezier(.175, .885, .32, 1);
-    -o-transition: all .2s cubic-bezier(.175, .885, .32, 1);
-    transition: all .2s cubic-bezier(.175, .885, .32, 1);
-    -webkit-transform: scale(.5);
-    -ms-transform: scale(.5);
-    -o-transform: scale(.5);
-    transform: scale(.5);
+    -webkit-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1);
+    -o-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1);
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5);
     speak: none;
     -webkit-text-stroke-width: 0;
     width: 0px;
@@ -195,11 +195,11 @@ body {
     text-overflow: ellipsis;
 }
 
-.header_menu a#menu_autosave[autosave-open='0']:before {
+.header_menu a#menu_autosave[autosave-open="0"]:before {
     content: "\E835";
 }
 
-.header_menu a#menu_autosave[autosave-open='1']:before {
+.header_menu a#menu_autosave[autosave-open="1"]:before {
     content: "\E834";
 }
 
@@ -232,8 +232,8 @@ body {
     -o-transform: scale(1);
     transform: scale(1);
     width: 20px;
-    -webkit-animation: backshake .5s linear;
-    animation: backshake .5s linear;
+    -webkit-animation: backshake 0.5s linear;
+    animation: backshake 0.5s linear;
 }
 
 .header_menu li:hover {
@@ -294,9 +294,9 @@ html[dir="RTL"] .farSide {
     cursor: pointer;
     color: #fff;
     font-size: large;
-    -webkit-transition: all .2s cubic-bezier(.175, .885, .32, 1);
-    -o-transition: all .2s cubic-bezier(.175, .885, .32, 1);
-    transition: all .2s cubic-bezier(.175, .885, .32, 1);
+    -webkit-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1);
+    -o-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1);
 }
 
 .lobibox_button:hover {
@@ -389,7 +389,7 @@ td.tabmax {
     text-align: right;
 }
 
-html[dir=rtl] td.tabmax {
+html[dir="rtl"] td.tabmax {
     text-align: left;
 }
 
@@ -502,7 +502,7 @@ button {
     line-height: 40px;
 }
 
-a[title='站长统计'] {
+a[title="站长统计"] {
     display: none;
 }
 
@@ -570,7 +570,7 @@ a[title='站长统计'] {
     margin-right: 4px;
 }
 
-.useroutput>i {
+.useroutput > i {
     color: #7d7d7d;
     position: relative;
     top: 6px;
@@ -622,15 +622,22 @@ a[title='站长统计'] {
     text-align: center;
 }
 
-@media screen and (orientation:portrait) {
+@media screen and (orientation: portrait) {
     /*  css[竖向定义样式]  */
     .screen_rotation {
         display: -webkit-box;
     }
 }
 
-@media screen and (orientation:landscape) {
+@media screen and (orientation: landscape) {
     /*   css[横向定义样式]  */
+    .screen_rotation {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 899px) {
+    /*   css[竖屏显示器不显示提示]  */
     .screen_rotation {
         display: none;
     }
@@ -707,8 +714,8 @@ a[title='站长统计'] {
     border: none;
     margin: 0;
     background: #dddddd;
-    transition: all .1s linear;
-    -webkit-transition: all .1s linear;
+    transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
     border-radius: 0;
 }
 
@@ -734,7 +741,7 @@ a[title='站长统计'] {
     border-bottom: 2px #fff solid;
     transform: translateY(1px);
     display: none;
-    transition: width .3s;
+    transition: width 0.3s;
 }
 
 #blocksearch_input:focus {
