@@ -38,6 +38,15 @@ Blockly.defineBlocksWithJsonArray([
       },
       {
         "type": "input_value",
+        "name": "rotqq",
+        "check": [
+          "Number",
+          "String"
+        ],
+        "align": "RIGHT"
+      },
+      {
+        "type": "input_value",
         "name": "idnumber",
         "check": [
           "Number",
@@ -115,6 +124,15 @@ Blockly.defineBlocksWithJsonArray([
       },
       {
         "type": "input_value",
+        "name": "rotqq",
+        "check": [
+          "Number",
+          "String"
+        ],
+        "align": "RIGHT"
+      },
+      {
+        "type": "input_value",
         "name": "idnumber",
         "check": [
           "Number",
@@ -186,6 +204,15 @@ Blockly.defineBlocksWithJsonArray([
       },
       {
         "type": "input_value",
+        "name": "rotqq",
+        "check": [
+          "Number",
+          "String"
+        ],
+        "align": "RIGHT"
+      },
+      {
+        "type": "input_value",
         "name": "groupnumber",
         "check": [
           "Number",
@@ -223,6 +250,18 @@ Blockly.defineBlocksWithJsonArray([
     "lastDummyAlign0": "RIGHT",
     "message0": "%{BKY_ROTFUNC_GETGROUPLIST}",
     "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "rotqq",
+        "check": [
+          "Number",
+          "String"
+        ],
+        "align": "RIGHT"
+      }
     ],
     "inputsInline": false,
     "output": null,
@@ -236,6 +275,15 @@ Blockly.defineBlocksWithJsonArray([
     "args0": [
       {
         "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "rotqq",
+        "check": [
+          "Number",
+          "String"
+        ],
+        "align": "RIGHT"
       },
       {
         "type": "input_value",
