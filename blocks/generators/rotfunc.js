@@ -52,6 +52,13 @@ Blockly.JavaScript['rot_getgrouplist'] = function (block) {
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
+Blockly.JavaScript['rot_getgroupmanager'] = function (block) {
+  var value_rotqq = Blockly.JavaScript.valueToCode(block, 'rotqq', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_groupnumber = Blockly.JavaScript.valueToCode(block, 'groupnumber', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = 'getGroupManager(' + value_rotqq + ',' + value_groupnumber + ')';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
 Blockly.JavaScript['rot_getusername'] = function (block) {
   var dropdown_type = block.getFieldValue('type');
   var value_number = Blockly.JavaScript.valueToCode(block, 'number', Blockly.JavaScript.ORDER_ATOMIC);

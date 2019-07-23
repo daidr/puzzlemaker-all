@@ -270,6 +270,39 @@ Blockly.defineBlocksWithJsonArray([
     "helpUrl": ""
   },
   {
+    "type": "rot_getgroupmanager",
+    "lastDummyAlign0": "RIGHT",
+    "message0": "%{BKY_ROTFUNC_GETGROUPMANAGER}",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "rotqq",
+        "check": [
+          "Number",
+          "String"
+        ],
+        "align": "RIGHT"
+      },
+      {
+        "type": "input_value",
+        "name": "groupnumber",
+        "check": [
+          "Number",
+          "String"
+        ],
+        "align": "RIGHT"
+      }
+    ],
+    "inputsInline": false,
+    "output": null,
+    "colour": "%{BKY_ROTFUNC_HUE}",
+    "tooltip": "%{BKY_ROTFUNC_GETGROUPMANAGER_TOOLTIP}",
+    "helpUrl": ""
+  },
+  {
     "type": "rot_deleteMsg",
     "message0": "%{BKY_ROTFUNC_DELETEMSG}",
     "args0": [
