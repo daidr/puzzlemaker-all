@@ -64,6 +64,18 @@
 				</shadow>
 			</value>
 		</block>
+		<block type="rot_getgroupmanager" data-keywords="获取Q群管理员|群主|酷q|ir功能">
+			<value name="rotqq">
+				<shadow type="event_values">
+					<field name="event_values">0</field>
+				</shadow>
+			</value>
+			<value name="groupnumber">
+				<shadow type="math_number">
+					<field name="NUM"></field>
+				</shadow>
+			</value>
+		</block>
 		<block type="rot_getusername" data-keywords="获取昵称|获取群名称|酷q|ir功能">
 			<value name="number">
 				<shadow type="math_number">
