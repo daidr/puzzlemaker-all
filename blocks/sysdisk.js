@@ -40,6 +40,32 @@ Blockly.defineBlocksWithJsonArray([
     "colour": "%{BKY_SYSDISK_HUE}",
     "tooltip": "将文本写入本地文件",
     "helpUrl": ""
+  },
+  {
+    "type": "sysdisk_appendfile",
+    "message0": "文件追加 %1 完整路径 %2 追加内容 %3",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "filepath",
+        "check": "String",
+        "align": "RIGHT"
+      },
+      {
+        "type": "input_value",
+        "name": "appendcontent",
+        "check": "String",
+        "align": "RIGHT"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "%{BKY_SYSDISK_HUE}",
+    "tooltip": "将文本写入本地文件",
+    "helpUrl": ""
   }
   ,
   {

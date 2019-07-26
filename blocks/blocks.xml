@@ -781,6 +781,26 @@
 				</shadow>
 			</value>
 		</block>
+		<block type="sysdisk_appendfile" data-keywords="追加文件|写文件|磁盘操作">
+			<value name="filepath">
+				<shadow type="text_join">
+					<mutation items="2"></mutation>
+					<value name="ADD0">
+						<shadow type="sysdisk_getlocalpath"></shadow>
+					</value>
+					<value name="ADD1">
+						<shadow type="text">
+							<field name="TEXT">/file.txt</field>
+						</shadow>
+					</value>
+				</shadow>
+			</value>
+			<value name="appendcontent">
+				<shadow type="text">
+					<field name="TEXT">这是追加的内容</field>
+				</shadow>
+			</value>
+		</block>
 		<block type="sysdisk_readfile" data-keywords="读取文件|读入文件|读文件|磁盘操作">
 			<value name="filepath">
 				<shadow type="text_join">
@@ -867,8 +887,10 @@
 		</block>
 	</category>
 	<sep></sep>
-	<category name="额外拓展" colour="242" custom="">
+	<category name="额外拓展" colour="242">
 		<label text="额外拓展"></label>
+		<block type="interface_left2vertical" data-keywords="转接口|水平转垂直" disabled="true">
+		</block>
 	</category>
 	<sep></sep>
 	<category name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>

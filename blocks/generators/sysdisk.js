@@ -16,6 +16,13 @@ Blockly.JavaScript['sysdisk_writefile'] = function (block) {
   return code;
 };
 
+Blockly.JavaScript['sysdisk_appendfile'] = function (block) {
+  var value_filepath = Blockly.JavaScript.valueToCode(block, 'filepath', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_appendcontent = Blockly.JavaScript.valueToCode(block, 'appendcontent', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = "appendFile(" + value_filepath + "," + value_appendcontent + ");\n";
+  return code;
+};
+
 Blockly.JavaScript['sysdisk_readfile'] = function (block) {
   var value_filepath = Blockly.JavaScript.valueToCode(block, 'filepath', Blockly.JavaScript.ORDER_ATOMIC);
   var code = "readFile(" + value_filepath + ")";
