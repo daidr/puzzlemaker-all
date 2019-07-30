@@ -199,6 +199,28 @@
 				</shadow>
 			</value>
 		</block>
+		<block type="rot_kickMember" data-keywords="踢出群员|酷q|ir功能">
+			<value name="rotqq">
+				<shadow type="event_values">
+					<field name="event_values">0</field>
+				</shadow>
+			</value>
+			<value name="groupnum">
+				<shadow type="event_values">
+					<field name="event_values">5</field>
+				</shadow>
+			</value>
+			<value name="qqnum">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+			<value name="canReapply">
+				<shadow type="logic_boolean">
+					<field name="BOOL">TRUE</field>
+				</shadow>
+			</value>
+		</block>
 		<block type="rot_addlog" data-keywords="日志|酷q|ir功能">
 			<value name="content">
 				<shadow type="text">

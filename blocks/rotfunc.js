@@ -398,3 +398,31 @@ Blockly.Blocks['rot_getusername'] = {
     }
   }
 };
+
+Blockly.Blocks['rot_kickMember'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("移除指定群成员");
+    this.appendValueInput("rotqq")
+        .setCheck(["String", "Number"])
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("机器人QQ");
+    this.appendValueInput("groupnum")
+        .setCheck(["String", "Number"])
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("群号");
+    this.appendValueInput("qqnum")
+        .setCheck(["String", "Number"])
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("Q号");
+    this.appendValueInput("canReapply")
+        .setCheck("Boolean")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("不再接收加群申请");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(Blockly.Blocks.rotfunc.HUE);
+ this.setTooltip("将指定对象移除群聊（需要管理员权限）");
+ this.setHelpUrl("");
+  }
+};
