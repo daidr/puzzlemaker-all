@@ -17,9 +17,23 @@ Blockly.Blocks.json_getKey = {
 		this.setInputsInline(true);
 		this.setOutput(true);
 		this.setColour(Blockly.Blocks.json.HUE);
-		this.setTooltip("获取键值");
+		this.setTooltip("获取属性值");
 		this.setHelpUrl(null);
 		this.contextMenuMsg_ = Blockly.Msg.VARIABLES_GET_CREATE_SET
+	}
+};
+
+Blockly.Blocks.json_hasOwnProperty  = {
+	init: function() {
+		this.appendDummyInput().appendField("判断json");
+		this.appendValueInput("VAR");
+		this.appendValueInput("propertyName").setCheck("String").appendField("中");
+		this.appendDummyInput().appendField("是否存在");
+		this.setInputsInline(true);
+		this.setOutput(true, "Boolean");
+		this.setColour(Blockly.Blocks.json.HUE);
+		this.setTooltip("判断某属性是否存在");
+		this.setHelpUrl(null);
 	}
 };
 
@@ -27,13 +41,13 @@ Blockly.Blocks.json_deleteKey = {
 	init: function() {
 		this.appendDummyInput().appendField("删除json");
 		this.appendValueInput("VAR");
-		this.appendValueInput("propertyName").setCheck("String").appendField("中  键值（key）为");
+		this.appendValueInput("propertyName").setCheck("String").appendField("中  属性（key）为");
 		this.appendDummyInput().appendField("的记录");
 		this.setInputsInline(true);
 		this.setPreviousStatement(true);
 		this.setNextStatement(true);
 		this.setColour(Blockly.Blocks.json.HUE);
-		this.setTooltip("删除键值");
+		this.setTooltip("删除属性");
 		this.setHelpUrl(null);
 		this.contextMenuMsg_ = Blockly.Msg.VARIABLES_SET_CREATE_GET
 	}
@@ -50,7 +64,7 @@ Blockly.Blocks.json_setKey = {
 		this.setPreviousStatement(true);
 		this.setNextStatement(true);
 		this.setColour(Blockly.Blocks.json.HUE);
-		this.setTooltip("设置键值");
+		this.setTooltip("设置属性");
 		this.setHelpUrl(null);
 		this.contextMenuMsg_ = Blockly.Msg.VARIABLES_SET_CREATE_GET
 	}

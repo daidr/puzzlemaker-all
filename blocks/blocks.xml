@@ -520,6 +520,7 @@
 		<block type="text_enter" data-keywords="换行符|回车符|enter|br|文字|文本"></block>
 	</category>
 	<category colour="%{BKY_JSON_HUE}" name="%{BKY_CATJSON}">
+		<block type="json_createJson"></block>
 		<block type="variables_set">
 			<field name="VAR">json</field>
 			<value name="VALUE">
@@ -527,6 +528,18 @@
 			</value>
 		</block>
 		<block type="json_getKey">
+			<value name="VAR">
+				<block type="variables_get">
+					<field name="VAR">json</field>
+				</block>
+			</value>
+			<value name="propertyName">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+		</block>
+		<block type="json_hasOwnProperty">
 			<value name="VAR">
 				<block type="variables_get">
 					<field name="VAR">json</field>
