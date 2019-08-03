@@ -60,7 +60,7 @@
         var ws;
         function openWebSocket() {
             if ("WebSocket" in window) {
-                ws = new WebSocket("ws://app.daidr.me/stats/");
+                ws = new WebSocket("wss://app.daidr.me/stats/");
                 ws.onopen = function () {
                     isWsOpened = 1;
                 };
