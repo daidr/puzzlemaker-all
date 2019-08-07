@@ -221,6 +221,18 @@
 				</shadow>
 			</value>
 		</block>
+		<block type="rot_quitGroup" data-keywords="退出群聊|酷q|ir功能">
+			<value name="rotqq">
+				<shadow type="event_values">
+					<field name="event_values">0</field>
+				</shadow>
+			</value>
+			<value name="groupnum">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
 		<block type="rot_addlog" data-keywords="日志|酷q|ir功能">
 			<value name="content">
 				<shadow type="text">

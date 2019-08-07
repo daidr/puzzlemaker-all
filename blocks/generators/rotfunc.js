@@ -48,14 +48,14 @@ Blockly.JavaScript['rot_jinyan'] = function (block) {
 
 Blockly.JavaScript['rot_getgrouplist'] = function (block) {
   var value_rotqq = Blockly.JavaScript.valueToCode(block, 'rotqq', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = 'getGroupList(' + value_rotqq + ')';
+  var code = 'JSON.parse(getGroupList(' + value_rotqq + '))';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['rot_getgroupmanager'] = function (block) {
   var value_rotqq = Blockly.JavaScript.valueToCode(block, 'rotqq', Blockly.JavaScript.ORDER_ATOMIC);
   var value_groupnumber = Blockly.JavaScript.valueToCode(block, 'groupnumber', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = 'getGroupManager(' + value_rotqq + ',' + value_groupnumber + ')';
+  var code = 'JSON.parse(getGroupManager(' + value_rotqq + ',' + value_groupnumber + '))';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
@@ -75,12 +75,20 @@ Blockly.JavaScript['rot_deleteMsg'] = function (block) {
   return code;
 };
 
-Blockly.JavaScript['rot_kickMember'] = function(block) {
+Blockly.JavaScript['rot_kickMember'] = function (block) {
   var value_rotqq = Blockly.JavaScript.valueToCode(block, 'rotqq', Blockly.JavaScript.ORDER_ATOMIC);
   var value_groupnum = Blockly.JavaScript.valueToCode(block, 'groupnum', Blockly.JavaScript.ORDER_ATOMIC);
   var value_qqnum = Blockly.JavaScript.valueToCode(block, 'qqnum', Blockly.JavaScript.ORDER_ATOMIC);
   var value_canreapply = Blockly.JavaScript.valueToCode(block, 'canReapply', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = 'kickMember(' + value_rotqq + ',' + value_groupnum + ',' + value_qqnum + ',' + value_canreapply + ');\n';
+  return code;
+};
+
+Blockly.JavaScript['rot_quitGroup'] = function (block) {
+  var value_rotqq = Blockly.JavaScript.valueToCode(block, 'rotqq', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_groupnum = Blockly.JavaScript.valueToCode(block, 'groupnum', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'quitGroup(' + value_rotqq + ',' + value_groupnum + ');\n';
   return code;
 };

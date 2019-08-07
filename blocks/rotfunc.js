@@ -426,3 +426,23 @@ Blockly.Blocks['rot_kickMember'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['rot_quitGroup'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("退出指定群聊");
+    this.appendValueInput("rotqq")
+        .setCheck(["String", "Number"])
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("机器人QQ");
+    this.appendValueInput("groupnum")
+        .setCheck(["String", "Number"])
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("群号");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(Blockly.Blocks.rotfunc.HUE);
+ this.setTooltip("退出指定群聊");
+ this.setHelpUrl("");
+  }
+};
