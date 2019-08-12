@@ -932,6 +932,109 @@
 				</shadow>
 			</value>
 		</block>
+		<label text="流操作拼图"></label>
+		<block type="sysdisk_openFileStream" data-keywords="打开文件流|文件流操作|磁盘操作">
+			<value name="filepath">
+				<shadow type="text">
+					<field name="TEXT">/file.txt</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_closeFileStream" data-keywords="关闭文件流|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_getFileStreamCurPos" data-keywords="获取文件流读写位置|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_moveFileStreamCurPos" data-keywords="移动文件流读写位置|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+			<value name="initialpos">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+			<value name="movedistance">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_isFileStreamEOF" data-keywords="判断读写位置是否在文件尾|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_writeFileStream" data-keywords="文件流写入|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+			<value name="filedata">
+				<shadow type="text">
+					<field name="TEXT">内容</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_readFileStream" data-keywords="文件流读取|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+			<value name="readlength">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_getFileStreamLength" data-keywords="获取文件流长度|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_gotoFileStreamBOF" data-keywords="移动读写位置到文件首|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_gotoFileStreamEOF" data-keywords="移动读写位置到文件尾|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_findFileStreamBytes" data-keywords="在文件流寻找指定内容出现位置|寻找内容出现位置|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+			<value name="filedata">
+				<shadow type="text">
+					<field name="TEXT">内容</field>
+				</shadow>
+			</value>
+		</block>
 	</category>
 	<sep></sep>
 	<category name="额外拓展" colour="242">

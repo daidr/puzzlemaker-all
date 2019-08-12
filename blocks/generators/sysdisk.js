@@ -57,3 +57,60 @@ Blockly.JavaScript['sysdisk_deletefile'] = function (block) {
   var code = 'deleteFile(' + value_filepath + ')';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+
+Blockly.JavaScript['sysdisk_openFileStream'] = function (block) {
+  var value_filepath = Blockly.JavaScript.valueToCode(block, 'filepath', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = 'openFileStream(' + value_filepath + ')';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['sysdisk_closeFileStream'] = function (block) {
+  var value_fileindex = Blockly.JavaScript.valueToCode(block, 'fileindex', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = 'closeFileStream(' + value_fileindex + ')';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['sysdisk_getFileStreamCurPos'] = function (block) {
+  var value_fileindex = Blockly.JavaScript.valueToCode(block, 'fileindex', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = 'getFileStreamCurPos(' + value_fileindex + ')';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['sysdisk_moveFileStreamCurPos'] = function (block) {
+  var value_fileindex = Blockly.JavaScript.valueToCode(block, 'fileindex', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_initialpos = Blockly.JavaScript.valueToCode(block, 'initialpos', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_movedistance = Blockly.JavaScript.valueToCode(block, 'movedistance', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = 'getFileStreamCurPos(' + value_fileindex + ',' + value_initialpos + ',' + value_movedistance + ')';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['sysdisk_sysdisk_isFileStreamEOF'] = function (block) {
+  var value_fileindex = Blockly.JavaScript.valueToCode(block, 'fileindex', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = 'isFileStreamEOF(' + value_fileindex + ')';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['sysdisk_writeFileStream'] = function (block) {
+  var value_fileindex = Blockly.JavaScript.valueToCode(block, 'fileindex', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_filedata = Blockly.JavaScript.valueToCode(block, 'filedata', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = 'writeFileStream(' + value_fileindex + ',' + value_filedata + ')';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['sysdisk_readFileStream'] = function (block) {
+  var value_fileindex = Blockly.JavaScript.valueToCode(block, 'fileindex', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_readlength = Blockly.JavaScript.valueToCode(block, 'readlength', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = 'readFileStream(' + value_fileindex + ',' + value_readlength + ')';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['sysdisk_getFileStreamLength'] = function (block) {
+  var value_fileindex = Blockly.JavaScript.valueToCode(block, 'fileindex', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = 'getFileStreamLength(' + value_fileindex + ')';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['sysdisk_gotoFileStreamBOF'] = function (block) {
+  var value_fileindex = Blockly.JavaScript.valueToCode(block, 'fileindex', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = 'gotoFileStreamBOF(' + value_fileindex + ')';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['sysdisk_gotoFileStreamEOF'] = function (block) {
+  var value_fileindex = Blockly.JavaScript.valueToCode(block, 'fileindex', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = 'gotoFileStreamEOF(' + value_fileindex + ')';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
