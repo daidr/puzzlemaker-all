@@ -935,9 +935,9 @@
 	</category>
 	<sep></sep>
 	<category name="额外拓展" colour="242">
-		<label text="额外拓展"></label>
-		<block type="interface_left2vertical" data-keywords="转接口|水平转垂直" disabled="true">
-		</block>
+		<label text="转接口"></label>
+		<block type="interface_left2vertical" data-keywords="转接口|水平转垂直"></block>
+		<block type="interface_left2left" data-keywords="转接口|类型强制转换"></block>
 	</category>
 	<sep></sep>
 	<category name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
