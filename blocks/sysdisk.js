@@ -8,10 +8,10 @@ goog.require('Blockly.Blocks');
 Blockly.defineBlocksWithJsonArray([
   {
     "type": "sysdisk_getlocalpath",
-    "message0": "获取酷Q运行目录",
+    "message0": "获取机器人运行目录",
     "output": null,
     "colour": "%{BKY_SYSDISK_HUE}",
-    "tooltip": "输出酷Q目录，末尾不带 /",
+    "tooltip": "输出机器人目录，末尾不带 /",
     "helpUrl": ""
   }
   ,
