@@ -252,9 +252,9 @@
 		<block type="logic_ternary" data-keywords="测试|如果为真|test|如果为假|if|逻辑"></block>
 		<block type="logic_switch" data-keywords="当变量拥有以下情况|switch|逻辑">
 			<value name="value_name">
-				<shadow type="variables_get">
+				<block type="variables_get">
 					<field name="VAR">文本</field>
-				</shadow>
+				</block>
 			</value>
 			<value name="calling">
 				<block type="logic_switch_default"></block>
@@ -271,9 +271,9 @@
 		</block>
 		<block type="logic_switch" data-keywords="当变量拥有以下情况|switch|逻辑">
 			<value name="value_name">
-				<shadow type="variables_get">
+				<block type="variables_get">
 					<field name="VAR">文本</field>
-				</shadow>
+				</block>
 			</value>
 		</block>
 		<block type="logic_case" data-keywords="case|逻辑">
@@ -646,16 +646,16 @@
 		<block type="rot_gettimestamp" data-keywords="获取时间戳|time|时间"></block>
 		<block type="rot_timestamptostr" data-keywords="转换时间戳|time|时间">
 			<value name="timestamp">
-				<shadow type="variables_get">
+				<block type="variables_get">
 					<field name="VAR">时间戳</field>
-				</shadow>
+				</block>
 			</value>
 		</block>
 		<block type="rot_timestamptostrx" data-keywords="转换时间戳|time|时间">
 			<value name="timestamp">
-				<shadow type="variables_get">
+				<block type="variables_get">
 					<field name="VAR">时间戳</field>
-				</shadow>
+				</block>
 			</value>
 			<value name="dateformat">
 				<shadow type="text">
