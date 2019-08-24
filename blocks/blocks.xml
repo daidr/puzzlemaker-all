@@ -53,6 +53,18 @@
 				</shadow>
 			</value>
 		</block>
+		<block type="rotcode_image" data-keywords="发送图片|cq码|酷q码|ir变量">
+			<value name="cache">
+				<block type="logic_boolean">
+					<field name="BOOL">FALSE</field>
+				</block>
+			</value>
+			<value name="path">
+				<block type="text">
+					<field name="TEXT">C:/fakepath/fakefile.png</field>
+				</block>
+			</value>
+		</block>
 		<block type="rotcode_emoji_1" data-keywords="emoji|cq码|酷q码|ir变量"></block>
 		<block type="rotcode_sface_1" data-keywords="小表情|黄豆表情|cq码|酷q码|ir变量"></block>
 	</category>

@@ -39,7 +39,7 @@ Blockly.defineBlocksWithJsonArray([{
   "inputsInline": true,
   "output": "String",
   "colour": "%{BKY_ROTCODE_HUE}",
-  "tooltip": "输出at指定QQ的动态码",
+  "tooltip": "返回at指定QQ的动态码",
   "helpUrl": ""
 },
 {
@@ -47,7 +47,7 @@ Blockly.defineBlocksWithJsonArray([{
   "message0": "窗口抖动(戳一戳)",
   "output": "String",
   "colour": "%{BKY_ROTCODE_HUE}",
-  "tooltip": "输出抖动(戳一戳)的动态码",
+  "tooltip": "返回抖动(戳一戳)的动态码",
   "helpUrl": ""
 },
 /* {
@@ -104,7 +104,7 @@ Blockly.defineBlocksWithJsonArray([{
   }],
   "output": "String",
   "colour": "%{BKY_ROTCODE_HUE}",
-  "tooltip": "输出emoji表情动态码",
+  "tooltip": "返回emoji表情动态码",
   "helpUrl": ""
 }, /* {
 	"type": "cqcode_emoji_2",
@@ -128,7 +128,7 @@ Blockly.defineBlocksWithJsonArray([{
   }],
   "output": "String",
   "colour": "%{BKY_ROTCODE_HUE}",
-  "tooltip": "输出qq表情动态码",
+  "tooltip": "返回qq表情动态码",
   "helpUrl": ""
 },
 {
@@ -161,7 +161,51 @@ Blockly.defineBlocksWithJsonArray([{
   ],
   "output": "String",
   "colour": "%{BKY_ROTCODE_HUE}",
-  "tooltip": "输出发送语音的动态码，「音频文件名」需存放在机器人目录的「data\\record\\」下。",
+  "tooltip": "返回发送语音的动态码，「音频文件名」需存放在机器人目录的「data\\record\\」下。",
   "helpUrl": ""
 }
 ]);
+
+Blockly.Blocks['rotcode_image'] = {
+  init: function () {
+    this.appendDummyInput()
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField("发送图片")
+      .appendField("来自")
+      .appendField(new Blockly.FieldDropdown([["磁盘", "1"], ["URL", "2"]], function (a) {
+        this.sourceBlock_.updateShape_(a)
+      }), "type");
+    this.appendValueInput("cache")
+      .setCheck("Boolean")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField("是否开启缓存");
+    this.appendValueInput("path")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField("图片路径");
+    this.setInputsInline(false);
+    this.setOutput(true, "String");
+    this.setColour(Blockly.Msg["ROTCODE_HUE"]);
+    this.setTooltip("返回指定图片的动态码");
+    this.setHelpUrl("");
+  }, updateShape_: function (b) {
+    var a = this.getFieldValue("type");
+    if (b != a) {
+      if (b == "1") {
+        this.removeInput("path");
+        this.appendValueInput("path")
+          .setCheck("String")
+          .setAlign(Blockly.ALIGN_RIGHT)
+          .appendField("图片路径");
+        this.setTooltip("返回指定磁盘路径下图片的动态码");
+      } else if (b == "2") {
+        this.removeInput("path");
+        this.appendValueInput("path")
+          .setCheck("String")
+          .setAlign(Blockly.ALIGN_RIGHT)
+          .appendField("图片URL");
+        this.setTooltip("返回指定URL地址下图片的动态码");
+      }
+    }
+  }
+};
