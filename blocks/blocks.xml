@@ -822,133 +822,151 @@
 		<block type="sysdisk_getlocalpath" data-keywords="获取运行目录|磁盘操作"></block>
 		<block type="sysdisk_writefile" data-keywords="写出文件|写文件|磁盘操作">
 			<value name="filepath">
-				<shadow type="text_join">
+				<block type="text_join">
 					<mutation items="2"></mutation>
 					<value name="ADD0">
-						<shadow type="sysdisk_getlocalpath"></shadow>
+						<block type="sysdisk_getlocalpath"></block>
 					</value>
 					<value name="ADD1">
-						<shadow type="text">
+						<block type="text">
 							<field name="TEXT">/file.txt</field>
-						</shadow>
+						</block>
 					</value>
-				</shadow>
+				</block>
+					
 			</value>
 			<value name="filecontent">
-				<shadow type="text">
+				<block type="text">
 					<field name="TEXT">这是一个测试文件</field>
-				</shadow>
+				</block>
 			</value>
 		</block>
 		<block type="sysdisk_appendfile" data-keywords="追加文件|写文件|磁盘操作">
 			<value name="filepath">
-				<shadow type="text_join">
+				<block type="text_join">
 					<mutation items="2"></mutation>
 					<value name="ADD0">
-						<shadow type="sysdisk_getlocalpath"></shadow>
+						<block type="sysdisk_getlocalpath"></block>
 					</value>
 					<value name="ADD1">
-						<shadow type="text">
+						<block type="text">
 							<field name="TEXT">/file.txt</field>
-						</shadow>
+						</block>
 					</value>
-				</shadow>
+				</block>
+					
 			</value>
 			<value name="appendcontent">
-				<shadow type="text">
+				<block type="text">
 					<field name="TEXT">这是追加的内容</field>
-				</shadow>
+				</block>
 			</value>
 		</block>
 		<block type="sysdisk_readfile" data-keywords="读取文件|读入文件|读文件|磁盘操作">
 			<value name="filepath">
-				<shadow type="text_join">
+				<block type="text_join">
 					<mutation items="2"></mutation>
 					<value name="ADD0">
-						<shadow type="sysdisk_getlocalpath"></shadow>
+						<block type="sysdisk_getlocalpath"></block>
 					</value>
 					<value name="ADD1">
-						<shadow type="text">
+						<block type="text">
 							<field name="TEXT">/file.txt</field>
-						</shadow>
+						</block>
 					</value>
-				</shadow>
+				</block>		
 			</value>
 		</block>
 		<block type="sysdisk_hasfile" data-keywords="检测文件|文件是否存在|磁盘操作">
 			<value name="filepath">
-				<shadow type="text">
-					<field name="TEXT">/file.txt</field>
-				</shadow>
+				<block type="text_join">
+					<mutation items="2"></mutation>
+					<value name="ADD0">
+						<block type="sysdisk_getlocalpath"></block>
+					</value>
+					<value name="ADD1">
+						<block type="text">
+							<field name="TEXT">/file.txt</field>
+						</block>
+					</value>
+				</block>
 			</value>
 		</block>
 		<block type="sysdisk_deletefile" data-keywords="删除文件|清除文件|磁盘操作">
 			<value name="filepath">
-				<shadow type="text">
-					<field name="TEXT">/file.txt</field>
-				</shadow>
+				<block type="text_join">
+					<mutation items="2"></mutation>
+					<value name="ADD0">
+						<block type="sysdisk_getlocalpath"></block>
+					</value>
+					<value name="ADD1">
+						<block type="text">
+							<field name="TEXT">/file.txt</field>
+						</block>
+					</value>
+				</block>
 			</value>
 		</block>
 		<block type="sysdisk_setkeytext" data-keywords="写出配置|写配置|磁盘操作">
 			<value name="inipath">
-				<shadow type="text_join">
+				<block type="text_join">
 					<mutation items="2"></mutation>
 					<value name="ADD0">
-						<shadow type="sysdisk_getlocalpath"></shadow>
+						<block type="sysdisk_getlocalpath"></block>
 					</value>
 					<value name="ADD1">
-						<shadow type="text">
+						<block type="text">
 							<field name="TEXT">/config.ini</field>
-						</shadow>
+						</block>
 					</value>
-				</shadow>
+				</block>
 			</value>
 			<value name="inisection">
-				<shadow type="text">
+				<block type="text">
 					<field name="TEXT">配置节</field>
-				</shadow>
+				</block>
 			</value>
 			<value name="inikey">
-				<shadow type="text">
+				<block type="text">
 					<field name="TEXT">配置项</field>
-				</shadow>
+				</block>
 			</value>
 			<value name="inicontent">
-				<shadow type="text">
+				<block type="text">
 					<field name="TEXT">配置内容</field>
-				</shadow>
+				</block>
 			</value>
 		</block>
 		<block type="sysdisk_getkeytext" data-keywords="读取配置|读入配置|读配置|磁盘操作">
 			<value name="inipath">
-				<shadow type="text_join">
+				<block type="text_join">
 					<mutation items="2"></mutation>
 					<value name="ADD0">
-						<shadow type="sysdisk_getlocalpath"></shadow>
+						<block type="sysdisk_getlocalpath"></block>
 					</value>
 					<value name="ADD1">
-						<shadow type="text">
+						<block type="text">
 							<field name="TEXT">/config.ini</field>
-						</shadow>
+						</block>
 					</value>
-				</shadow>
+				</block>	
 			</value>
 			<value name="inisection">
-				<shadow type="text">
+				<block type="text">
 					<field name="TEXT">配置节</field>
-				</shadow>
+				</block>
 			</value>
 			<value name="inikey">
-				<shadow type="text">
+				<block type="text">
 					<field name="TEXT">配置项</field>
-				</shadow>
+				</block>
 			</value>
 		</block>
 		<label text="流操作拼图"></label>
 		<block type="sysdisk_openFileStream" data-keywords="打开文件流|文件流操作|磁盘操作">
 			<value name="filepath">
 				<shadow type="text">
-					<field name="TEXT">/file.txt</field>
+					<field name="TEXT">C:/fakepath/file.txt</field>
 				</shadow>
 			</value>
 		</block>
