@@ -918,6 +918,8 @@ Blockly.Blocks['text_REtest'] = { init: function () { this.appendValueInput("tes
 
 Blockly.Blocks['text_REexec'] = { init: function () { this.appendValueInput("tester").setCheck("RegExp").appendField("用正则表达式"); this.appendValueInput("testee").setCheck("String").appendField("匹配字符串"); this.setInputsInline(true); this.setOutput(true, "Array"); this.setColour(Blockly.Msg.TEXTS_HUE); this.setTooltip("返回一个匹配的字符串列表（exec代码块）"); this.setHelpUrl(null); this.setInputsInline(false); } };
 
+Blockly.Blocks['text_REreplace'] = { init: function () { this.appendValueInput("tester").setCheck("RegExp").appendField("用正则表达式"); this.appendValueInput("testee").setCheck("String").appendField("匹配字符串");this.appendValueInput("replaceto").setCheck("String").appendField("替换成");this.setInputsInline(true); this.setOutput(true, "Array"); this.setColour(Blockly.Msg.TEXTS_HUE); this.setTooltip("将匹配的字串替换掉"); this.setHelpUrl(null); this.setInputsInline(false); } };
+
 Blockly.Blocks['text_midx'] = {
   init: function () {
     this.appendValueInput("mainString")

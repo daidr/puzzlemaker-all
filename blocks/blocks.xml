@@ -541,6 +541,27 @@
 				</shadow>
 			</value>
 		</block>
+		<block type="text_REexec" data-keywords="匹配字符串|匹配正则表达式|exec|文字|文本">
+			<value name="tester">
+				<block type="text_newRE">
+					<value name="text">
+						<shadow type="text">
+							<field name="TEXT">[\u4e00-\u9fa5]+</field>
+						</shadow>
+					</value>
+				</block>
+			</value>
+			<value name="testee">
+				<shadow type="text">
+					<field name="TEXT">这是测试文本</field>
+				</shadow>
+			</value>
+			<value name="replaceto">
+				<shadow type="text">
+					<field name="TEXT">这是测试文本</field>
+				</shadow>
+			</value>
+		</block>
 		<block type="text_enter" data-keywords="换行符|回车符|enter|br|文字|文本"></block>
 	</category>
 	<category colour="%{BKY_JSON_HUE}" name="%{BKY_CATJSON}">
