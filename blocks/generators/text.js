@@ -382,6 +382,13 @@ Blockly.JavaScript['text_REexec'] = function (f) {
   return [c, Blockly.JavaScript.ORDER_ATOMIC]
 };
 
+Blockly.JavaScript['text_REmatch'] = function (f) {
+  var b = Blockly.JavaScript.valueToCode(f, "tester", Blockly.JavaScript.ORDER_ATOMIC);
+  var d = Blockly.JavaScript.valueToCode(f, "testee", Blockly.JavaScript.ORDER_ATOMIC);
+  var c = d + ".match(" + b + ")";
+  return [c, Blockly.JavaScript.ORDER_ATOMIC]
+};
+
 Blockly.JavaScript['text_REreplace'] = function (f) {
   var b = Blockly.JavaScript.valueToCode(f, "tester", Blockly.JavaScript.ORDER_ATOMIC);
   var d = Blockly.JavaScript.valueToCode(f, "testee", Blockly.JavaScript.ORDER_ATOMIC);
