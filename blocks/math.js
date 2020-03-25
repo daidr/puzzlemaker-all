@@ -92,6 +92,53 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "helpUrl": "%{BKY_MATH_ARITHMETIC_HELPURL}",
     "extensions": ["math_op_tooltip"]
   },
+  
+  {
+    "type": "math_bitwise",
+    "message0": "%1 %2 %3",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "A",
+        "check": "Number"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "OP",
+        "options": [
+          ["&", "AND"],
+          ["|", "OR"],
+          ["^", "XOR"],
+          [">>", "RSHIFT"],
+		  [">>>", "URSHIFT"],
+		  ["<<", "LSHIFT"]
+        ]
+      },
+      {
+        "type": "input_value",
+        "name": "B",
+        "check": "Number"
+      }
+    ],
+    "inputsInline": true,
+    "output": "Number",
+    "colour": "%{BKY_MATH_HUE}",
+    "extensions": ["math_op_tooltip"]
+  },
+  {
+    "type": "math_bitwise_not",
+    "message0": "~ %1",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "A",
+        "check": "Number"
+      }
+    ],
+    "inputsInline": true,
+    "output": "Number",
+    "colour": "%{BKY_MATH_HUE}"
+  },
 
   // Block for advanced math operators with single operand.
   {

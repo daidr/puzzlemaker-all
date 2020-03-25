@@ -61,6 +61,38 @@ Blockly.JavaScript['math_arithmetic'] = function (block) {
   return [code, order];
 };
 
+Blockly.JavaScript['math_bitwise'] = function (block) {
+  // Basic arithmetic operators, and power.
+  var OPERATORS = {
+    'AND': [' & ', Blockly.JavaScript.ORDER_BITWISE_AND],
+    'OR': [' | ', Blockly.JavaScript.ORDER_BITWISE_OR],
+    'XOR': [' ^ ', Blockly.JavaScript.ORDER_BITWISE_XOR],
+    'RSHIFT': [' >> ', Blockly.JavaScript.ORDER_BITWISE_SHIFT],
+    'URSHIFT': [' >>> ', Blockly.JavaScript.ORDER_BITWISE_SHIFT],
+	'LSHIFT': [' << ', Blockly.JavaScript.ORDER_BITWISE_SHIFT]
+  };
+  var tuple = OPERATORS[block.getFieldValue('OP')];
+  var operator = tuple[0];
+  var order = tuple[1];
+  var argument0 = Blockly.JavaScript.valueToCode(block, 'A', order) || '0';
+  var argument1 = Blockly.JavaScript.valueToCode(block, 'B', order) || '0';
+  var code;
+  // Power in JavaScript requires a special case since it has no operator.
+  code = argument0 + operator + argument1;
+  return [code, order];
+};
+
+Blockly.JavaScript['math_bitwise_not'] = function (block) {
+  // Basic arithmetic operators, and power.
+  var operator = '~';
+  var order = Blockly.JavaScript.ORDER_BITWISE_NOT;
+  var argument0 = Blockly.JavaScript.valueToCode(block, 'A', order) || '0';
+  var code;
+  // Power in JavaScript requires a special case since it has no operator.
+  code = operator + argument0;
+  return [code, order];
+};
+
 Blockly.JavaScript['math_single'] = function (block) {
   // Math operators with single operand.
   var operator = block.getFieldValue('OP');

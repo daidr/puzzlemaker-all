@@ -88,3 +88,5 @@ var PuzzleTips = {
 
 }
 PuzzleTips.m(); //通过此函数激活所有的
+
+// 下面的所有函数用于创建空的函数对象

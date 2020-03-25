@@ -412,6 +412,26 @@
 			</value>
 		</block>
 		<block type="math_random_float" data-keywords="取随机分数|数学"></block>
+		<label text="位操作拼图"></label>
+		<block type="math_bitwise" data-keywords="与and&|或or|异或xor^|位移<<>>>|calc|bitwise|位运算|计算|数学">
+			<value name="A">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+			<value name="B">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="math_bitwise_not" data-keywords="非not~|calc|bitwise|位运算|计算|数学">
+			<value name="A">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+		</block>
 	</category>
 	<category name="%{BKY_CATTEXT}" colour="%{BKY_TEXTS_HUE}">
 		<block type="text" data-keywords="input|text|输入|文字|文本"></block>
