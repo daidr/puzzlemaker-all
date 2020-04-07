@@ -35,3 +35,22 @@ Blockly.defineBlocksWithJsonArray([
         "helpUrl": ""
     }
 ]);
+
+Blockly.Blocks['verify_md5_text'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "校验字符串MD5 %1",
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "string",
+          "check": "String"
+        }
+      ],
+      "output": "String",
+      "colour": 315,
+      "tooltip": "计算一个字符串的MD5并输出",
+      "helpUrl": ""
+    });
+  }
+};
