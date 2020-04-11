@@ -1,6 +1,7 @@
 let cacheFiles = [
     './js/jquery-3.2.1.min.js',
     './js/LibsLoader.min.js',
+    './',
     './index.html',
     './iconfont/material-icons.css',
     './iconfont/MaterialIcons-Regular.woff2',
