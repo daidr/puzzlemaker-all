@@ -21,9 +21,10 @@ Blockly.JavaScript.request_all = function (g) {
     var b = Blockly.JavaScript.valueToCode(g, "url", Blockly.JavaScript.ORDER_ATOMIC);
     var d = Blockly.JavaScript.statementToCode(g, "callback");
     var c = "";
+    var functionName = 'HTTP_CALLBACK_' + randomString(15);
     var getCompareFunctionName = Blockly.JavaScript.provideFunction_(
-        'HTTP_CALLBACK_' + randomString(10),
-        ["function(responseCode, responseBody) {\n" + d + "}"]);
+        'HTTP_CALLBACK_' + randomString(15),
+        ["function " + functionName + "(responseCode, responseBody) {\n" + d + "}"]);
     if (f == "GET") {
         c = "request_GET(" + b + ",\"\",\"";
         c += getCompareFunctionName + "\");\n"
