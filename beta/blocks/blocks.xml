@@ -1,0 +1,1144 @@
+<xml id="toolbox_xml">
+	<category name="%{BKY_CATROTEVENT}" colour="%{BKY_ROTEVENT_HUE}">
+		<block type="rotevent_allevent" data-keywords="群消息|事件|酷q|IR">
+			<value name="eventTypeInput">
+				<block type="event_rotsys"></block>
+			</value>
+		</block>
+		<block type="rotevent_allevent" data-keywords="私聊消息|事件|酷q|IR">
+			<value name="eventTypeInput">
+				<block type="event_rotsys">
+					<field name="event_type">ROTPrivateMsg</field>
+				</block>
+			</value>
+		</block>
+		<block type="rotevent_allevent" data-keywords="讨论组消息|事件|酷q|IR">
+			<value name="eventTypeInput">
+				<block type="event_rotsys">
+					<field name="event_type">ROTDiscussMsg</field>
+				</block>
+			</value>
+		</block>
+		<block type="rotevent_allevent" data-keywords="插件被重载|事件|酷q|IR">
+			<value name="eventTypeInput">
+				<block type="event_rotsys">
+					<field name="event_type">ROTAddonsReload</field>
+				</block>
+			</value>
+		</block>
+		<block type="event_values"></block>
+	</category>
+	<category name="%{BKY_CATROTCODE}" colour="%{BKY_ROTCODE_HUE}">
+		<block type="rotcode_at" data-keywords="at|@|cq码|酷q码|ir变量">
+			<value name="QQID">
+				<shadow type="math_number">
+					<field name="NUM"></field>
+				</shadow>
+			</value>
+		</block>
+		<block type="rotcode_shake" data-keywords="抖一抖|戳一戳|窗口抖动|cq码|酷q码|ir变量"></block>
+		<block type="rotcode_record" data-keywords="发送语音|cq码|酷q码|ir变量">
+			<value name="filename">
+				<shadow type="ve_gettts">
+					<value name="content">
+						<shadow type="text">
+							<field name="TEXT"></field>
+						</shadow>
+					</value>
+					<value name="ttsgroup">
+						<shadow type="text">
+							<field name="TEXT">度丫丫.vdb</field>
+						</shadow>
+					</value>
+				</shadow>
+			</value>
+		</block>
+		<block type="rotcode_image" data-keywords="发送图片|cq码|酷q码|ir变量">
+			<value name="cache">
+				<block type="logic_boolean">
+					<field name="BOOL">FALSE</field>
+				</block>
+			</value>
+			<value name="path">
+				<block type="text">
+					<field name="TEXT">C:/fakepath/fakefile.png</field>
+				</block>
+			</value>
+		</block>
+		<block type="rotcode_emoji_1" data-keywords="emoji|cq码|酷q码|ir变量"></block>
+		<block type="rotcode_sface_1" data-keywords="小表情|黄豆表情|cq码|酷q码|ir变量"></block>
+	</category>
+	<category name="%{BKY_CATROTFUNC}" colour="%{BKY_ROTFUNC_HUE}">
+		<block type="rot_getgrouplist" data-keywords="获取群列表|酷q|ir功能">
+			<value name="rotqq">
+				<shadow type="event_values">
+					<field name="event_values">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="rot_getgroupmanager" data-keywords="获取Q群管理员|群主|酷q|ir功能">
+			<value name="rotqq">
+				<shadow type="event_values">
+					<field name="event_values">0</field>
+				</shadow>
+			</value>
+			<value name="groupnumber">
+				<shadow type="math_number">
+					<field name="NUM"></field>
+				</shadow>
+			</value>
+		</block>
+		<block type="rot_getusername" data-keywords="获取昵称|获取群名称|酷q|ir功能">
+			<value name="number">
+				<shadow type="math_number">
+					<field name="NUM"></field>
+				</shadow>
+			</value>
+		</block>
+		<block type="rot_sendmsg" data-keywords="发送消息|群消息|私聊消息|讨论组消息|酷q|ir功能">
+			<value name="rotqq">
+				<shadow type="event_values">
+					<field name="event_values">0</field>
+				</shadow>
+			</value>
+			<value name="idnumber">
+				<shadow type="math_number">
+					<field name="NUM"></field>
+				</shadow>
+			</value>
+			<value name="msg">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+		</block>
+		<!-- <block type="rot_sendmsg" data-keywords="发送消息|群消息|私聊消息|讨论组消息|酷q|ir功能">
+			<value name="rotqq">
+				<shadow type="event_values">
+					<field name="event_values">0</field>
+				</shadow>
+			</value>
+			<value name="idnumber">
+				<shadow type="math_number">
+					<field name="NUM"></field>
+				</shadow>
+			</value>
+			<value name="msg">
+				<shadow type="ve_gettts">
+					<value name="content">
+						<shadow type="text">
+							<field name="TEXT"></field>
+						</shadow>
+					</value>
+					<value name="ttsgroup">
+						<shadow type="text">
+							<field name="TEXT">度丫丫.vdb</field>
+						</shadow>
+					</value>
+				</shadow>
+			</value>
+		</block> -->
+		<!-- 		<block type="rot_sendvoicemsg" data-keywords="发送消息|群消息|私聊消息|讨论组消息|酷q|ir功能|语音时代">
+			<value name="idnumber">
+				<shadow type="math_number">
+					<field name="NUM"></field>
+				</shadow>
+			</value>
+			<value name="msg">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+		</block> -->
+		<block type="rot_sendlike" data-keywords="点赞|名片赞|发送赞|酷q|ir功能">
+			<value name="rotqq">
+				<shadow type="event_values">
+					<field name="event_values">0</field>
+				</shadow>
+			</value>
+			<value name="idnumber">
+				<shadow type="math_number">
+					<field name="NUM"></field>
+				</shadow>
+			</value>
+			<value name="times">
+				<shadow type="math_number">
+					<field name="NUM">10</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="rot_jinyan" data-keywords="禁言|酷q|ir功能">
+			<value name="rotqq">
+				<shadow type="event_values">
+					<field name="event_values">0</field>
+				</shadow>
+			</value>
+			<value name="groupnumber">
+				<shadow type="math_number">
+					<field name="NUM"></field>
+				</shadow>
+			</value>
+			<value name="idnumber">
+				<shadow type="math_number">
+					<field name="NUM"></field>
+				</shadow>
+			</value>
+			<value name="time">
+				<shadow type="math_number">
+					<field name="NUM">60</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="rot_deleteMsg" data-keywords="撤回消息|酷q|ir功能">
+			<value name="rotqq">
+				<shadow type="event_values">
+					<field name="event_values">0</field>
+				</shadow>
+			</value>
+			<value name="groupnum">
+				<shadow type="event_values">
+					<field name="event_values">5</field>
+				</shadow>
+			</value>
+			<value name="msgid">
+				<shadow type="event_values">
+					<field name="event_values">3</field>
+				</shadow>
+			</value>
+			<value name="msgnum">
+				<shadow type="event_values">
+					<field name="event_values">4</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="rot_kickMember" data-keywords="踢出群员|酷q|ir功能">
+			<value name="rotqq">
+				<shadow type="event_values">
+					<field name="event_values">0</field>
+				</shadow>
+			</value>
+			<value name="groupnum">
+				<shadow type="event_values">
+					<field name="event_values">5</field>
+				</shadow>
+			</value>
+			<value name="qqnum">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+			<value name="canReapply">
+				<shadow type="logic_boolean">
+					<field name="BOOL">TRUE</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="rot_quitGroup" data-keywords="退出群聊|酷q|ir功能">
+			<value name="rotqq">
+				<shadow type="event_values">
+					<field name="event_values">0</field>
+				</shadow>
+			</value>
+			<value name="groupnum">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="rot_addlog" data-keywords="日志|酷q|ir功能">
+			<value name="content">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+		</block>
+	</category>
+	<sep></sep>
+	<category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
+		<block type="controls_if" data-keywords="如果|if|逻辑"></block>
+		<block type="logic_compare" data-keywords="=|!=|≠|条件|if|逻辑"></block>
+		<block type="logic_operation" data-keywords="|且|和|或|if|逻辑"></block>
+		<block type="logic_negate" data-keywords="非|!|if|逻辑"></block>
+		<block type="logic_boolean" data-keywords="false|true|假|真|boolean|逻辑"></block>
+		<block type="logic_null" data-keywords="空|empty|逻辑"></block>
+		<block type="logic_ternary" data-keywords="测试|如果为真|test|如果为假|if|逻辑"></block>
+		<block type="logic_switch" data-keywords="当变量拥有以下情况|switch|逻辑">
+			<value name="value_name">
+				<block type="variables_get">
+					<field name="VAR">文本</field>
+				</block>
+			</value>
+			<value name="calling">
+				<block type="logic_switch_default"></block>
+			</value>
+			<value name="calling">
+				<block type="logic_case">
+					<value name="caseName">
+						<shadow type="text">
+							<field name="TEXT"></field>
+						</shadow>
+					</value>
+				</block>
+			</value>
+		</block>
+		<block type="logic_switch" data-keywords="当变量拥有以下情况|switch|逻辑">
+			<value name="value_name">
+				<block type="variables_get">
+					<field name="VAR">文本</field>
+				</block>
+			</value>
+		</block>
+		<block type="logic_case" data-keywords="case|逻辑">
+			<value name="caseName">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+		</block>
+		<block type="logic_switch_default" data-keywords="default|逻辑"></block>
+	</category>
+	<category name="%{BKY_CATLOOPS}" colour="%{BKY_LOOPS_HUE}">
+		<block type="controls_repeat_ext" data-keywords="重复|repeat|循环">
+			<value name="TIMES">
+				<shadow type="math_number">
+					<field name="NUM">10</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="controls_whileUntil" data-keywords="条件重复|重复当|循环"></block>
+		<block type="controls_for">
+			<value name="FROM">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+			<value name="TO">
+				<shadow type="math_number">
+					<field name="NUM">10</field>
+				</shadow>
+			</value>
+			<value name="BY">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="controls_forEach" data-keywords="重复|循环"></block>
+		<block type="controls_flow_statements" data-keywords="中断循环|跳出循环|重复|循环"></block>
+	</category>
+	<category name="%{BKY_CATMATH}" colour="%{BKY_MATH_HUE}">
+		<block type="math_number" data-keywords="input|输入|number|数字|数学"></block>
+		<block type="math_arithmetic" data-keywords="加法|减法|除法|乘法|*x×÷/-＋+|calc|运算|计算|数学">
+			<value name="A">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+			<value name="B">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="math_single" data-keywords="平方根|绝对值|in|log10|e^|10^|运算|计算|数学">
+			<value name="NUM">
+				<shadow type="math_number">
+					<field name="NUM">9</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="math_trig" data-keywords="三角函数|反正弦|反余弦|反正切|asin|acos|atan|运算|计算|数学">
+			<value name="NUM">
+				<shadow type="math_number">
+					<field name="NUM">45</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="math_constant" data-keywords="圆周率|pai|π|e|无限大|无穷大|∞|运算|计算|数学"></block>
+		<block type="math_number_property" data-keywords="是奇数|是偶数|是整数|是质数|可被整除|是正数|是负数|数学">
+			<value name="NUMBER_TO_CHECK">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="math_round" data-keywords="四舍五入|退一法|进位法|进一法|向上舍入|向下舍入|数学">
+			<value name="NUM">
+				<shadow type="math_number">
+					<field name="NUM">3.1</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="math_on_list" data-keywords="列表平均数|计算|数学"></block>
+		<block type="math_modulo" data-keywords="取余数|除法|运算|计算|数学">
+			<value name="DIVIDEND">
+				<shadow type="math_number">
+					<field name="NUM">64</field>
+				</shadow>
+			</value>
+			<value name="DIVISOR">
+				<shadow type="math_number">
+					<field name="NUM">10</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="math_constrain">
+			<value name="VALUE">
+				<shadow type="math_number">
+					<field name="NUM">50</field>
+				</shadow>
+			</value>
+			<value name="LOW">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+			<value name="HIGH">
+				<shadow type="math_number">
+					<field name="NUM">100</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="math_random_int" data-keywords="取随机整数|随机数|数学">
+			<value name="FROM">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+			<value name="TO">
+				<shadow type="math_number">
+					<field name="NUM">100</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="math_random_float" data-keywords="取随机分数|数学"></block>
+		<label text="位操作拼图"></label>
+		<block type="math_bitwise" data-keywords="与and|或or|异或xor|位移|calc|bitwise|位运算|计算|数学">
+			<value name="A">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+			<value name="B">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="math_bitwise_not" data-keywords="非not~|calc|bitwise|位运算|计算|数学">
+			<value name="A">
+				<shadow type="math_number">
+					<field name="NUM">1</field>
+				</shadow>
+			</value>
+		</block>
+	</category>
+	<category name="%{BKY_CATTEXT}" colour="%{BKY_TEXTS_HUE}">
+		<block type="text" data-keywords="input|text|输入|文字|文本"></block>
+		<block type="text_join" data-keywords="连接字符串|连接文本|文字|文本"></block>
+		<block type="text_append" data-keywords="添加成员|追加成员|列表|文字|文本">
+			<value name="TEXT">
+				<shadow type="text"></shadow>
+			</value>
+		</block>
+		<block type="text_length" data-keywords="取字符串长度|取文本长度|文字|文本">
+			<value name="VALUE">
+				<shadow type="text">
+					<field name="TEXT">abc</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="text_isEmpty" data-keywords="是否为空|empty|文字|文本">
+			<value name="VALUE">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+		</block>
+		<block type="text_indexOf" data-keywords="寻找文本|文字|文本">
+			<value name="VALUE">
+				<block type="variables_get">
+					<field name="VAR">文本</field>
+				</block>
+			</value>
+			<value name="FIND">
+				<shadow type="text">
+					<field name="TEXT">abc</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="text_charAt" data-keywords="获得字符串|获得文本|文字|文本">
+			<value name="VALUE">
+				<block type="variables_get">
+					<field name="VAR">文本</field>
+				</block>
+			</value>
+		</block>
+		<block type="text_getSubstring" data-keywords="获得字符串|获得文本|文字|文本">
+			<value name="STRING">
+				<block type="variables_get">
+					<field name="VAR">文本</field>
+				</block>
+			</value>
+		</block>
+		<block type="text_changeCase" data-keywords="到大写|到小写|文字|文本">
+			<value name="TEXT">
+				<shadow type="text">
+					<field name="TEXT">abc</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="text_trim" data-keywords="去首尾空格|去空格|文字|文本">
+			<value name="TEXT">
+				<shadow type="text">
+					<field name="TEXT">abc</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="text_replace" data-keywords="子文本替换|替换文本|文字|文本">
+			<value name="FROM">
+				<shadow type="text">
+					<field name="TEXT">78</field>
+				</shadow>
+			</value>
+			<value name="TO">
+				<shadow type="text">
+					<field name="TEXT">4</field>
+				</shadow>
+			</value>
+			<value name="TEXT">
+				<shadow type="text">
+					<field name="TEXT">123785</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="text_midx" data-keywords="middle|取出中间文本|文字|文本">
+			<value name="mainString">
+				<shadow type="text">
+					<field name="TEXT">abcdefg</field>
+				</shadow>
+			</value>
+			<value name="subString1">
+				<shadow type="text">
+					<field name="TEXT">c</field>
+				</shadow>
+			</value>
+			<value name="subString2">
+				<shadow type="text">
+					<field name="TEXT">g</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="text_REtest" data-keywords="测试正则表达式|re|文字|文本">
+			<value name="tester">
+				<block type="text_newRE">
+					<value name="text">
+						<shadow type="text">
+							<field name="TEXT">[\u4e00-\u9fa5]+</field>
+						</shadow>
+					</value>
+				</block>
+			</value>
+			<value name="testee">
+				<shadow type="text">
+					<field name="TEXT">这是测试文本</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="text_REexec" data-keywords="匹配字符串|执行|匹配正则表达式|exec|文字|文本">
+			<value name="tester">
+				<block type="text_newRE">
+					<value name="text">
+						<shadow type="text">
+							<field name="TEXT">[\u4e00-\u9fa5]+</field>
+						</shadow>
+					</value>
+				</block>
+			</value>
+			<value name="testee">
+				<shadow type="text">
+					<field name="TEXT">这是测试文本</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="text_REmatch" data-keywords="匹配字符串|匹配正则表达式|match|文字|文本">
+			<value name="tester">
+				<block type="text_newRE">
+					<value name="text">
+						<shadow type="text">
+							<field name="TEXT">[\u4e00-\u9fa5]+</field>
+						</shadow>
+					</value>
+				</block>
+			</value>
+			<value name="testee">
+				<shadow type="text">
+					<field name="TEXT">这是测试文本</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="text_REreplace" data-keywords="匹配替换字符串|匹配正则表达式|替换字符串|replace|文字|文本">
+			<value name="tester">
+				<block type="text_newRE">
+					<value name="text">
+						<shadow type="text">
+							<field name="TEXT">[\u4e00-\u9fa5]+</field>
+						</shadow>
+					</value>
+				</block>
+			</value>
+			<value name="testee">
+				<shadow type="text">
+					<field name="TEXT">这是测试文本</field>
+				</shadow>
+			</value>
+			<value name="replaceto">
+				<shadow type="text">
+					<field name="TEXT">这是测试文本</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="text_enter" data-keywords="换行符|回车符|enter|br|文字|文本"></block>
+	</category>
+	<category colour="%{BKY_JSON_HUE}" name="%{BKY_CATJSON}">
+		<block type="json_createJson"></block>
+		<block type="variables_set">
+			<field name="VAR">json</field>
+			<value name="VALUE">
+				<block type="json_createJson"></block>
+			</value>
+		</block>
+		<block type="json_getKey">
+			<value name="VAR">
+				<block type="variables_get">
+					<field name="VAR">json</field>
+				</block>
+			</value>
+			<value name="propertyName">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+		</block>
+		<block type="json_hasOwnProperty">
+			<value name="VAR">
+				<block type="variables_get">
+					<field name="VAR">json</field>
+				</block>
+			</value>
+			<value name="propertyName">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+		</block>
+		<block type="json_setKey">
+			<value name="VAR">
+				<block type="variables_get">
+					<field name="VAR">json</field>
+				</block>
+			</value>
+			<value name="propertyName">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+		</block>
+		<block type="json_deleteKey">
+			<value name="VAR">
+				<block type="variables_get">
+					<field name="VAR">json</field>
+				</block>
+			</value>
+			<value name="propertyName">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+		</block>
+		<block type="json_getLength"></block>
+		<block type="json_stringify"></block>
+		<block type="json_parse"></block>
+	</category>
+	<category name="%{BKY_CATLISTS}" colour="%{BKY_LISTS_HUE}">
+		<block type="lists_create_with" data-keywords="创建列表|创建空列表|数组|列表">
+			<mutation items="0"></mutation>
+		</block>
+		<block type="lists_create_with" data-keywords="创建列表|数组|列表"></block>
+		<block type="lists_repeat" data-keywords="重复|创建|数组|列表">
+			<value name="NUM">
+				<shadow type="math_number">
+					<field name="NUM">5</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="lists_length" data-keywords="取数组成员数|取列表成员数|取数组长度|取列表长度|数组|列表"></block>
+		<block type="lists_isEmpty" data-keywords="列表是空的|empty|数组|列表"></block>
+		<block type="lists_indexOf" data-keywords="寻找列表|数组|列表">
+			<value name="VALUE">
+				<block type="variables_get">
+					<field name="VAR">列表</field>
+				</block>
+			</value>
+		</block>
+		<block type="lists_getIndex" data-keywords="获取列表成员|数组|列表">
+			<value name="VALUE">
+				<block type="variables_get">
+					<field name="VAR">列表</field>
+				</block>
+			</value>
+		</block>
+		<block type="lists_setIndex" data-keywords="设置列表成员|数组|列表">
+			<value name="LIST">
+				<block type="variables_get">
+					<field name="VAR">列表</field>
+				</block>
+			</value>
+		</block>
+		<block type="lists_getSublist" data-keywords="设置列表成员|数组|列表">
+			<value name="LIST">
+				<block type="variables_get">
+					<field name="VAR">列表</field>
+				</block>
+			</value>
+		</block>
+		<block type="lists_split" data-keywords="分割文本|分割字符串|数组|列表">
+			<value name="DELIM">
+				<shadow type="text">
+					<field name="TEXT">,</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="lists_sort" data-keywords="排序|升序|降序|数组|列表"></block>
+	</category>
+	<category name="%{BKY_CATTIME}" colour="%{BKY_TIME_HUE}">
+		<block type="rot_gettimestamp" data-keywords="获取时间戳|time|时间"></block>
+		<block type="rot_timestamptostr" data-keywords="转换时间戳|time|时间">
+			<value name="timestamp">
+				<block type="variables_get">
+					<field name="VAR">时间戳</field>
+				</block>
+			</value>
+		</block>
+		<block type="rot_timestamptoweekday" data-keywords="转换时间戳|星期|time|时间">
+			<value name="timestamp">
+				<block type="variables_get">
+					<field name="VAR">时间戳</field>
+				</block>
+			</value>
+		</block>
+		<block type="rot_timestamptostrx" data-keywords="转换时间戳|time|时间">
+			<value name="timestamp">
+				<block type="variables_get">
+					<field name="VAR">时间戳</field>
+				</block>
+			</value>
+			<value name="dateformat">
+				<shadow type="text">
+					<field name="TEXT">yyyy/MM/dd </field>
+				</shadow>
+			</value>
+			<value name="timeformat">
+				<shadow type="text">
+					<field name="TEXT">hh:mm:ss</field>
+				</shadow>
+			</value>
+		</block>
+		<!-- <block type="rot_timestamptogmtstring" data-keywords="转换时间戳|time|时间">
+			<value name="timestamp">
+				<shadow type="variables_get">
+					<field name="VAR">时间戳</field>
+				</shadow>
+			</value>
+		</block> -->
+		<!-- <block type="rot_sleep" data-keywords="延时|计时器|延迟|time|时间">
+			<value name="time">
+				<shadow type="math_number">
+					<field name="NUM">1000</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="time_timer_folder" data-keywords="延时|计时器|延迟|time|时间">
+			<value name="timeout">
+				<shadow type="math_number">
+					<field name="NUM">5000</field>
+				</shadow>
+			</value>
+		</block> -->
+	</category>
+	<sep></sep>
+	<category name="%{BKY_CATVOICEERA}" colour="%{BKY_VOICEERA_HUE}">
+		<block type="ve_gettts" data-keywords="语音合成|语音时代|酷q|IR">
+			<value name="content">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+			<value name="ttsgroup">
+				<shadow type="text">
+					<field name="TEXT">度丫丫.vdb</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="ve_getos" data-keywords="词库|词库交互|语音时代|酷q|IR">
+			<value name="content">
+				<shadow type="text">
+					<field name="TEXT"></field>
+				</shadow>
+			</value>
+			<value name="osgroup">
+				<shadow type="text">
+					<field name="TEXT">聊天女仆.vos</field>
+				</shadow>
+			</value>
+		</block>
+	</category>
+	<category name="%{BKY_CATREQUEST}" colour="%{BKY_REQUEST_HUE}">
+		<block type="request_all">
+			<mutation method="GET"></mutation>
+			<field name="method">GET</field>
+			<value name="url">
+				<block type="text">
+					<field name="TEXT">https://example.com</field>
+				</block>
+			</value>
+			<statement name="callback">
+				<block type="variables_set">
+					<field name="VAR">code</field>
+					<value name="VALUE">
+						<block type="request_all_responsecode"></block>
+					</value>
+					<next>
+						<block type="variables_set">
+							<field name="VAR">body</field>
+							<value name="VALUE">
+								<block type="request_all_responsebody"></block>
+							</value>
+						</block>
+					</next>
+				</block>
+			</statement>
+		</block>
+		<block type="request_all">
+			<mutation method="POST"></mutation>
+			<field name="method">POST</field>
+			<field name="contentType">application/json</field>
+			<value name="url">
+				<block type="text">
+					<field name="TEXT">https://example.com</field>
+				</block>
+			</value>
+			<value name="params">
+				<block type="text">
+					<field name="TEXT">["a", "b"]</field>
+				</block>
+			</value>
+			<statement name="callback">
+				<block type="variables_set">
+					<field name="VAR">code</field>
+					<value name="VALUE">
+						<block type="request_all_responsecode"></block>
+					</value>
+					<next>
+						<block type="variables_set">
+							<field name="VAR">body</field>
+							<value name="VALUE">
+								<block type="request_all_responsebody"></block>
+							</value>
+						</block>
+					</next>
+				</block>
+			</statement>
+		</block>
+		<block type="request_all">
+			<mutation method="POST"></mutation>
+			<field name="method">POST</field>
+			<field name="contentType">x-www-form-urlencoded</field>
+			<value name="url">
+				<block type="text">
+					<field name="TEXT">https://example.com</field>
+				</block>
+			</value>
+			<value name="params">
+				<block type="text">
+					<field name="TEXT">value1=1&amp;value2=2</field>
+				</block>
+			</value>
+			<statement name="callback">
+				<block type="variables_set">
+					<field name="VAR">code</field>
+					<value name="VALUE">
+						<block type="request_all_responsecode"></block>
+					</value>
+					<next>
+						<block type="variables_set">
+							<field name="VAR">body</field>
+							<value name="VALUE">
+								<block type="request_all_responsebody"></block>
+							</value>
+						</block>
+					</next>
+				</block>
+			</statement>
+		</block>
+	</category>
+	<category name="%{BKY_CATSYSDISK}" colour="%{BKY_SYSDISK_HUE}">
+		<block type="sysdisk_getlocalpath" data-keywords="获取运行目录|磁盘操作"></block>
+		<block type="sysdisk_writefile" data-keywords="写出文件|写文件|磁盘操作">
+			<value name="filepath">
+				<block type="text_join">
+					<mutation items="2"></mutation>
+					<value name="ADD0">
+						<block type="sysdisk_getlocalpath"></block>
+					</value>
+					<value name="ADD1">
+						<block type="text">
+							<field name="TEXT">/file.txt</field>
+						</block>
+					</value>
+				</block>
+
+			</value>
+			<value name="filecontent">
+				<block type="text">
+					<field name="TEXT">这是一个测试文件</field>
+				</block>
+			</value>
+		</block>
+		<block type="sysdisk_appendfile" data-keywords="追加文件|写文件|磁盘操作">
+			<value name="filepath">
+				<block type="text_join">
+					<mutation items="2"></mutation>
+					<value name="ADD0">
+						<block type="sysdisk_getlocalpath"></block>
+					</value>
+					<value name="ADD1">
+						<block type="text">
+							<field name="TEXT">/file.txt</field>
+						</block>
+					</value>
+				</block>
+
+			</value>
+			<value name="appendcontent">
+				<block type="text">
+					<field name="TEXT">这是追加的内容</field>
+				</block>
+			</value>
+		</block>
+		<block type="sysdisk_readfile" data-keywords="读取文件|读入文件|读文件|磁盘操作">
+			<value name="filepath">
+				<block type="text_join">
+					<mutation items="2"></mutation>
+					<value name="ADD0">
+						<block type="sysdisk_getlocalpath"></block>
+					</value>
+					<value name="ADD1">
+						<block type="text">
+							<field name="TEXT">/file.txt</field>
+						</block>
+					</value>
+				</block>
+			</value>
+		</block>
+		<block type="sysdisk_hasfile" data-keywords="检测文件|文件是否存在|磁盘操作">
+			<value name="filepath">
+				<block type="text_join">
+					<mutation items="2"></mutation>
+					<value name="ADD0">
+						<block type="sysdisk_getlocalpath"></block>
+					</value>
+					<value name="ADD1">
+						<block type="text">
+							<field name="TEXT">/file.txt</field>
+						</block>
+					</value>
+				</block>
+			</value>
+		</block>
+		<block type="sysdisk_deletefile" data-keywords="删除文件|清除文件|磁盘操作">
+			<value name="filepath">
+				<block type="text_join">
+					<mutation items="2"></mutation>
+					<value name="ADD0">
+						<block type="sysdisk_getlocalpath"></block>
+					</value>
+					<value name="ADD1">
+						<block type="text">
+							<field name="TEXT">/file.txt</field>
+						</block>
+					</value>
+				</block>
+			</value>
+		</block>
+		<block type="sysdisk_setkeytext" data-keywords="写出配置|写配置|磁盘操作">
+			<value name="inipath">
+				<block type="text_join">
+					<mutation items="2"></mutation>
+					<value name="ADD0">
+						<block type="sysdisk_getlocalpath"></block>
+					</value>
+					<value name="ADD1">
+						<block type="text">
+							<field name="TEXT">/config.ini</field>
+						</block>
+					</value>
+				</block>
+			</value>
+			<value name="inisection">
+				<block type="text">
+					<field name="TEXT">配置节</field>
+				</block>
+			</value>
+			<value name="inikey">
+				<block type="text">
+					<field name="TEXT">配置项</field>
+				</block>
+			</value>
+			<value name="inicontent">
+				<block type="text">
+					<field name="TEXT">配置内容</field>
+				</block>
+			</value>
+		</block>
+		<block type="sysdisk_getkeytext" data-keywords="读取配置|读入配置|读配置|磁盘操作">
+			<value name="inipath">
+				<block type="text_join">
+					<mutation items="2"></mutation>
+					<value name="ADD0">
+						<block type="sysdisk_getlocalpath"></block>
+					</value>
+					<value name="ADD1">
+						<block type="text">
+							<field name="TEXT">/config.ini</field>
+						</block>
+					</value>
+				</block>
+			</value>
+			<value name="inisection">
+				<block type="text">
+					<field name="TEXT">配置节</field>
+				</block>
+			</value>
+			<value name="inikey">
+				<block type="text">
+					<field name="TEXT">配置项</field>
+				</block>
+			</value>
+		</block>
+		<label text="流操作拼图"></label>
+		<block type="sysdisk_openFileStream" data-keywords="打开文件流|文件流操作|磁盘操作">
+			<value name="filepath">
+				<shadow type="text">
+					<field name="TEXT">C:/fakepath/file.txt</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_closeFileStream" data-keywords="关闭文件流|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_getFileStreamCurPos" data-keywords="获取文件流读写位置|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_moveFileStreamCurPos" data-keywords="移动文件流读写位置|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+			<value name="initialpos">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+			<value name="movedistance">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_isFileStreamEOF" data-keywords="判断读写位置是否在文件尾|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_writeFileStream" data-keywords="文件流写入|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+			<value name="filedata">
+				<shadow type="text">
+					<field name="TEXT">内容</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_readFileStream" data-keywords="文件流读取|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+			<value name="readlength">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_getFileStreamLength" data-keywords="获取文件流长度|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_gotoFileStreamBOF" data-keywords="移动读写位置到文件首|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_gotoFileStreamEOF" data-keywords="移动读写位置到文件尾|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+		</block>
+		<block type="sysdisk_findFileStreamBytes" data-keywords="在文件流寻找指定内容出现位置|寻找内容出现位置|文件流操作|磁盘操作">
+			<value name="fileindex">
+				<shadow type="math_number">
+					<field name="NUM">0</field>
+				</shadow>
+			</value>
+			<value name="filedata">
+				<shadow type="text">
+					<field name="TEXT">内容</field>
+				</shadow>
+			</value>
+		</block>
+	</category>
+	<sep></sep>
+	<category name="额外拓展" colour="242">
+		<label text="转接口"></label>
+		<block type="interface_left2vertical" data-keywords="转接口|水平转垂直"></block>
+		<block type="interface_left2left" data-keywords="转接口|类型强制转换"></block>
+		<label text="校验"></label>
+		<block type="verify_md5_text" data-keywords="校验|MD5|字符串"></block>
+	</category>
+	<sep></sep>
+	<category name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
+	<category name="%{BKY_CATFUNCTIONS}" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
+</xml>

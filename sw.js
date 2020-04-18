@@ -43,7 +43,7 @@ let cacheFiles = [
     './favicon.ico',
     './blocks/blocks.xml',
 ]
-let __version__ = 'cache-v20200418.0001'
+let __version__ = 'cache-v20200418.0002'
 // 文件缓存
 self.addEventListener('install', e => {
     // 强制更新sw
