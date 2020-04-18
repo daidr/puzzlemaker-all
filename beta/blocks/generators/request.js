@@ -23,7 +23,7 @@ Blockly.JavaScript.request_all = function (g) {
     var c = "";
     var functionName = 'HTTP_CALLBACK_' + randomString(15);
     var getCompareFunctionName = Blockly.JavaScript.provideFunction_(
-        'HTTP_CALLBACK_' + randomString(15),
+        functionName,
         ["function " + functionName + "(responseCode, responseBody) {\n" + d + "}"]);
     if (f == "GET") {
         c = "request_GET(" + b + ",\"\",\"";
