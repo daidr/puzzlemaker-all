@@ -12,10 +12,10 @@ Blockly.JavaScript['rotevent_allevent'] = function (block) {
     code += "})()\n";
   } else {
     var dropdown_dispose = block.getFieldValue('dispose');
-    /*     Blockly.JavaScript.provideFunction_(
-          'setValue',
-          ['var eventarray = {};']); */
-    var code = "function " + value_eventtypeinput + "(event){\n  var eventarray = event.split('|,|,|,|,|');\n" + statements_action;
+    Blockly.JavaScript.provideFunction_(
+      'setValue',
+      ['var eventarray = {};']);
+    var code = "function " + value_eventtypeinput + "(event){\n eventarray = event.split('|,|,|,|,|');\n" + statements_action;
     code = code + "return \"" + dropdown_dispose + "\";" + "\n}\n";
   }
 
