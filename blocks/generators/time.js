@@ -10,6 +10,12 @@ Blockly.JavaScript['rot_timestamptostr'] = function (block) {
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
+Blockly.JavaScript['rot_timestamptoweekday'] = function (block) {
+  var value_timestamp = Blockly.JavaScript.valueToCode(block, 'timestamp', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = 'new Date(parseInt(' + value_timestamp + ')).getDay()';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
 Blockly.JavaScript['rot_timestamptostrx'] = function (block) {
   var value_timestamp = Blockly.JavaScript.valueToCode(block, 'timestamp', Blockly.JavaScript.ORDER_ATOMIC);
   var value_dateformat = Blockly.JavaScript.valueToCode(block, 'dateformat', Blockly.JavaScript.ORDER_ATOMIC);

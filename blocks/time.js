@@ -32,6 +32,32 @@ Blockly.defineBlocksWithJsonArray([{
 ]);
 
 Blockly.defineBlocksWithJsonArray([{
+  "type": "rot_timestamptoweekday",
+  "message0": "时间戳转星期 %1 时间戳 %2",
+  "args0": [
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "input_value",
+      "name": "timestamp",
+      "check": [
+        "Number",
+        "String"
+      ],
+      "align": "RIGHT"
+    }
+  ],
+  "inputsInline": false,
+  "output": "String",
+  "colour": "%{BKY_TIME_HUE}",
+  "tooltip": "将时间戳转为星期。输出0-6的整数，0为周日，1为周一，2为周二，以此类推",
+  "helpUrl": ""
+}
+]);
+
+Blockly.defineBlocksWithJsonArray([{
   "type": "rot_timestamptostrx",
   "message0": "时间戳转时间 %1 时间戳 %2 日期格式 %3 时间格式 %4",
   "args0": [
