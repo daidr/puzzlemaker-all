@@ -25,7 +25,13 @@ Blockly.JavaScript['sysdisk_appendfile'] = function (block) {
 
 Blockly.JavaScript['sysdisk_readfile'] = function (block) {
   var value_filepath = Blockly.JavaScript.valueToCode(block, 'filepath', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = "readFile(" + value_filepath + ")";
+  var functionName = Blockly.JavaScript.provideFunction_(
+    'sliceValue',
+    ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
+      '(value) {',
+      '  return value.slice(0, value.length / 2 - 2);',
+      '}']);
+  var code = functionName + "(readFile(" + value_filepath + "))";
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
@@ -42,7 +48,13 @@ Blockly.JavaScript['sysdisk_getkeytext'] = function (block) {
   var value_inipath = Blockly.JavaScript.valueToCode(block, 'inipath', Blockly.JavaScript.ORDER_ATOMIC);
   var value_inisection = Blockly.JavaScript.valueToCode(block, 'inisection', Blockly.JavaScript.ORDER_ATOMIC);
   var value_inikey = Blockly.JavaScript.valueToCode(block, 'inikey', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = "getKeyText(" + value_inipath + "," + value_inisection + "," + value_inikey + ")";
+  var functionName = Blockly.JavaScript.provideFunction_(
+    'sliceValue',
+    ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
+      '(value) {',
+      '  return value.slice(0, value.length / 2 - 2);',
+      '}']);
+  var code = functionName+"(getKeyText(" + value_inipath + "," + value_inisection + "," + value_inikey + "))";
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
@@ -96,7 +108,13 @@ Blockly.JavaScript['sysdisk_writeFileStream'] = function (block) {
 Blockly.JavaScript['sysdisk_readFileStream'] = function (block) {
   var value_fileindex = Blockly.JavaScript.valueToCode(block, 'fileindex', Blockly.JavaScript.ORDER_ATOMIC);
   var value_readlength = Blockly.JavaScript.valueToCode(block, 'readlength', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = 'readFileStream(' + value_fileindex + ',' + value_readlength + ')';
+  var functionName = Blockly.JavaScript.provideFunction_(
+    'sliceValue',
+    ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
+      '(value) {',
+      '  return value.slice(0, value.length / 2 - 2);',
+      '}']);
+  var code = functionName+'(readFileStream(' + value_fileindex + ',' + value_readlength + '))';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 Blockly.JavaScript['sysdisk_getFileStreamLength'] = function (block) {

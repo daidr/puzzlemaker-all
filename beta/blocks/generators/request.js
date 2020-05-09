@@ -46,6 +46,12 @@ Blockly.JavaScript.request_all_responsecode = function (b) {
     return [a, Blockly.JavaScript.ORDER_ATOMIC]
 };
 Blockly.JavaScript.request_all_responsebody = function (b) {
-    var a = "responseBody";
+    var sliceValueFunctionName = Blockly.JavaScript.provideFunction_(
+        'sliceValue',
+        ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
+            '(value) {',
+            '  return value.slice(0, value.length / 2 - 2);',
+            '}']);
+    var a = sliceValueFunctionName+"(responseBody)";
     return [a, Blockly.JavaScript.ORDER_ATOMIC]
 };
