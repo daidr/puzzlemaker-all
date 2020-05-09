@@ -9,7 +9,7 @@ Blockly.JavaScript['sysdisk_getlocalpath'] = function (block) {
     'sliceValue',
     ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
       '(value) {',
-      '  return value.slice(0, value.length / 2 - 2);',
+      '  return value.slice(0, value.length / 2 - 1);',
       '}']);
   var code = functionName + "(getLocalpath())";
   return [code, Blockly.JavaScript.ORDER_NONE];
@@ -35,7 +35,7 @@ Blockly.JavaScript['sysdisk_readfile'] = function (block) {
     'sliceValue',
     ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
       '(value) {',
-      '  return value.slice(0, value.length / 2 - 2);',
+      '  return value.slice(0, value.length / 2 - 1);',
       '}']);
   var code = functionName + "(readFile(" + value_filepath + "))";
   return [code, Blockly.JavaScript.ORDER_NONE];
@@ -58,7 +58,7 @@ Blockly.JavaScript['sysdisk_getkeytext'] = function (block) {
     'sliceValue',
     ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
       '(value) {',
-      '  return value.slice(0, value.length / 2 - 2);',
+      '  return value.slice(0, value.length / 2 - 1);',
       '}']);
   var code = functionName + "(getKeyText(" + value_inipath + "," + value_inisection + "," + value_inikey + "))";
   return [code, Blockly.JavaScript.ORDER_NONE];
@@ -118,7 +118,7 @@ Blockly.JavaScript['sysdisk_readFileStream'] = function (block) {
     'sliceValue',
     ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
       '(value) {',
-      '  return value.slice(0, value.length / 2 - 2);',
+      '  return value.slice(0, value.length / 2 - 1);',
       '}']);
   var code = functionName + '(readFileStream(' + value_fileindex + ',' + value_readlength + '))';
   return [code, Blockly.JavaScript.ORDER_NONE];

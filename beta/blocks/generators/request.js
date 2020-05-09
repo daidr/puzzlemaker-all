@@ -50,7 +50,7 @@ Blockly.JavaScript.request_all_responsebody = function (b) {
         'sliceValue',
         ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
             '(value) {',
-            '  return value.slice(0, value.length / 2 - 2);',
+            '  return value.slice(0, value.length / 2 - 1);',
             '}']);
     var a = sliceValueFunctionName+"(responseBody)";
     return [a, Blockly.JavaScript.ORDER_ATOMIC]
