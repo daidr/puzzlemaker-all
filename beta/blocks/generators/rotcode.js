@@ -10,7 +10,7 @@ Blockly.JavaScript['rotcode_at'] = function (block) {
     'sliceValue',
     ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
       '(value) {',
-      '  return value.slice(0, value.length / 2 - 1);',
+      '  return value.slice(0, value.length / 3 * 2 - 9);',
       '}']);
   var code = functionName+"(rotcode_at(" + text_qqid + "," + dropdown_isnospace + "))";
   return [code, Blockly.JavaScript.ORDER_NONE];
@@ -34,7 +34,7 @@ Blockly.JavaScript['rotcode_emoji_1'] = function (block) {
     'sliceValue',
     ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
       '(value) {',
-      '  return value.slice(0, value.length / 2 - 1);',
+      '  return value.slice(0, value.length / 3 * 2 - 9);',
       '}']);
   var code = functionName+"(rotcode_emoji(" + dropdown_emojiid + "))";
   return [code, Blockly.JavaScript.ORDER_NONE];
@@ -52,7 +52,7 @@ Blockly.JavaScript['rotcode_sface_1'] = function (block) {
     'sliceValue',
     ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
       '(value) {',
-      '  return value.slice(0, value.length / 2 - 1);',
+      '  return value.slice(0, value.length / 3 * 2 - 9);',
       '}']);
   var code = functionName+"(rotcode_sface(" + text_sfaceid + "))";
   return [code, Blockly.JavaScript.ORDER_NONE];
@@ -65,7 +65,7 @@ Blockly.JavaScript['rotcode_record'] = function (block) {
     'sliceValue',
     ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
       '(value) {',
-      '  return value.slice(0, value.length / 2 - 1);',
+      '  return value.slice(0, value.length / 3 * 2 - 9);',
       '}']);
   var code = functionName+"(rotcode_record(" + dropdown_magic + "," + value_filename + "))";
   return [code, Blockly.JavaScript.ORDER_NONE];
@@ -79,7 +79,7 @@ Blockly.JavaScript['rotcode_image'] = function (block) {
     'sliceValue',
     ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
       '(value) {',
-      '  return value.slice(0, value.length / 2 - 1);',
+      '  return value.slice(0, value.length / 3 * 2 - 9);',
       '}']);
   var code = functionName+"(rotcode_image(" + dropdown_type + "," + value_cache + "," + value_path + "))";
   return [code, Blockly.JavaScript.ORDER_NONE];

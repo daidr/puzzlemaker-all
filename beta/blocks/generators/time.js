@@ -10,7 +10,7 @@ Blockly.JavaScript['rot_timestamptostr'] = function (block) {
     'sliceValue',
     ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
       '(value) {',
-      '  return value.slice(0, value.length / 2 - 1);',
+      '  return value.slice(0, value.length / 3 * 2 - 9);',
       '}']);
   var code = functionName+'(timestampToStr(' + value_timestamp + '))';
   return [code, Blockly.JavaScript.ORDER_NONE];
@@ -30,7 +30,7 @@ Blockly.JavaScript['rot_timestamptostrx'] = function (block) {
     'sliceValue',
     ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
       '(value) {',
-      '  return value.slice(0, value.length / 2 - 1);',
+      '  return value.slice(0, value.length / 3 * 2 - 9);',
       '}']);
   var code = functionName+'(timestampToStrX(' + value_timestamp + "," + value_dateformat + "," + value_timeformat + '))';
   return [code, Blockly.JavaScript.ORDER_NONE];
